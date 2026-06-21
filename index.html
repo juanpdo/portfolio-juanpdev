@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <meta name="description" content="Portfolio profesional de Juan Peña Dorado (juanpdev), como desarrollador web Front-End">
+        <meta name="author" content="Juan Peña Dorado">
+        <meta name="robots" content="index,follow">
+        <title>Portfolio Profesional juanpdev</title>
+        <link rel="canonical" href="https://juanpdev.com/">
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/BrunoAce-Regular.woff2">
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/FunnelDisplay-Bold.woff2">
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/FunnelDisplay-Regular.woff2">
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/SulphurPoint-Light.woff2">
+        <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/SulphurPoint-Regular.woff2">
+        <link rel="stylesheet" href="styles.css">
+        <script type="module" src="main.js"></script>
+    </head>
+    <body>
+        <header class="cabecera">
+            <nav class="navbar">
+                <ul class="navbar-lista">
+                    <li class="navbar-elemento elemento-portada" title="Portada"><a href="#seccion_portada" aria-label="Navegar a sección portada"></a><img src="assets/icons/home.svg" alt="Ícono de la sección portada (casa)"></li>
+                    <li class="navbar-elemento elemento-proyectos" title="Proyectos"><a href="#seccion_proyectos" aria-label="Navegar a sección proyectos"></a><img src="assets/icons/briefcase.svg" alt="Ícono de la sección proyectos (maletín)"></li>
+                    <li class="navbar-elemento elemento-informacion" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"></a><img src="assets/icons/user-square.svg" alt="Ícono de la sección información (card de usuario)"></li>
+                    <li class="navbar-elemento elemento-contacto" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"></a><img src="assets/icons/mail-opened.svg" alt="Ícono de la sección contacto (sobre abierto)"></li>
+                    <li class="navbar-elemento elemento-settings" title="Opciones"><button id="boton_settings" type="button" class="boton-settings" aria-label="Abrir opciones de configuración" aria-expanded="false"><img src="assets/icons/settings.svg" alt="Ícono de la sección configuración (engranaje)"></button></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="principal">
+            <section id="seccion_portada" class="seccion seccion-portada">
+                <header class="seccion-cabecera">
+                    <h1 class="titulo-principal">Juan Peña</h1>
+                    <h2 class="subtitulo-principal">Front-End Developer</h2>
+                </header>
+                <div class="mascara-foto-principal">
+                    <img src="assets/images/Foto_Monocromo.webp" alt="Fotografía frontal monocromo de mi busto" class="foto-principal">
+                </div>
+            </section>
+            <section id="seccion_proyectos" class="seccion seccion-proyectos">
+                <header class="seccion-cabecera">
+                    <h2 class="seccion-titulo">Proyectos Personales</h2>
+                    <div class="linea-decorativa-titulo" role="presentation"></div>
+                </header>
+                
+            </section>
+            <section id="seccion_informacion" class="seccion seccion-informacion">
+                <header class="seccion-cabecera">
+                    <h2 class="seccion-titulo">Información Personal</h2>
+                    <div class="linea-decorativa-titulo" role="presentation"></div>
+                </header>
+                
+            </section>
+            <section id="seccion_contacto" class="seccion seccion-contacto">
+                <header class="seccion-cabecera">
+                    <h2 class="seccion-titulo">Contacto</h2>
+                    <div class="linea-decorativa-titulo" role="presentation"></div>
+                </header>
+                
+            </section>
+        </main>
+        <footer class="pie-pagina">
+            <button type="button" id="boton_legal" class="boton-aviso-legal" aria-label="Apartado Legal abrir documentación" aria-expanded="false">Apartado Legal</button>
+            <p class="copyright">juanpdev.com © 2026 by Juan Peña Dorado. Todos los derechos reservados.</p>
+            <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" rel="noopener noreferrer" class="enlace-accesibilidad" aria-label="Navegar a la página de conformidad AAA de la W3C" title="Accesibilidad W3C"><img src="assets/icons/w3c.svg" alt="Ícono de accesibilidad AAA de la W3C personalizado"></a>
+        </footer>
+    </body>
+</html>
