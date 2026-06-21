@@ -21,10 +21,10 @@
         <header class="cabecera">
             <nav class="navbar">
                 <ul class="navbar-lista">
-                    <li class="navbar-elemento elemento-portada" title="Portada"><a href="#seccion_portada" aria-label="Navegar a sección portada"></a><img src="assets/icons/home.svg" alt="Ícono de la sección portada (casa)"></li>
-                    <li class="navbar-elemento elemento-proyectos" title="Proyectos"><a href="#seccion_proyectos" aria-label="Navegar a sección proyectos"></a><img src="assets/icons/briefcase.svg" alt="Ícono de la sección proyectos (maletín)"></li>
-                    <li class="navbar-elemento elemento-informacion" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"></a><img src="assets/icons/user-square.svg" alt="Ícono de la sección información (card de usuario)"></li>
-                    <li class="navbar-elemento elemento-contacto" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"></a><img src="assets/icons/mail-opened.svg" alt="Ícono de la sección contacto (sobre abierto)"></li>
+                    <li class="navbar-elemento elemento-portada" title="Portada"><a href="#seccion_portada" aria-label="Navegar a sección portada"><img src="assets/icons/home.svg" alt="Ícono de la sección portada (casa)"></a></li>
+                    <li class="navbar-elemento elemento-proyectos" title="Proyectos"><a href="#seccion_proyectos" aria-label="Navegar a sección proyectos"><img src="assets/icons/briefcase.svg" alt="Ícono de la sección proyectos (maletín)"></a></li>
+                    <li class="navbar-elemento elemento-informacion" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"><img src="assets/icons/user-square.svg" alt="Ícono de la sección información (card de usuario)"></a></li>
+                    <li class="navbar-elemento elemento-contacto" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"><img src="assets/icons/mail-opened.svg" alt="Ícono de la sección contacto (sobre abierto)"></a></li>
                     <li class="navbar-elemento elemento-settings" title="Opciones"><button id="boton_settings" type="button" class="boton-settings" aria-label="Abrir opciones de configuración" aria-expanded="false"><img src="assets/icons/settings.svg" alt="Ícono de la sección configuración (engranaje)"></button></li>
                 </ul>
             </nav>
@@ -44,7 +44,85 @@
                     <h2 class="seccion-titulo">Proyectos Personales</h2>
                     <div class="linea-decorativa-titulo" role="presentation"></div>
                 </header>
-                
+                <div class="estructura-cards">
+                    <article id="card_proyecto_spa" class="card-proyecto">
+                        <h3 class="card-proyecto-titulo"><a href="" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto SPA Noticias">SPA Noticias</a></h3>
+                        <div class="card-proyecto-multimedia">
+                            <img src="assets/images/SPA_Noticias.webp" alt="Miniatura del proyecto SPA Noticias" id="miniatura_spa">
+                            <video src="assets/videos/SPA_Noticias.webm" id="video_spa" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
+                        </div>
+                        <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
+                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
+                            <li class="proyecto-lista-elemento" title="Sass"><img src="assets/icons/sass.svg" alt="Ícono Sass"></li>
+                            <li class="proyecto-lista-elemento" title="TypeScript"><img src="assets/icons/typescript.svg" alt="Ícono TypeScript"></li>
+                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
+                            <li class="proyecto-lista-elemento" title="React Router"><img src="assets/icons/reactrouter.svg" alt="Ícono React Router"></li>
+                        </ul>
+                    </article>
+                    <article id="card_proyecto_ecommerce" class="card-proyecto">
+                        <h3 class="card-proyecto-titulo"><a href="" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto E-Commerce">E-Commerce</a></h3>
+                        <div class="card-proyecto-multimedia">
+                            <img src="assets/images/E-Commerce.webp" alt="Miniatura del proyecto E-Commerce" id="miniatura_ecommerce">
+                            <video src="assets/videos/E-Commerce.webm" id="video_ecommerce" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
+                        </div>
+                        <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
+                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
+                            <li class="proyecto-lista-elemento" title="TypeScript"><img src="assets/icons/typescript.svg" alt="Ícono TypeScript"></li>
+                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
+                        </ul>
+                    </article>
+                    <article id="card_proyecto_buscador" class="card-proyecto">
+                        <h3 class="card-proyecto-titulo"><a href="" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Buscador OMDb">Buscador OMDb</a></h3>
+                        <div class="card-proyecto-multimedia">
+                            <img src="assets/images/Buscador_OMDb.webp" alt="Miniatura del proyecto Buscador OMDb" id="miniatura_buscador">
+                            <video src="assets/videos/Buscador_OMDb.webm" id="video_buscador" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
+                        </div>
+                        <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
+                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
+                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
+                        </ul>
+                    </article>
+                    <article id="card_proyecto_tresenraya" class="card-proyecto">
+                        <h3 class="card-proyecto-titulo"><a href="" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Tres en Raya">Tres en Raya</a></h3>
+                        <div class="card-proyecto-multimedia">
+                            <img src="assets/images/Tres_en_raya.webp" alt="Miniatura del proyecto Tres en Raya" id="miniatura_tresenraya">
+                            <video src="assets/videos/Tres_en_raya.webm" id="video_tresenraya" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
+                        </div>
+                        <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
+                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
+                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
+                        </ul>
+                    </article>
+                    <article id="card_proyecto_arkanoid" class="card-proyecto">
+                        <h3 class="card-proyecto-titulo"><a href="" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Clon Arkanoid">Clon Arkanoid</a></h3>
+                        <div class="card-proyecto-multimedia">
+                            <img src="assets/images/Arkanoid.webp" alt="Miniatura del proyecto Clon Arkanoid" id="miniatura_arkanoid">
+                            <video src="assets/videos/Arkanoid.webm" id="video_arkanoid" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
+                        </div>
+                        <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
+                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
+                        </ul>
+                    </article>
+                    <article id="card_proyecto_cajero" class="card-proyecto">
+                        <h3 class="card-proyecto-titulo"><a href="" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Cajero Automático">Cajero Automático</a></h3>
+                        <div class="card-proyecto-multimedia">
+                            <img src="assets/images/Cajero_automatico.webp" alt="Miniatura del proyecto Cajero Automático" id="miniatura_cajero">
+                            <video src="assets/videos/Cajero_automatico.webm" id="video_cajero" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
+                        </div>
+                        <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
+                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
+                        </ul>
+                    </article>
+                </div>
             </section>
             <section id="seccion_informacion" class="seccion seccion-informacion">
                 <header class="seccion-cabecera">
@@ -64,7 +142,7 @@
         <footer class="pie-pagina">
             <button type="button" id="boton_legal" class="boton-aviso-legal" aria-label="Apartado Legal abrir documentación" aria-expanded="false">Apartado Legal</button>
             <p class="copyright">juanpdev.com © 2026 by Juan Peña Dorado. Todos los derechos reservados.</p>
-            <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" rel="noopener noreferrer" class="enlace-accesibilidad" aria-label="Navegar a la página de conformidad AAA de la W3C" title="Accesibilidad W3C"><img src="assets/icons/w3c.svg" alt="Ícono de accesibilidad AAA de la W3C personalizado"></a>
+            <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" target="_blank" rel="noopener noreferrer" class="enlace-accesibilidad" aria-label="Navegar a la página de conformidad AAA de la W3C" title="Accesibilidad W3C"><img src="assets/icons/w3c.svg" alt="Ícono de accesibilidad AAA de la W3C personalizado"></a>
         </footer>
     </body>
 </html>
