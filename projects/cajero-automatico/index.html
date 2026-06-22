@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="cajeroAutomaticoCSS.css">
+    <title>Cajero Automático</title>
+  </head>
+  <body>
+    <table id="encabezadoHtml" border="3" width="1006">
+      <tr>
+        <td align="center">
+           <h1>Cajero Automático</h1><p>Utiliza las teclas del cajero para retirar dinero</p>
+        </td>
+      </tr>
+    </table>
+
+    <div id="cajeroHtml">
+      <img src="cajero.jpg" id="imagenCajeroHtml" border=3>
+      <img src="tecladoCajero.png" id="tecladoCajeroHtml">
+      <canvas id="pantallaHtml" width="300" height="300" class="pantalla"></canvas>
+      <canvas id="pantallaPINHtml" width="200" height="50" class="pantallaPIN"></canvas>
+      <canvas id="pantallaDineroHtml" width="200" height="50" class="pantallaDinero"></canvas>
+      <canvas id="lectorTarjetaHtml" width="130" height="55" class="lector"></canvas>
+      <canvas id="zonaDineroHtml" width="200" height="181" class="zonaDinero"></canvas>
+      <canvas id="canvas0Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas1Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas2Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas3Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas4Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas5Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas6Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas7Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas8Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvas9Html" width="65" height="50" class="tecla"></canvas>
+      <canvas id="canvasCancelHtml" width="75" height="50" class="teclaGrande"></canvas>
+      <canvas id="canvasClearHtml" width="75" height="50" class="teclaGrande"></canvas>
+      <canvas id="canvasEnterHtml" width="75" height="50" class="teclaGrande"></canvas>
+    </div>
+
+    <div id="cajaHtml">
+      <table  id="cajeadoCajaTitulo" border="3" width="800">
+        <tr>
+          <td align="center">
+            <h1>CAJA DE BILLETES DEL CAJERO AUTOMÁTICO</h1>
+          </td>
+        </tr>
+      </table>
+
+      <table  id="cajeadoCajaBilletes" border="3" width="800">
+        <tr>
+          <th>BILLETES DE 500</th>
+          <th>BILLETES DE 200</th>
+          <th>BILLETES DE 100</th>
+          <th>BILLETES DE 50</th>
+          <th>BILLETES DE 20</th>
+          <th>BILLETES DE 10</th>
+          <th>BILLETES DE 5</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="number" id="caja500Html" value="1" max="10" min="0" size="8" class="caja">
+          </td>
+          <td>
+            <input type="number" id="caja200Html" value="2" max="10" min="0" size="8" class="caja">
+          </td>
+          <td>
+            <input type="number" id="caja100Html" value="3" max="10" min="0" size="8" class="caja">
+          </td>
+          <td>
+            <input type="number" id="caja50Html" value="4" max="10" min="0" size="8" class="caja">
+          </td>
+          <td>
+            <input type="number" id="caja20Html" value="5" max="10" min="0" size="8" class="caja">
+          </td>
+          <td>
+            <input type="number" id="caja10Html" value="6" max="10" min="0" size="8" class="caja">
+          </td>
+          <td>
+            <input type="number" id="caja5Html" value="8" max="10" min="0" size="8" class="caja">
+          </td>
+        </tr>
+      </table>
+
+      <table id="cajaTotalTabla" border="3" width="800">
+        <tr>
+          <td>
+            <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TOTAL EN CAJERO <input type="text" id="cajaTotalHtml" value="1600" readonly="readonly"> € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAXIMO A RETIRAR <input type="number" id="cajeroMaximoHtml" value="1200" max="2000" min="0"> € </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <img src="tarjetaCredito.png" id="tarjetaCreditoHtml" class="tarjeta">
+
+    <div id="zonaResultados">
+      <canvas id="resultadosHtml" width="635" height="90"></canvas>
+    </div>
+
+    <div id="zonaBolsillo">
+      <canvas id="bolsilloHtml" width="800" height="800"></canvas>
+    </div>
+
+    <script type="text/javascript" src="funcionesCajeroAutomatico.js"></script>
+    <script type="text/javascript" src="cajeroAutomaticoJava.js"></script>
+  </body>
+</html>

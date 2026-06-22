@@ -1,0 +1,198 @@
+#cajaHtml
+{
+  position: relative;
+  left: 1014px;
+  top: -1138px;
+  user-select: none;
+}
+
+#cajeadoCajaBilletes
+{
+  text-align: center;
+  font-size: 15px;
+  user-select: none;
+}
+
+#imagenCajeroHtml
+{
+  user-select: none;
+}
+
+#tecladoCajeroHtml
+{
+  position: absolute;
+  left: 130px;
+  top: 820px;
+  z-index: 1;
+  user-select: none;
+}
+
+#pantallaHtml
+{
+  position: absolute;
+  left: 177px;
+  top: 415px;
+  z-index: 1;
+}
+
+#pantallaPINHtml
+{
+  position: absolute;
+  left: 227px;
+  top: 645px;
+  z-index: 1;
+}
+
+#pantallaDineroHtml
+{
+  position: absolute;
+  left: 227px;
+  top: 645px;
+  z-index: 1;
+}
+
+#lectorTarjetaHtml
+{
+  position: absolute;
+  left: 563px;
+  top: 394px;
+  z-index: 1;
+}
+
+#zonaDineroHtml
+{
+  position: absolute;
+  left: 620px;
+  top: 760px;
+  z-index: 1;
+}
+
+#bolsilloHtml
+{
+  position: relative;
+  background-color: grey;
+  left: 1015px;
+  top: -1043px;
+  z-index: 0;
+}
+
+#tarjetaCreditoHtml
+{
+  position: absolute;
+  left: 1020px;
+  top: 250px;
+  z-index: 2;
+}
+
+#resultadosHtml
+{
+  position: absolute;
+  background-color: #bfd8d9;
+  left: 1188px;
+  top: 250px;
+  z-index: 0;
+}
+
+#canvas1Html
+{
+  position: absolute;
+  left: 164px;
+  top: 854px;
+  z-index: 1;
+}
+
+#canvas2Html
+{
+  position: absolute;
+  left: 245px;
+  top: 854px;
+  z-index: 1;
+}
+
+#canvas3Html
+{
+  position: absolute;
+  left: 325px;
+  top: 854px;
+  z-index: 1;
+}
+
+#canvas4Html
+{
+  position: absolute;
+  left: 164px;
+  top: 917px;
+  z-index: 1;
+}
+
+#canvas5Html
+{
+  position: absolute;
+  left: 245px;
+  top: 917px;
+  z-index: 1;
+}
+
+#canvas6Html
+{
+  position: absolute;
+  left: 325px;
+  top: 917px;
+  z-index: 1;
+}
+
+#canvas7Html
+{
+  position: absolute;
+  left: 164px;
+  top: 979px;
+  z-index: 1;
+}
+
+#canvas8Html
+{
+  position: absolute;
+  left: 245px;
+  top: 979px;
+  z-index: 1;
+}
+
+#canvas9Html
+{
+  position: absolute;
+  left: 325px;
+  top: 979px;
+  z-index: 1;
+}
+
+#canvas0Html
+{
+  position: absolute;
+  left: 245px;
+  top: 1042px;
+  z-index: 1;
+}
+
+#canvasCancelHtml
+{
+  position: absolute;
+  left: 425px;
+  top: 854px;
+  z-index: 1;
+}
+
+#canvasClearHtml
+{
+  position: absolute;
+  left: 425px;
+  top: 917px;
+  z-index: 1;
+}
+
+#canvasEnterHtml
+{
+  position: absolute;
+  left: 425px;
+  top: 979px;
+  z-index: 1;
+}

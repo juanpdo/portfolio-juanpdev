@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Juan Peña">
+        <meta name="description" content="Documento para trabajar con el canvas, con el mítico Arkanoid">
+        <meta name="keywords" content="HTML5,css,javascript,canvas,arkanoid">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="styles.css">
+        <title>ARKANOID EN CANVAS</title>
+    </head>
+    <body>
+        <header>
+            <h1><img src="assets/img/logo.webp" alt="logotipo original de Arkanoid"></h1>
+        </header>
+        <main>
+            <section class="seccion-completa">
+                <section class="seccion-sonido">
+                    <button id="boton_sonido" aria-label="botón para activar/desactivar el sonido del juego"><img id="imagen_sonido" src="assets/img/altavoz.png" alt="icono minimalista de un altavoz"></button>
+                </section>
+                <section class="seccion-canvas">
+                    <canvas id="canvas1" role="application" aria-label="juego del Arkanoid clonado del original">Clon del mítico juego de romper bloques Arkanoid</canvas>
+                </section>
+                <section class="seccion-opciones">
+                    <form action="">
+                        <fieldset aria-label="apartado para configurar las opciones del juego" class="apartado-opciones">
+                            <legend>OPCIONES DEL JUEGO</legend>
+                            <label for="selector_dificultad" class="etiqueta-dificultad">DIFICULTAD:</label>
+                            <select name="dificultad-juego" id="selector_dificultad" class="selector-dificultad">
+                                <option value="muyFacil"> MUY FÁCIL</option>
+                                <option value="facil">FÁCIL</option>
+                                <option value="normal" selected>NORMAL</option>
+                                <option value="dificil">DIFÍCIL</option>
+                                <option value="muyDificil">MUY DIFÍCIL</option>
+                            </select>
+                            <label for="selector_ladrillos" class="etiqueta-ladrillos">NÚMERO LADRILLOS:</label>
+                            <select name="numero-ladrillos" id="selector_ladrillos" class="selector-ladrillos">
+                                <option value="pocos">POCOS</option>
+                                <option value="normal" selected>NORMAL</option>
+                                <option value="muchos">MUCHOS</option>
+                            </select>
+                            <label for="selector_espaciado" class="etiqueta-espaciado">ESPACIADO LADRILLOS:</label>
+                            <select name="espaciado-ladrillos" id="selector_espaciado" class="selector-espaciado">
+                                <option value="ninguno" selected>NINGUNO</option>
+                                <option value="pequeno">PEQUEÑO</option>
+                                <option value="grande">GRANDE</option>
+                            </select>
+                            <label for="ladrillos_grandes" class="etiqueta-tamano">LADRILLOS GRANDES</label>
+                            <input type="checkbox" name="ladrillos-grandes" id="ladrillos_grandes" class="selector-tamano">
+                            <label for="pelota_grande" class="etiqueta-pelota">PELOTA GRANDE</label>
+                            <input type="checkbox" name="pelota-grande" id="pelota_grande" class="selector-pelota">
+                            <input type="button" id="boton_opciones" class="boton-opciones" value="APLICAR CAMBIOS" aria-label="Botón para aplicar los cambios establecidos en las opciones">
+                        </fieldset>
+                    </form>     
+                </section>
+            </section>
+        </main>
+        <script src="scripts.js"></script>
+    </body>
+</html>

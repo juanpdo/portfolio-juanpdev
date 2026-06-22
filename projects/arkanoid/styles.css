@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+body{
+    /* background-color: lightgray; */
+    background: radial-gradient(blue,black);
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+}
+
+fieldset{
+    color: white;
+}
+
+legend{
+    text-decoration: underline;
+    justify-self: left;
+}
+
+label{
+    font-size: 12px;
+}
+
+.seccion-completa{
+    justify-items: center;
+}
+
+.seccion-canvas{
+    display: flex;
+    justify-content: center;
+}
+
+.seccion-sonido{
+    width: 640px;
+    justify-items: right;
+    margin-bottom: 5px;
+}
+
+canvas{
+    border: 1px solid black;
+}
+
+.etiqueta-dificultad{
+    grid-area: e-dif;
+}
+
+.etiqueta-ladrillos{
+    grid-area: e-lad;
+}
+
+.etiqueta-espaciado{
+    grid-area: e-esp;
+}
+
+.etiqueta-tamano{
+    grid-area: e-tam;
+}
+
+.etiqueta-pelota{
+    grid-area: e-pel;
+}
+
+.selector-dificultad{
+    grid-area: s-dif;
+}
+
+.selector-ladrillos{
+    grid-area: s-lad;
+}
+
+.selector-espaciado{
+    grid-area: s-esp;
+}
+
+.selector-tamano{
+    grid-area: s-tam;
+}
+
+.selector-pelota{
+    grid-area: s-pel;
+}
+
+.boton-opciones{
+    grid-area: b-opc;
+    height: 24px;
+}
+
+.apartado-opciones{
+    margin-top: 25px;
+    max-width: 640px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 1fr 0.5fr) 1fr 1fr;
+    grid-template-rows: minmax(15px,30px) 10px minmax(15px,30px);
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    grid-template-areas: "e-dif s-dif . e-lad s-lad . e-esp s-esp"
+                         ". . . . . . . ."
+                         "e-tam s-tam . e-pel s-pel . b-opc b-opc" ;
+}
+
+#boton_sonido{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    place-items: center;
+}
+
+#boton_sonido>img{
+    width: 16px;
+    height: 16px;
+}
