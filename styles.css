@@ -1,0 +1,210 @@
+/*------------------------------------------------------------------------IMPORTACIÓN DE FUENTES-------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "BrunoAce";
+    src: url("assets/fonts/BrunoAce-Regular.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "FunnelDisplay";
+    src: url("assets/fonts/FunnelDisplay-Regular.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "FunnelDisplay";
+    src: url("assets/fonts/FunnelDisplay-Bold.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "ShulphurPoint";
+    src: url("assets/fonts/SulphurPoint-Regular.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "ShulphurPoint";
+    src: url("assets/fonts/SulphurPoint-Light.woff2") format("woff2");
+    font-display: swap;
+    font-weight: 300;
+}
+
+/*------------------------------------------------------------------------VARIABLES GLOBALES-----------------------------------------------------------------------------------*/
+:root{
+    /*------------------COLORES---------------------------*/
+
+    --color-fondo: rgb(255,255,255);
+    --color-flechas: rgb(255,255,255);
+    --color-sombra-flechas: rgb(255,255,255);
+    --color-fondo-navbar: rgba(255,255,255, 0.03);
+    --color-iconos-navbar: rgb(255,255,255);
+    --color-sombra-iconos-navbar: rgb(255,255,255);
+    --color-fondo-configuracion: rgba(255,255,255, 0.03);
+    --color-iconos-configuracion: rgb(255,255,255);
+    --color-sombra-iconos-configuracion: rgb(255,255,255);
+    --color-switch-apagado: rgb(177,177,177);
+    --color-switch-encendido: rgb(255,255,255);
+    --color-borde-switch: rgb(255,255,255);
+    --color-bola-switch: rgb(255,255,255);
+    --color-sombra-switch: rgb(255,255,255);
+    --color-letras-titulo: rgb(255,255,255);
+    --color-letras-subtitulo: rgb(255,255,255);
+    --color-letras-contenido: rgb(255,255,255);
+    --color-sombra-letras: rgb(255,255,255);
+    --color-mascara-foto: rgba(217,217,217,0.6);
+    --color-sombra-mascara: rgb(255,255,255);
+    --color-fondo-foto: rgb(255,255,255);
+    --color-sombra-foto: rgb(255,255,255);
+    --color-fondo-cards: rgba(161,161,161,0.25);
+    --color-sombra-cards: rgb(255,255,255);
+    --color-borde-cards: rgb(255,255,255);
+    --color-sombra-borde-cards: rgb(255,255,255);
+    --color-fondo-miniaturas: rgb(255,255,255);
+    --color-iconos-tecnologias: rgb(255,255,255);
+    --color-sombras-iconos-tecnologias: rgb(255,255,255);
+    --color-luz-cards: rgb(255,255,255);
+    --color-sombra-luz-cards: rgb(255,255,255);
+    --color-fondo-stack: rgba(161,161,161,0.25);
+    --color-sombra-stack: rgb(255,255,255);
+    --color-borde-stack: rgb(255,255,255);
+    --color-iconos-stack: rgb(255,255,255);
+    --color-sombra-iconos-stack: rgb(255,255,255);
+    --color-separador-vertical: rgb(255,255,255);
+    --color-fondo-contacto: rgba(161,161,161,0.25);
+    --color-sombra-contacto: rgb(255,255,255);
+    --color-borde-contacto: rgb(255,255,255);
+    --color-sombra-borde-contacto: rgb(255,255,255);
+    --color-input: rgb(164,164,164);
+    --color-sombra-input: rgb(255,255,255);
+    --color-borde-input: rgb(255,255,255);
+    --color-sombra-borde-input: rgb(255,255,255);
+    --color-boton-enviar: rgba(161,161,161,0.25);
+    --color-sombra-boton-enviar: rgb(255,255,255);
+    --color-borde-boton-enviar: rgb(255,255,255);
+    --color-sombra-borde-boton-enviar: rgb(255,255,255);
+    --color-luz-boton-enviar: rgb(255,255,255);
+    --color-sombra-luz-boton-enviar: rgb(255,255,255);
+    --color-iconos-contacto: rgb(255,255,255);
+    --color-sombra-iconos-contacto: rgb(255,255,255);
+    --color-fondo-pie: rgba(255,255,255,0.03);
+    --color-legal-pie: rgb(255,255,255);
+    --color-sombra-legal-pie: rgb(255,255,255);
+    --color-iconos-pie: rgb(255,255,255);
+    --color-sombra-iconos-pie: rgb(255,255,255);
+    --color-modal: rgba(161,161,161,0.25);
+    --color-navbar-modal: rgba(255,255,255,0.03);
+    --color-enlaces-modal: rgb(255,255,255);
+    --color-sombra-enlaces-modal: rgb(255,255,255);
+    --color-boton-modal: rgb(164,164,164);
+    --color-sombra-boton-modal: rgb(255,255,255);
+
+    /*------------------TAMAÑOS---------------------------*/
+
+    --tamano-flechas: 60px;
+    --tamano-icono-navbar: 48px;
+    --tamano-icono-configuracion: 48px;
+    --tamano-largo-switch: 40px;
+    --tamano-alto-switch: 24px;
+    --tamano-icono-tecnologias: 24px;
+    --tamano-luz: 3px;
+    --tamano-punto-stack: 15px;
+    --tamano-icono-stack: 32px;
+    --tamano-largo-boton-enviar: 150px;
+    --tamano-alto-boton-enviar: 50px;
+    --tamano-icono-contacto: 32px;
+    --tamano-largo-icono-accesibilidad: 88px;
+    --tamano-alto-icono-accesibilidad: 31px;
+    --tamano-boton-modal: 40px;
+
+    /*------------------TEXTOS---------------------------*/
+
+    --texto-pequeno: 0.75rem;
+    --texto-contenido: 1rem;
+    --texto-subtitulo: 1.5rem;
+    --texto-titulo: 2rem;
+
+    /*------------------ESCALAS---------------------------*/
+
+    --escalado-pequeno: 1.05;
+    --escalado-medio: 1.1;
+    --escalado-grande: 1.2;
+
+    /*------------------RADIOS---------------------------*/
+
+    --radio-mediano: 10px;
+    --radio-grande: 20px;
+
+    /*------------------MODO CLARO---------------------------*/
+    
+    &[data-theme="claro"]{
+        --color-fondo: rgb(59,59,59);
+        --color-flechas: rgb(59,59,59);
+        --color-sombra-flechas: rgb(59,59,59);
+        --color-fondo-navbar: rgba(59,59,59,0.03);
+        --color-iconos-navbar: rgb(59,59,59);
+        --color-sombra-iconos-navbar: rgb(59,59,59);
+        --color-fondo-configuracion: rgba(59,59,59,0.03);
+        --color-iconos-configuracion: rgb(59,59,59);
+        --color-sombra-iconos-configuracion: rgb(59,59,59);
+        --color-switch-apagado: rgb(177,177,177);
+        --color-switch-encendido: rgb(59,59,59);
+        --color-borde-switch: rgb(59,59,59);
+        --color-bola-switch: rgb(59,59,59);
+        --color-sombra-switch: rgb(59,59,59);
+        --color-letras-titulo: rgb(59,59,59);
+        --color-letras-subtitulo: rgb(59,59,59);
+        --color-letras-contenido: rgb(59,59,59);
+        --color-sombra-letras: rgb(59,59,59);
+        --color-mascara-foto: rgba(217,217,217,0.6);
+        --color-sombra-mascara: rgb(59,59,59);
+        --color-fondo-foto: rgb(59,59,59);
+        --color-sombra-foto: rgb(59,59,59);
+        --color-fondo-cards: rgba(161,161,161,0.25);
+        --color-sombra-cards: rgb(59,59,59);
+        --color-borde-cards: rgb(59,59,59);
+        --color-sombra-borde-cards: rgb(59,59,59);
+        --color-fondo-miniaturas: rgb(59,59,59);
+        --color-iconos-tecnologias: rgb(59,59,59);
+        --color-sombras-iconos-tecnologias: rgb(59,59,59);
+        --color-luz-cards: rgb(59,59,59);
+        --color-sombra-luz-cards: rgb(59,59,59);
+        --color-fondo-stack: rgba(161,161,161,0.25);
+        --color-sombra-stack: rgb(59,59,59);
+        --color-borde-stack: rgb(59,59,59);
+        --color-iconos-stack: rgb(59,59,59);
+        --color-sombra-iconos-stack: rgb(59,59,59);
+        --color-separador-vertical: rgb(59,59,59);
+        --color-fondo-contacto: rgba(161,161,161,0.25);
+        --color-sombra-contacto: rgb(59,59,59);
+        --color-borde-contacto: rgb(59,59,59);
+        --color-sombra-borde-contacto: rgb(59,59,59);
+        --color-input: rgb(164,164,164);
+        --color-sombra-input: rgb(59,59,59);
+        --color-borde-input: rgb(59,59,59);
+        --color-sombra-borde-input: rgb(59,59,59);
+        --color-boton-enviar: rgba(161,161,161,0.25);
+        --color-sombra-boton-enviar: rgb(59,59,59);
+        --color-borde-boton-enviar: rgb(59,59,59);
+        --color-sombra-borde-boton-enviar: rgb(59,59,59);
+        --color-luz-boton-enviar: rgb(59,59,59);
+        --color-sombra-luz-boton-enviar: rgb(59,59,59);
+        --color-iconos-contacto: rgb(59,59,59);
+        --color-sombra-iconos-contacto: rgb(59,59,59);
+        --color-fondo-pie: rgba(255, 255, 255, 0.03);
+        --color-legal-pie: rgb(59,59,59);
+        --color-sombra-legal-pie: rgb(59,59,59);
+        --color-iconos-pie: rgb(59,59,59);
+        --color-sombra-iconos-pie: rgb(59,59,59);
+        --color-modal: rgba(161,161,161,0.25);
+        --color-navbar-modal: rgba(59,59,59,0.03);
+        --color-enlaces-modal: rgb(59,59,59);
+        --color-sombra-enlaces-modal: rgb(59,59,59);
+        --color-boton-modal: rgb(164,164,164);
+        --color-sombra-boton-modal: rgb(59,59,59);
+    }
+}
