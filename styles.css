@@ -43,7 +43,7 @@
     --color-flechas: var(--color-base);
     --color-fondo-navbar: rgb(from var(--color-base) r g b /1%);
     --color-iconos-navbar: var(--color-base);
-    --color-fondo-configuracion: rgb(from var(--color-base) r g b /10%);
+    --color-fondo-configuracion: rgb(from var(--color-base) r g b /1%);
     --color-iconos-configuracion: var(--color-base);
     --color-switch-apagado: rgb(177,177,177);
     --color-switch-encendido: rgb(0,0,0);
@@ -310,116 +310,6 @@ body{
                 margin-left: auto;          
             }
         }
-
-        /*----------------------MENU OPCIONES--------------------------*/
-
-        .configuracion-menu{
-            /* height: 0; */
-            position: fixed;
-            top: 80px;
-            right: -1px;
-            left: auto;
-            bottom: auto;
-            background-color: var(--color-fondo-configuracion);
-            border: var(--borde-configuracion);
-            padding: 20px;
-
-            .configuracion-lista{
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                list-style: none;
-
-                .configuracion-elemento{
-                    position: relative;
-                    display: flex;
-                    flex-direction: row;
-                    gap: 20px;
-                    place-items: center;
-
-                    .contenedor-iconos-configuracion{
-                        position: relative;
-                        width: var(--tamano-icono-configuracion);
-                        height: var(--tamano-icono-configuracion);
-
-                        .icono{
-                            position: absolute;
-                            width: 100%;
-                            aspect-ratio: 1;
-                            stroke-width: 0.5px;
-                            shape-rendering: geometricPrecision;
-                            color: var(--color-iconos-configuracion);
-                            transition: opacity 0.6s ease;
-
-                            &.encendido{
-                                opacity: 0%;
-                            }
-                        }
-
-                    }
-
-                    .interruptor-cuerpo{
-                        position: relative;
-                        width: var(--tamano-largo-switch);
-                        height: var(--tamano-alto-switch);
-                        background-color: var(--color-switch-apagado);
-                        border: var(--borde-switch);
-                        border-radius: 20px;
-                        cursor: pointer;
-
-                        .interruptor-bola{
-                            position: absolute;
-                            top: 2px;
-                            left: 2px;
-                            width: var(--tamano-bola-switch);
-                            aspect-ratio: 1;
-                            background-color: var(--color-bola-switch);
-                            border-radius: 50%;
-                            transition: transform 0.6s ease;
-                        }
-
-                        &:hover{
-                            box-shadow: var(--sombra-switch);
-                        }
-                    }
-
-                    .interruptor-cuerpo:hover+.contenedor-iconos-configuracion{
-                        .icono use{
-                            stroke-width: 1px;
-                            transform-origin: center;
-                            scale: var(--escalado-pequeno);
-                            filter: drop-shadow(var(--sombra-iconos-configuracion));
-                        }
-                    }
-
-                    .interruptor-checkbox{
-                        position: absolute;
-                        left: 14px;
-                        opacity: 0;
-                        pointer-events: none;
-                    }
-
-                    .interruptor-checkbox:checked+.interruptor-cuerpo{
-                        background-color: var(--color-switch-encendido);
-
-                        .interruptor-bola{
-                            transform: translateX(17px);
-                        }
-                    }
-
-                    .interruptor-checkbox:checked~.contenedor-iconos-configuracion{
-
-                        .encendido{
-                            opacity: 100%;
-                        }
-
-                        .apagado{
-                            opacity: 0%;
-                        }
-                    }
-                }
-            }
-        }
     }
 
     /*----------------------EFECTO REFLEXIÓN--------------------------*/
@@ -429,5 +319,101 @@ body{
         width: 100%;
         height: 1px;
         backdrop-filter: brightness(3);
+    }
+
+    /*----------------------MENU OPCIONES--------------------------*/
+
+    .configuracion-menu{
+        /* height: 0; */
+        position: fixed;
+        top: 80px;
+        right: 0px;
+        left: auto;
+        bottom: auto;
+        background-color: var(--color-fondo-configuracion);
+        border: var(--borde-configuracion);
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        
+        .configuracion-lista{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            list-style: none;
+            .configuracion-elemento{
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                place-items: center;
+                .contenedor-iconos-configuracion{
+                    position: relative;
+                    width: var(--tamano-icono-configuracion);
+                    height: var(--tamano-icono-configuracion);
+                    .icono{
+                        position: absolute;
+                        width: 100%;
+                        aspect-ratio: 1;
+                        stroke-width: 0.5px;
+                        shape-rendering: geometricPrecision;
+                        color: var(--color-iconos-configuracion);
+                        transition: opacity 0.6s ease;
+                        &.encendido{
+                            opacity: 0%;
+                        }
+                    }
+                }
+                .interruptor-cuerpo{
+                    position: relative;
+                    width: var(--tamano-largo-switch);
+                    height: var(--tamano-alto-switch);
+                    background-color: var(--color-switch-apagado);
+                    border: var(--borde-switch);
+                    border-radius: 20px;
+                    cursor: pointer;
+                    .interruptor-bola{
+                        position: absolute;
+                        top: 2px;
+                        left: 2px;
+                        width: var(--tamano-bola-switch);
+                        aspect-ratio: 1;
+                        background-color: var(--color-bola-switch);
+                        border-radius: 50%;
+                        transition: transform 0.6s ease;
+                    }
+                    &:hover{
+                        box-shadow: var(--sombra-switch);
+                    }
+                }
+                .interruptor-cuerpo:hover+.contenedor-iconos-configuracion{
+                    .icono use{
+                        stroke-width: 1px;
+                        transform-origin: center;
+                        scale: var(--escalado-pequeno);
+                        filter: drop-shadow(var(--sombra-iconos-configuracion));
+                    }
+                }
+                .interruptor-checkbox{
+                    position: absolute;
+                    left: 14px;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+                .interruptor-checkbox:checked+.interruptor-cuerpo{
+                    background-color: var(--color-switch-encendido);
+                    .interruptor-bola{
+                        transform: translateX(17px);
+                    }
+                }
+                .interruptor-checkbox:checked~.contenedor-iconos-configuracion{
+                    .encendido{
+                        opacity: 100%;
+                    }
+                    .apagado{
+                        opacity: 0%;
+                    }
+                }
+            }
+        }
     }
 }
