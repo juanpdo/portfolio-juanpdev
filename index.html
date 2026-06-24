@@ -33,28 +33,28 @@
                 <dialog class="configuracion-menu" open>
                     <ul class="configuracion-lista" aria-label="Lista de elementos de configuración">
                         <li class="configuracion-elemento" aria-label="Tema Claro/Oscuro">
-                            <div class="contenedor-iconos-configuracion">
-                                <svg class="icono" aria-hidden="true" id="icono_tema_off" title="Tema Claro"><use href="assets/icons/icons.svg#icono_sun"></use></svg>
-                                <svg class="icono" aria-hidden="true" id="icono_tema_on" title="Tema Oscuro"><use href="assets/icons/icons.svg#icono_moon"></use></svg>
-                            </div>
+                            <input type="checkbox" name="tema" value="oscuro" id="switch_tema" class="interruptor-checkbox" aria-label="Activar Tema Oscuro">
                             <label for="switch_tema" class="interruptor-cuerpo" title="Cambiar Tema"><div class="interruptor-bola"></div></label>
-                            <input type="checkbox" name="tema" value="oscuro" id="switch_tema" aria-label="Activar Tema Oscuro">
+                            <div class="contenedor-iconos-configuracion">
+                                <svg class="icono apagado" aria-hidden="true" id="icono_tema_off" title="Tema Claro"><use href="assets/icons/icons.svg#icono_sun"></use></svg>
+                                <svg class="icono encendido" aria-hidden="true" id="icono_tema_on" title="Tema Oscuro"><use href="assets/icons/icons.svg#icono_moon"></use></svg>
+                            </div>
                         </li>
                         <li class="configuracion-elemento" aria-label="Animación ON/OFF">
-                            <div class="contenedor-iconos-configuracion">
-                                <svg class="icono" aria-hidden="true" id="icono_animacion_off" title="Animaciones OFF"><use href="assets/icons/icons.svg#icono_wand_off"></use></svg>
-                                <svg class="icono" aria-hidden="true" id="icono_animacion_on" title="Animaciones ON"><use href="assets/icons/icons.svg#icono_wand"></use></svg>
-                            </div>
+                            <input type="checkbox" name="animacion" value="activada" id="switch_animacion" class="interruptor-checkbox" aria-label="Activar Animaciones">
                             <label for="switch_animacion" class="interruptor-cuerpo" title="Cambiar Animaciones"><div class="interruptor-bola"></div></label>
-                            <input type="checkbox" name="animacion" value="activada" id="switch_animacion" aria-label="Activar Animaciones">
+                            <div class="contenedor-iconos-configuracion">
+                                <svg class="icono apagado" aria-hidden="true" id="icono_animacion_off" title="Animaciones OFF"><use href="assets/icons/icons.svg#icono_wand_off"></use></svg>
+                                <svg class="icono encendido" aria-hidden="true" id="icono_animacion_on" title="Animaciones ON"><use href="assets/icons/icons.svg#icono_wand"></use></svg>
+                            </div>
                         </li>
                         <li class="configuracion-elemento" aria-label="Audio ON/OFF">
-                            <div class="contenedor-iconos-configuracion">
-                                <svg class="icono" aria-hidden="true" id="icono_audio_off" title="Audio OFF"><use href="assets/icons/icons.svg#icono_volume_off"></use></svg>
-                                <svg class="icono" aria-hidden="true" id="icono_audio_on" title="Audio ON"><use href="assets/icons/icons.svg#icono_volume"></use></svg>
-                            </div>
+                            <input type="checkbox" name="audio" value="activado" id="switch_audio" class="interruptor-checkbox" aria-label="Activar Audio">
                             <label for="switch_audio" class="interruptor-cuerpo" title="Cambiar Audio"><div class="interruptor-bola"></div></label>
-                            <input type="checkbox" name="audio" value="activado" id="switch_audio" aria-label="Activar Audio">
+                            <div class="contenedor-iconos-configuracion">
+                                <svg class="icono apagado" aria-hidden="true" id="icono_audio_off" title="Audio OFF"><use href="assets/icons/icons.svg#icono_volume_off"></use></svg>
+                                <svg class="icono encendido" aria-hidden="true" id="icono_audio_on" title="Audio ON"><use href="assets/icons/icons.svg#icono_volume"></use></svg>
+                            </div>
                         </li>
                     </ul>
                 </dialog>

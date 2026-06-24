@@ -43,10 +43,10 @@
     --color-flechas: var(--color-base);
     --color-fondo-navbar: rgb(from var(--color-base) r g b /1%);
     --color-iconos-navbar: var(--color-base);
-    --color-fondo-configuracion: rgb(from var(--color-base) r g b /3%);
+    --color-fondo-configuracion: rgb(from var(--color-base) r g b /10%);
     --color-iconos-configuracion: var(--color-base);
     --color-switch-apagado: rgb(177,177,177);
-    --color-switch-encendido: var(--color-base);
+    --color-switch-encendido: rgb(0,0,0);
     --color-bola-switch: var(--color-base);
     --color-letras-titulo: var(--color-base);
     --color-letras-subtitulo: var(--color-base);
@@ -91,9 +91,9 @@
     --sombra-flechas: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-navbar: 0px 0px 5px 3px rgb(from var(--color-base) r g b /5%) inset;
     --sombra-borde-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-iconos-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /100%);
-    --sombra-iconos-configuracion: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-switch: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-navbar: 0 0 2px rgb(from var(--color-base) r g b /100%);
+    --sombra-iconos-configuracion: 0 0 2px rgb(from var(--color-base) r g b /100%);
+    --sombra-switch: 0px 0px 5px 5px rgb(from var(--color-base) r g b /30%);
     --sombra-letras: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-mascara: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-foto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
@@ -123,6 +123,7 @@
     --tamano-icono-configuracion: 48px;
     --tamano-largo-switch: 40px;
     --tamano-alto-switch: 24px;
+    --tamano-bola-switch: 18px;
     --tamano-icono-tecnologias: 24px;
     --tamano-luz: 3px;
     --tamano-punto-stack: 15px;
@@ -158,6 +159,7 @@
     &[data-theme="claro"]{
         --color-base: rgb(59,59,59);
         --color-switch-apagado: rgb(177,177,177);
+        --color-switch-encendido: rgb(255,255,255);
         --color-mascara-foto: rgba(217,217,217,0.6);
         --color-fondo-cards: rgba(161,161,161,0.25);
         --color-fondo-stack: rgba(161,161,161,0.25);
@@ -269,9 +271,9 @@ body{
                 .icono{
                     width: 100%;
                     aspect-ratio: 1;
-                    color: var(--color-iconos-navbar);
                     stroke-width: 0.5px;
                     shape-rendering: geometricPrecision;
+                    color: var(--color-iconos-navbar);
                 }
 
                 button{
@@ -287,7 +289,7 @@ body{
 
                     .icono use{
                         stroke-width: 1px;
-                        filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+                        filter: drop-shadow(var(--sombra-iconos-navbar));
                     }
                     
                 }
@@ -318,7 +320,102 @@ body{
             left: auto;
             bottom: auto;
             background-color: var(--color-fondo-configuracion);
-            border: var(--borde-);
+            border: var(--borde-configuracion);
+            padding: 20px;
+
+            .configuracion-lista{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                list-style: none;
+
+                .configuracion-elemento{
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                    place-items: center;
+
+                    .contenedor-iconos-configuracion{
+                        position: relative;
+                        width: var(--tamano-icono-configuracion);
+                        height: var(--tamano-icono-configuracion);
+
+                        .icono{
+                            position: absolute;
+                            width: 100%;
+                            aspect-ratio: 1;
+                            stroke-width: 0.5px;
+                            shape-rendering: geometricPrecision;
+                            color: var(--color-iconos-configuracion);
+                            transition: opacity 0.6s ease;
+
+                            &.encendido{
+                                opacity: 0%;
+                            }
+                        }
+
+                    }
+
+                    .interruptor-cuerpo{
+                        position: relative;
+                        width: var(--tamano-largo-switch);
+                        height: var(--tamano-alto-switch);
+                        background-color: var(--color-switch-apagado);
+                        border: var(--borde-switch);
+                        border-radius: 20px;
+                        cursor: pointer;
+
+                        .interruptor-bola{
+                            position: absolute;
+                            top: 2px;
+                            left: 2px;
+                            width: var(--tamano-bola-switch);
+                            aspect-ratio: 1;
+                            background-color: var(--color-bola-switch);
+                            border-radius: 50%;
+                            transition: transform 0.6s ease;
+                        }
+
+                        &:hover{
+                            box-shadow: var(--sombra-switch);
+                        }
+                    }
+
+                    .interruptor-cuerpo:hover+.contenedor-iconos-configuracion{
+                        .icono use{
+                            stroke-width: 1px;
+                            filter: drop-shadow(var(--sombra-iconos-configuracion));
+                        }
+                    }
+
+                    .interruptor-checkbox{
+                        position: absolute;
+                        left: 14px;
+                        opacity: 0;
+                        pointer-events: none;
+                    }
+
+                    .interruptor-checkbox:checked+.interruptor-cuerpo{
+                        background-color: var(--color-switch-encendido);
+
+                        .interruptor-bola{
+                            transform: translateX(17px);
+                        }
+                    }
+
+                    .interruptor-checkbox:checked~.contenedor-iconos-configuracion{
+
+                        .encendido{
+                            opacity: 100%;
+                        }
+
+                        .apagado{
+                            opacity: 0%;
+                        }
+                    }
+                }
+            }
         }
     }
 
