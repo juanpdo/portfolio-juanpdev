@@ -285,6 +285,7 @@ body{
                 }
 
                 &:hover{
+                    transform-origin: center;
                     scale: var(--escalado-pequeno);
 
                     .icono use{
@@ -385,6 +386,8 @@ body{
                     .interruptor-cuerpo:hover+.contenedor-iconos-configuracion{
                         .icono use{
                             stroke-width: 1px;
+                            transform-origin: center;
+                            scale: var(--escalado-pequeno);
                             filter: drop-shadow(var(--sombra-iconos-configuracion));
                         }
                     }
