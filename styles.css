@@ -41,68 +41,74 @@
     --color-base: rgb(255,255,255);
     --color-fondo: var(--color-base);
     --color-flechas: var(--color-base);
-    --color-sombra-flechas: var(--color-base);
-    --color-fondo-navbar: rgb(var(--color-base)/3%);
+    --color-fondo-navbar: rgb(from var(--color-base) r g b /1%);
+    --color-borde-navbar: rgb(from var(--color-base) r g b /10%);
     --color-iconos-navbar: var(--color-base);
-    --color-sombra-iconos-navbar: var(--color-base);
-    --color-fondo-configuracion: rgb(var(--color-base)/3%);
+    --color-fondo-configuracion: rgb(from var(--color-base) r g b /3%);
     --color-iconos-configuracion: var(--color-base);
-    --color-sombra-iconos-configuracion: var(--color-base);
     --color-switch-apagado: rgb(177,177,177);
     --color-switch-encendido: var(--color-base);
     --color-borde-switch: var(--color-base);
     --color-bola-switch: var(--color-base);
-    --color-sombra-switch: var(--color-base);
     --color-letras-titulo: var(--color-base);
     --color-letras-subtitulo: var(--color-base);
     --color-letras-contenido: var(--color-base);
-    --color-sombra-letras: var(--color-base);
     --color-mascara-foto: rgba(217,217,217,0.6);
-    --color-sombra-mascara: var(--color-base);
     --color-fondo-foto: var(--color-base);
-    --color-sombra-foto: var(--color-base);
     --color-fondo-cards: rgba(161,161,161,0.25);
-    --color-sombra-cards: var(--color-base);
     --color-borde-cards: var(--color-base);
-    --color-sombra-borde-cards: var(--color-base);
     --color-fondo-miniaturas: var(--color-base);
     --color-iconos-tecnologias: var(--color-base);
-    --color-sombras-iconos-tecnologias: var(--color-base);
     --color-luz-cards: var(--color-base);
-    --color-sombra-luz-cards: var(--color-base);
     --color-fondo-stack: rgba(161,161,161,0.25);
-    --color-sombra-stack: var(--color-base);
     --color-borde-stack: var(--color-base);
     --color-iconos-stack: var(--color-base);
-    --color-sombra-iconos-stack: var(--color-base);
     --color-separador-vertical: var(--color-base);
     --color-fondo-contacto: rgba(161,161,161,0.25);
-    --color-sombra-contacto: var(--color-base);
     --color-borde-contacto: var(--color-base);
-    --color-sombra-borde-contacto: var(--color-base);
     --color-input: rgb(164,164,164);
-    --color-sombra-input: var(--color-base);
     --color-borde-input: var(--color-base);
-    --color-sombra-borde-input: var(--color-base);
     --color-boton-enviar: rgba(161,161,161,0.25);
-    --color-sombra-boton-enviar: var(--color-base);
     --color-borde-boton-enviar: var(--color-base);
-    --color-sombra-borde-boton-enviar: var(--color-base);
     --color-luz-boton-enviar: var(--color-base);
-    --color-sombra-luz-boton-enviar: var(--color-base);
     --color-iconos-contacto: var(--color-base);
-    --color-sombra-iconos-contacto: var(--color-base);
-    --color-fondo-pie: rgb(var(--color-base)/3%);
+    --color-fondo-pie: rgb(from var(--color-base) r g b /3%);
     --color-legal-pie: var(--color-base);
-    --color-sombra-legal-pie: var(--color-base);
     --color-iconos-pie: var(--color-base);
-    --color-sombra-iconos-pie: var(--color-base);
     --color-modal: rgba(161,161,161,0.25);
-    --color-navbar-modal: rgb(var(--color-base)/3%);
+    --color-navbar-modal: rgb(from var(--color-base) r g b /3%);
     --color-enlaces-modal: var(--color-base);
-    --color-sombra-enlaces-modal: var(--color-base);
     --color-boton-modal: rgb(164,164,164);
-    --color-sombra-boton-modal: var(--color-base);
+
+    /*------------------SOMBRAS---------------------------*/
+
+    --sombra-flechas: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-navbar: 0px 0px 5px 3px rgb(from var(--color-base) r g b /5%) inset;
+    --sombra-borde-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-configuracion: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-switch: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-letras: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-mascara: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-foto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-borde-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombras-iconos-tecnologias: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-luz-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-borde-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-input: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-borde-input: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-borde-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-luz-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-legal-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-enlaces-modal: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-boton-modal: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
 
     /*------------------TAMAÑOS---------------------------*/
 
@@ -144,69 +150,140 @@
     
     &[data-theme="claro"]{
         --color-base: rgb(59,59,59);
-        --color-fondo: var(--color-base);
-        --color-flechas: var(--color-base);
-        --color-sombra-flechas: var(--color-base);
-        --color-fondo-navbar: rgb(var(--color-base)/3%);
-        --color-iconos-navbar: var(--color-base);
-        --color-sombra-iconos-navbar: var(--color-base);
-        --color-fondo-configuracion: rgb(var(--color-base)/3%);
-        --color-iconos-configuracion: var(--color-base);
-        --color-sombra-iconos-configuracion: var(--color-base);
         --color-switch-apagado: rgb(177,177,177);
-        --color-switch-encendido: var(--color-base);
-        --color-borde-switch: var(--color-base);
-        --color-bola-switch: var(--color-base);
-        --color-sombra-switch: var(--color-base);
-        --color-letras-titulo: var(--color-base);
-        --color-letras-subtitulo: var(--color-base);
-        --color-letras-contenido: var(--color-base);
-        --color-sombra-letras: var(--color-base);
         --color-mascara-foto: rgba(217,217,217,0.6);
-        --color-sombra-mascara: var(--color-base);
-        --color-fondo-foto: var(--color-base);
-        --color-sombra-foto: var(--color-base);
         --color-fondo-cards: rgba(161,161,161,0.25);
-        --color-sombra-cards: var(--color-base);
-        --color-borde-cards: var(--color-base);
-        --color-sombra-borde-cards: var(--color-base);
-        --color-fondo-miniaturas: var(--color-base);
-        --color-iconos-tecnologias: var(--color-base);
-        --color-sombras-iconos-tecnologias: var(--color-base);
-        --color-luz-cards: var(--color-base);
-        --color-sombra-luz-cards: var(--color-base);
         --color-fondo-stack: rgba(161,161,161,0.25);
-        --color-sombra-stack: var(--color-base);
-        --color-borde-stack: var(--color-base);
-        --color-iconos-stack: var(--color-base);
-        --color-sombra-iconos-stack: var(--color-base);
-        --color-separador-vertical: var(--color-base);
         --color-fondo-contacto: rgba(161,161,161,0.25);
-        --color-sombra-contacto: var(--color-base);
-        --color-borde-contacto: var(--color-base);
-        --color-sombra-borde-contacto: var(--color-base);
         --color-input: rgb(164,164,164);
-        --color-sombra-input: var(--color-base);
-        --color-borde-input: var(--color-base);
-        --color-sombra-borde-input: var(--color-base);
         --color-boton-enviar: rgba(161,161,161,0.25);
-        --color-sombra-boton-enviar: var(--color-base);
-        --color-borde-boton-enviar: var(--color-base);
-        --color-sombra-borde-boton-enviar: var(--color-base);
-        --color-luz-boton-enviar: var(--color-base);
-        --color-sombra-luz-boton-enviar: var(--color-base);
-        --color-iconos-contacto: var(--color-base);
-        --color-sombra-iconos-contacto: var(--color-base);
-        --color-fondo-pie: rgb(var(--color-base)/3%);
-        --color-legal-pie: var(--color-base);
-        --color-sombra-legal-pie: var(--color-base);
-        --color-iconos-pie: var(--color-base);
-        --color-sombra-iconos-pie: var(--color-base);
         --color-modal: rgba(161,161,161,0.25);
-        --color-navbar-modal: rgb(var(--color-base)/3%);
-        --color-enlaces-modal: var(--color-base);
-        --color-sombra-enlaces-modal: var(--color-base);
         --color-boton-modal: rgb(164,164,164);
-        --color-sombra-boton-modal: var(--color-base);
+    }
+}
+
+/*------------------------------------------------------------------------RESET Y BASES-----------------------------------------------------------------------------------*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--color-fondo);
+    background-image: url("assets/backgrounds/Fondo-negro.webp");
+    background-size: 100% 100%;
+    font-family: "ShulphurPoint";
+    font-size: var(--texto-contenido);
+    color: var(--color-letras-contenido);
+
+    h1{
+        font-family: "BrunoAce";
+        font-size: 8rem;
+        color: var(--color-letras-titulo);
+    }
+
+    h2{
+        font-family: "FunnelDisplay";
+        font-size: var(--texto-titulo);
+        font-weight: 700;
+        color: var(--color-letras-titulo);
+    }
+
+    h3{
+        font-family: "FunnelDisplay";
+        font-size: var(--texto-subtitulo);
+        font-weight: 700;
+        color: var(--color-letras-subtitulo);
+    }
+}
+
+/*------------------------------------------------------------------------CABECERA-----------------------------------------------------------------------------------*/
+
+.cabecera{
+    position: fixed;
+    width: 100%;
+
+    .navbar{
+        position: relative;
+        height: 80px;
+        background-color: var(--color-fondo-navbar);
+        border-width: 1px;
+        border-style: solid;
+        border-color: var(--color-borde-navbar);
+        box-shadow: var(--sombra-navbar);
+        backdrop-filter: blur(2px);
+
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            content: "";
+            backdrop-filter: brightness(2) saturate(2) contrast(2);
+        }
+
+        &::after{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            content: "";
+            backdrop-filter: brightness(3) saturate(3) contrast(3);
+        }
+
+        .navbar-lista{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            place-items: center;
+            height: 100%;
+            padding: 20px;
+            list-style: none;
+
+            .navbar-elemento{
+                width: var(--tamano-icono-navbar);
+                height: var(--tamano-icono-navbar);
+
+                .icono{
+                    width: 100%;
+                    aspect-ratio: 1;
+                    color: var(--color-iconos-navbar);
+                }
+
+                button{
+                    width: 100%;
+                    aspect-ratio: 1;
+                    background: none;
+                    border: none;
+                }
+            }
+
+            .elemento-settings{
+                margin-left: auto;          
+            }
+        }
+
+        .configuracion-menu{
+            /* height: 0; */
+            margin: 0;
+            overflow: hidden;
+            position: fixed;
+            top: 80px;
+            right: -1px;
+            left: auto;
+            bottom: auto;
+        }
+    }
+
+    .caja-reflectora{
+        position: fixed;
+        width: 100%;
+        height: 1px;
+        backdrop-filter: brightness(3);
     }
 }
