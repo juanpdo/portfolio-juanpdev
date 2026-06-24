@@ -42,13 +42,11 @@
     --color-fondo: var(--color-base);
     --color-flechas: var(--color-base);
     --color-fondo-navbar: rgb(from var(--color-base) r g b /1%);
-    --color-borde-navbar: rgb(from var(--color-base) r g b /10%);
     --color-iconos-navbar: var(--color-base);
     --color-fondo-configuracion: rgb(from var(--color-base) r g b /3%);
     --color-iconos-configuracion: var(--color-base);
     --color-switch-apagado: rgb(177,177,177);
     --color-switch-encendido: var(--color-base);
-    --color-borde-switch: var(--color-base);
     --color-bola-switch: var(--color-base);
     --color-letras-titulo: var(--color-base);
     --color-letras-subtitulo: var(--color-base);
@@ -56,20 +54,15 @@
     --color-mascara-foto: rgba(217,217,217,0.6);
     --color-fondo-foto: var(--color-base);
     --color-fondo-cards: rgba(161,161,161,0.25);
-    --color-borde-cards: var(--color-base);
     --color-fondo-miniaturas: var(--color-base);
     --color-iconos-tecnologias: var(--color-base);
     --color-luz-cards: var(--color-base);
     --color-fondo-stack: rgba(161,161,161,0.25);
-    --color-borde-stack: var(--color-base);
     --color-iconos-stack: var(--color-base);
     --color-separador-vertical: var(--color-base);
     --color-fondo-contacto: rgba(161,161,161,0.25);
-    --color-borde-contacto: var(--color-base);
     --color-input: rgb(164,164,164);
-    --color-borde-input: var(--color-base);
     --color-boton-enviar: rgba(161,161,161,0.25);
-    --color-borde-boton-enviar: var(--color-base);
     --color-luz-boton-enviar: var(--color-base);
     --color-iconos-contacto: var(--color-base);
     --color-fondo-pie: rgb(from var(--color-base) r g b /3%);
@@ -80,12 +73,25 @@
     --color-enlaces-modal: var(--color-base);
     --color-boton-modal: rgb(164,164,164);
 
+    /*------------------BORDES---------------------------*/
+
+    --borde-navbar: 1px solid rgb(from var(--color-base) r g b /10%);
+    --borde-configuracion: 2px solid var(--color-base);
+    --borde-switch: 1px solid var(--color-base);
+    --borde-cards: 2px solid var(--color-base);
+    --borde-stack: 2px solid var(--color-base);
+    --borde-contacto: 2px solid var(--color-base);
+    --borde-input: 1px solid var(--color-base);
+    --borde-boton-enviar: 2px solid var(--color-base);
+    --borde-modal: 2px solid var(--color-base);
+    --borde-boton-modal: 1px solid var(--color-base);
+
     /*------------------SOMBRAS---------------------------*/
 
     --sombra-flechas: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-navbar: 0px 0px 5px 3px rgb(from var(--color-base) r g b /5%) inset;
     --sombra-borde-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-iconos-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /100%);
     --sombra-iconos-configuracion: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-switch: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-letras: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
@@ -137,6 +143,7 @@
 
     /*------------------ESCALAS---------------------------*/
 
+    --escalado-reduccion: 0.95;
     --escalado-pequeno: 1.05;
     --escalado-medio: 1.1;
     --escalado-grande: 1.2;
@@ -163,6 +170,16 @@
 }
 
 /*------------------------------------------------------------------------RESET Y BASES-----------------------------------------------------------------------------------*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto;
+    }
+}
 
 *{
     box-sizing: border-box;
@@ -206,13 +223,13 @@ body{
     position: fixed;
     width: 100%;
 
+    /*----------------------NAVBAR--------------------------*/
+
     .navbar{
         position: relative;
         height: 80px;
         background-color: var(--color-fondo-navbar);
-        border-width: 1px;
-        border-style: solid;
-        border-color: var(--color-borde-navbar);
+        border: var(--borde-navbar);
         box-shadow: var(--sombra-navbar);
         backdrop-filter: blur(2px);
 
@@ -253,6 +270,8 @@ body{
                     width: 100%;
                     aspect-ratio: 1;
                     color: var(--color-iconos-navbar);
+                    stroke-width: 0.5px;
+                    shape-rendering: geometricPrecision;
                 }
 
                 button{
@@ -260,6 +279,27 @@ body{
                     aspect-ratio: 1;
                     background: none;
                     border: none;
+                    cursor: pointer;
+                }
+
+                &:hover{
+                    scale: var(--escalado-pequeno);
+
+                    .icono use{
+                        stroke-width: 1px;
+                        filter: drop-shadow(0 0 2px rgb(255, 255, 255));
+                    }
+                    
+                }
+
+                &:active{
+                    scale: var(--escalado-reduccion);
+
+                    .icono use{
+                        stroke-width: 0.5px;
+                        shape-rendering: geometricPrecision;
+                        filter: none;
+                    }
                 }
             }
 
@@ -268,17 +308,21 @@ body{
             }
         }
 
+        /*----------------------MENU OPCIONES--------------------------*/
+
         .configuracion-menu{
             /* height: 0; */
-            margin: 0;
-            overflow: hidden;
             position: fixed;
             top: 80px;
             right: -1px;
             left: auto;
             bottom: auto;
+            background-color: var(--color-fondo-configuracion);
+            border: var(--borde-);
         }
     }
+
+    /*----------------------EFECTO REFLEXIÓN--------------------------*/
 
     .caja-reflectora{
         position: fixed;
