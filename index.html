@@ -24,34 +24,34 @@
         <header class="cabecera">
             <nav class="navbar">
                 <ul class="navbar-lista">
-                    <li class="navbar-elemento elemento-portada" title="Portada"><a href="#seccion_portada" aria-label="Navegar a sección portada"><img src="assets/icons/home.svg" alt="Ícono de la sección portada (casa)"></a></li>
+                    <li class="navbar-elemento elemento-portada" title="Portada"><a href="#seccion_portada" aria-label="Navegar a sección portada"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_home"></use></svg></a></li>
                     <li class="navbar-elemento elemento-proyectos" title="Proyectos"><a href="#seccion_proyectos" aria-label="Navegar a sección proyectos"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_briefcase"></use></svg></a></li>
-                    <li class="navbar-elemento elemento-informacion" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"><img src="assets/icons/user-square.svg" alt="Ícono de la sección información (card de usuario)"></a></li>
-                    <li class="navbar-elemento elemento-contacto" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"><img src="assets/icons/mail-opened.svg" alt="Ícono de la sección contacto (sobre abierto)"></a></li>
-                    <li class="navbar-elemento elemento-settings" title="Configuración"><button id="boton_settings" type="button" class="boton-settings" aria-label="Abrir opciones de configuración" aria-expanded="false"><img src="assets/icons/settings.svg" alt="Ícono de la sección configuración (engranaje)"></button></li>
+                    <li class="navbar-elemento elemento-informacion" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_user_square"></use></svg></a></li>
+                    <li class="navbar-elemento elemento-contacto" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_mail_opened"></use></svg></a></li>
+                    <li class="navbar-elemento elemento-settings" title="Configuración"><button id="boton_settings" type="button" class="boton-settings" aria-label="Abrir opciones de configuración" aria-expanded="false"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_settings"></use></svg></button></li>
                 </ul>
                 <dialog class="configuracion-menu" open>
                     <ul class="configuracion-lista" aria-label="Lista de elementos de configuración">
                         <li class="configuracion-elemento" aria-label="Tema Claro/Oscuro">
                             <div class="contenedor-iconos-configuracion">
-                                <img src="assets/icons/sun.svg" alt="Ícono de Sol" id="icono_tema_off" title="Tema Claro" aria-hidden="true">
-                                <img src="assets/icons/moon.svg" alt="Ícono de Luna" id="icono_tema_on" title="Tema Oscuro" aria-hidden="true">
+                                <svg class="icono" aria-hidden="true" id="icono_tema_off" title="Tema Claro"><use href="assets/icons/icons.svg#icono_sun"></use></svg>
+                                <svg class="icono" aria-hidden="true" id="icono_tema_on" title="Tema Oscuro"><use href="assets/icons/icons.svg#icono_moon"></use></svg>
                             </div>
                             <label for="switch_tema" class="interruptor-cuerpo" title="Cambiar Tema"><div class="interruptor-bola"></div></label>
                             <input type="checkbox" name="tema" value="oscuro" id="switch_tema" aria-label="Activar Tema Oscuro">
                         </li>
                         <li class="configuracion-elemento" aria-label="Animación ON/OFF">
                             <div class="contenedor-iconos-configuracion">
-                                <img src="assets/icons/wand-off.svg" alt="Ícono de Varita tachada" id="icono_animacion_off" title="Animaciones OFF" aria-hidden="true">
-                                <img src="assets/icons/wand.svg" alt="Ícono de Varita" id="icono_animacion_on" title="Animaciones ON" aria-hidden="true">
+                                <svg class="icono" aria-hidden="true" id="icono_animacion_off" title="Animaciones OFF"><use href="assets/icons/icons.svg#icono_wand_off"></use></svg>
+                                <svg class="icono" aria-hidden="true" id="icono_animacion_on" title="Animaciones ON"><use href="assets/icons/icons.svg#icono_wand"></use></svg>
                             </div>
                             <label for="switch_animacion" class="interruptor-cuerpo" title="Cambiar Animaciones"><div class="interruptor-bola"></div></label>
                             <input type="checkbox" name="animacion" value="activada" id="switch_animacion" aria-label="Activar Animaciones">
                         </li>
                         <li class="configuracion-elemento" aria-label="Audio ON/OFF">
                             <div class="contenedor-iconos-configuracion">
-                                <img src="assets/icons/volume-off.svg" alt="Ícono de Altavoz tachado" id="icono_audio_off" title="Audio OFF" aria-hidden="true">
-                                <img src="assets/icons/volume.svg" alt="Ícono de Altavoz" id="icono_audio_on" title="Audio ON" aria-hidden="true">
+                                <svg class="icono" aria-hidden="true" id="icono_audio_off" title="Audio OFF"><use href="assets/icons/icons.svg#icono_volume_off"></use></svg>
+                                <svg class="icono" aria-hidden="true" id="icono_audio_on" title="Audio ON"><use href="assets/icons/icons.svg#icono_volume"></use></svg>
                             </div>
                             <label for="switch_audio" class="interruptor-cuerpo" title="Cambiar Audio"><div class="interruptor-bola"></div></label>
                             <input type="checkbox" name="audio" value="activado" id="switch_audio" aria-label="Activar Audio">
@@ -84,11 +84,11 @@
                             <video src="assets/videos/SPA_Noticias.webm" id="video_spa" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
                         </div>
                         <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
-                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
-                            <li class="proyecto-lista-elemento" title="Sass"><img src="assets/icons/sass.svg" alt="Ícono Sass"></li>
-                            <li class="proyecto-lista-elemento" title="TypeScript"><img src="assets/icons/typescript.svg" alt="Ícono TypeScript"></li>
-                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
-                            <li class="proyecto-lista-elemento" title="React Router"><img src="assets/icons/reactrouter.svg" alt="Ícono React Router"></li>
+                            <li class="proyecto-lista-elemento" title="HTML 5"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_html5"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="Sass"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_sass"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="TypeScript"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_typescript"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="React"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_react"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="React Router"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_reactrouter"></use></svg></li>
                         </ul>
                     </article>
                     <article id="card_proyecto_ecommerce" class="card-proyecto">
@@ -98,10 +98,10 @@
                             <video src="assets/videos/E-Commerce.webm" id="video_ecommerce" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
                         </div>
                         <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
-                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
-                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
-                            <li class="proyecto-lista-elemento" title="TypeScript"><img src="assets/icons/typescript.svg" alt="Ícono TypeScript"></li>
-                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
+                            <li class="proyecto-lista-elemento" title="HTML 5"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_html5"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_css3"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="TypeScript"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_typescript"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="React"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_react"></use></svg></li>
                         </ul>
                     </article>
                     <article id="card_proyecto_buscador" class="card-proyecto">
@@ -111,10 +111,10 @@
                             <video src="assets/videos/Buscador_OMDb.webm" id="video_buscador" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
                         </div>
                         <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
-                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
-                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
-                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
-                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
+                            <li class="proyecto-lista-elemento" title="HTML 5"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_html5"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_css3"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_javascript"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="React"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_react"></use></svg></li>
                         </ul>
                     </article>
                     <article id="card_proyecto_tresenraya" class="card-proyecto">
@@ -124,10 +124,10 @@
                             <video src="assets/videos/Tres_en_raya.webm" id="video_tresenraya" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
                         </div>
                         <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
-                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
-                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
-                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
-                            <li class="proyecto-lista-elemento" title="React"><img src="assets/icons/react.svg" alt="Ícono React"></li>
+                            <li class="proyecto-lista-elemento" title="HTML 5"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_html5"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_css3"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_javascript"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="React"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_react"></use></svg></li>
                         </ul>
                     </article>
                     <article id="card_proyecto_arkanoid" class="card-proyecto">
@@ -137,9 +137,9 @@
                             <video src="assets/videos/Arkanoid.webm" id="video_arkanoid" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
                         </div>
                         <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
-                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
-                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
-                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
+                            <li class="proyecto-lista-elemento" title="HTML 5"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_html5"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_css3"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_javascript"></use></svg></li>
                         </ul>
                     </article>
                     <article id="card_proyecto_cajero" class="card-proyecto">
@@ -149,9 +149,9 @@
                             <video src="assets/videos/Cajero_automatico.webm" id="video_cajero" loop muted preload="metadata" tabindex="-1" aria-hidden="true"></video>
                         </div>
                         <ul class="card-proyecto-lista" aria-label="Lista de tecnologías utilizadas en el proyecto">
-                            <li class="proyecto-lista-elemento" title="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono HTML 5"></li>
-                            <li class="proyecto-lista-elemento" title="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono CSS 3"></li>
-                            <li class="proyecto-lista-elemento" title="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono JavaScript"></li>
+                            <li class="proyecto-lista-elemento" title="HTML 5"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_html5"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="CSS 3"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_css3"></use></svg></li>
+                            <li class="proyecto-lista-elemento" title="JavaScript"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_javascript"></use></svg></li>
                         </ul>
                     </article>
                 </div>
@@ -172,7 +172,7 @@
                             <p class="parrafo-info">Me especializo en el ecosistema Frontend, donde combino una base sólida en lógica de programación y bases de datos con el dominio de las tecnologías web estándar. Mi enfoque se centra en el rendimiento y la optimización de las interfaces, entendiendo el funcionamiento del lenguaje nativo para exprimir al máximo las posibilidades de las bibliotecas y herramientas modernas. Mi objetivo es aportar soluciones interactivas eficaces y robustas, fusionando la disciplina de la ingeniería con la versatilidad del desarrollo de software actual.</p>
                         </div>
                     </article>
-                    <img src="assets/icons/separador-vertical.svg" alt="Ícono de separación vertical de artículos de información" id="separador_vertical_izquierdo" role="presentation">
+                    <svg class="icono" aria-hidden="true" id="separador_vertical_izquierdo"><use href="assets/icons/icons.svg#icono_separador_vertical"></use></svg>
                     <article class="articulo-info">
                         <header class="articulo-info-cabecera">
                             <h3 class="articulo-info-titulo">Formación</h3>
@@ -208,7 +208,7 @@
                             </ul>
                         </div>
                     </article>
-                    <img src="assets/icons/separador-vertical.svg" alt="Ícono de separación vertical de artículos de información" id="separador_vertical_izquierdo" role="presentation">
+                    <svg class="icono" aria-hidden="true" id="separador_vertical_derecho"><use href="assets/icons/icons.svg#icono_separador_vertical"></use></svg>
                     <article class="articulo-info">
                         <header class="articulo-info-cabecera">
                             <h3 class="articulo-info-titulo">Mi Stack</h3>
@@ -219,62 +219,62 @@
                                 <li class="apartado-stack">
                                     <h4 class="stack-titulo">Hardware, Redes, y Sistemas</h4>
                                     <ul class="sublista-stack" aria-label="Sublista con las tecnologías en Hardware, Redes, y Sistemas">
-                                        <li class="elemento-stack" title="Hardware avanzado" aria-label="Hardware avanzado"><img src="assets/icons/hardware.svg" alt="Ícono de Hardware" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="Redes avanzadas" aria-label="Redes avanzadas"><img src="assets/icons/network.svg" alt="Ícono de Redes" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="SO Windows" aria-label="SO Windows"><img src="assets/icons/microsoft-windows.svg" alt="Ícono de Windows" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="SO Linux" aria-label="SO Linux"><img src="assets/icons/linux.svg" alt="Ícono de Linux" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="Terminal avanzada" aria-label="Terminal avanzada"><img src="assets/icons/terminal.svg" alt="Ícono de Terminal" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="Virtualización" aria-label="Virtualización"><img src="assets/icons/virtualbox.svg" alt="Ícono de VirtualBox" aria-hidden="true"></li>
+                                        <li class="elemento-stack" title="Hardware avanzado" aria-label="Hardware avanzado"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_hardware"></use></svg>
+                                        <li class="elemento-stack" title="Redes avanzadas" aria-label="Redes avanzadas"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_network"></use></svg>
+                                        <li class="elemento-stack" title="SO Windows" aria-label="SO Windows"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_microsoft_windows"></use></svg>
+                                        <li class="elemento-stack" title="SO Linux" aria-label="SO Linux"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_linux"></use></svg>
+                                        <li class="elemento-stack" title="Terminal avanzada" aria-label="Terminal avanzada"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_terminal"></use></svg>
+                                        <li class="elemento-stack" title="Virtualización" aria-label="Virtualización"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_virtualbox"></use></svg>
                                     </ul>
                                 </li>
                                 <li class="apartado-stack">
                                     <h4 class="stack-titulo">Bases de Datos</h4>
                                     <ul class="sublista-stack" aria-label="Sublista con las tecnologías en Bases de Datos">
-                                        <li class="elemento-stack" title="SQL" aria-label="SQL"><img src="assets/icons/sql.svg" alt="Ícono de SQL" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="Bases de datos Oracle" aria-label="Bases de datos Oracle"><img src="assets/icons/oracle.svg" alt="Ícono de Oracle" aria-hidden="true"></li>
+                                        <li class="elemento-stack" title="SQL" aria-label="SQL"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_sql"></use></svg>
+                                        <li class="elemento-stack" title="Bases de datos Oracle" aria-label="Bases de datos Oracle"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_oracle"></use></svg>
                                     </ul>
                                 </li>
                                 <li class="apartado-stack">
                                     <h4 class="stack-titulo">Lenguajes y Tecnologías Web</h4>
                                     <ul class="sublista-stack" aria-label="Sublista con las tecnologías en Lenguajes y Tecnologías Web">
-                                        <li class="elemento-stack" title="HTML 5" aria-label="HTML 5"><img src="assets/icons/html5.svg" alt="Ícono de HTML 5" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="CSS 3" aria-label="CSS 3"><img src="assets/icons/css3.svg" alt="Ícono de CSS3" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="JavaScript" aria-label="JavaScript"><img src="assets/icons/javascript.svg" alt="Ícono de JavaScript" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="WebComponents" aria-label="WebComponents"><img src="assets/icons/webcomponents.svg" alt="Ícono de WebComponents" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="XML" aria-label="XML"><img src="assets/icons/xml.svg" alt="Ícono de XML" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="JSON" aria-label="JSON"><img src="assets/icons/json.svg" alt="Ícono de JSON" aria-hidden="true"></li>
+                                        <li class="elemento-stack" title="HTML 5" aria-label="HTML 5"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_html5"></use></svg>
+                                        <li class="elemento-stack" title="CSS 3" aria-label="CSS 3"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_css3"></use></svg>
+                                        <li class="elemento-stack" title="JavaScript" aria-label="JavaScript"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_javascript"></use></svg>
+                                        <li class="elemento-stack" title="WebComponents" aria-label="WebComponents"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_webcomponents"></use></svg>
+                                        <li class="elemento-stack" title="XML" aria-label="XML"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_xml"></use></svg>
+                                        <li class="elemento-stack" title="JSON" aria-label="JSON"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_json"></use></svg>
                                     </ul>
                                 </li>
                                 <li class="apartado-stack">
                                     <h4 class="stack-titulo">Bibliotecas, Frameworks, y Superconjuntos</h4>
                                     <ul class="sublista-stack" aria-label="Sublista con las tecnologías en Bibliotecas, Frameworks, y Superconjuntos">
-                                        <li class="elemento-stack" title="Sass" aria-label="Sass"><img src="assets/icons/sass.svg" alt="Ícono de Sass" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="TypeScripts" aria-label="TypeScripts"><img src="assets/icons/typescript.svg" alt="Ícono de TypeScript" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="React" aria-label="React"><img src="assets/icons/react.svg" alt="Ícono de React" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="React Router" aria-label="React Router"><img src="assets/icons/reactrouter.svg" alt="Ícono de React Router" aria-hidden="true"></li>
+                                        <li class="elemento-stack" title="Sass" aria-label="Sass"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_sass"></use></svg>
+                                        <li class="elemento-stack" title="TypeScripts" aria-label="TypeScripts"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_typescript"></use></svg>
+                                        <li class="elemento-stack" title="React" aria-label="React"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_react"></use></svg>
+                                        <li class="elemento-stack" title="React Router" aria-label="React Router"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_reactrouter"></use></svg>
                                     </ul>
                                 </li>
                                 <li class="apartado-stack">
                                     <h4 class="stack-titulo">Entornos de Ejecución y Empaquetadores</h4>
                                     <ul class="sublista-stack" aria-label="Sublista con las tecnologías en Entornos de Ejecución y Empaquetadores">
-                                        <li class="elemento-stack" title="Node.js" aria-label="Node.js"><img src="assets/icons/nodedotjs.svg" alt="Ícono de Node.js" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="NPM" aria-label="NPM"><img src="assets/icons/npm.svg" alt="Ícono de NPM" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="Vite" aria-label="Vite"><img src="assets/icons/vite.svg" alt="Ícono de Vite" aria-hidden="true"></li>
+                                        <li class="elemento-stack" title="Node.js" aria-label="Node.js"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_nodedotjs"></use></svg>
+                                        <li class="elemento-stack" title="NPM" aria-label="NPM"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_npm"></use></svg>
+                                        <li class="elemento-stack" title="Vite" aria-label="Vite"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_vite"></use></svg>
                                     </ul>
                                 </li>
                                 <li class="apartado-stack">
                                     <h4 class="stack-titulo">Control de Versiones y Repositorios</h4>
                                     <ul class="sublista-stack" aria-label="Sublista con las tecnologías en Control de Versiones y Repositorios">
-                                        <li class="elemento-stack" title="Git" aria-label="Git"><img src="assets/icons/git.svg" alt="Ícono de Git" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="GitHub" aria-label="GitHub"><img src="assets/icons/github.svg" alt="Ícono de GitHub" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="GitKraken" aria-label="GitKraken"><img src="assets/icons/gitkraken.svg" alt="Ícono de GitKraken" aria-hidden="true"></li>
+                                        <li class="elemento-stack" title="Git" aria-label="Git"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_git"></use></svg>
+                                        <li class="elemento-stack" title="GitHub" aria-label="GitHub"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_github"></use></svg>
+                                        <li class="elemento-stack" title="GitKraken" aria-label="GitKraken"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_gitkraken"></use></svg>
                                     </ul>
                                 </li>
                                 <li class="apartado-stack">
                                     <h4 class="stack-titulo">Herramientas de Prototipado</h4>
                                     <ul class="sublista-stack" aria-label="Sublista con las tecnologías en Herramientas de Prototipado">
-                                        <li class="elemento-stack" title="Figma" aria-label="Figma"><img src="assets/icons/figma.svg" alt="Ícono de Figma" aria-hidden="true"></li>
-                                        <li class="elemento-stack" title="Lunacy" aria-label="Lunacy"><img src="assets/icons/lunacy.svg" alt="Ícono de Lunacy" aria-hidden="true"></li>
+                                        <li class="elemento-stack" title="Figma" aria-label="Figma"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_figma"></use></svg>
+                                        <li class="elemento-stack" title="Lunacy" aria-label="Lunacy"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_lunacy"></use></svg>
                                     </ul>
                                 </li>
                             </ul>
@@ -300,11 +300,11 @@
                         <button type="submit" id="boton_enviar" class="boton-enviar">Enviar</button>
                     </form>
                     <ul class="lista-contacto">
-                        <li id="contacto_telefono" class="lista-contacto-elemento" title="Teléfono +34 671858858"><a href="tel:+34671858858" aria-label="Llamar al teléfono +34 671858858"><img src="assets/icons/phone.svg" alt="Ícono de Teléfono" aria-hidden="true"></a></li>
-                        <li id="contacto_correo" class="lista-contacto-elemento" title="Correo juanpdomail@gmail.com"><a href="mailto:juanpdomail@gmail.com" aria-label="Mandar correo a juanpdomail@gmail.com"><img src="assets/icons/mail.svg" alt="Ícono de Correo" aria-hidden="true"></a></li>
-                        <li id="contacto_github" class="lista-contacto-elemento" title="GitHub https://github.com/juanpdo"><a href="https://github.com/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a GitHub https://github.com/juanpdo"><img src="assets/icons/github.svg" alt="Ícono de GitHub" aria-hidden="true"></a></li>
-                        <li id="contacto_linkedin" class="lista-contacto-elemento" title="LinkedIn"><a href="https://linkedin.com/in/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a LinkedIn"><img src="assets/icons/linkedin.svg" alt="Ícono de LinkedIn" aria-hidden="true"></a></li>
-                        <li id="contacto_infojobs" class="lista-contacto-elemento" title="InfoJobs"><a href="https://infojobs.net" target="_blank" rel="noopener noreferrer" aria-label="Ir a InfoJobs"><img src="assets/icons/infojobs.svg" alt="Ícono de InfoJobs" aria-hidden="true"></a></li>
+                        <li id="contacto_telefono" class="lista-contacto-elemento" title="Teléfono +34 671858858"><a href="tel:+34671858858" aria-label="Llamar al teléfono +34 671858858"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_phone"></use></svg></a></li>
+                        <li id="contacto_correo" class="lista-contacto-elemento" title="Correo juanpdomail@gmail.com"><a href="mailto:juanpdomail@gmail.com" aria-label="Mandar correo a juanpdomail@gmail.com"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_mail"></use></svg></a></li>
+                        <li id="contacto_github" class="lista-contacto-elemento" title="GitHub https://github.com/juanpdo"><a href="https://github.com/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a GitHub https://github.com/juanpdo"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_github"></use></svg></a></li>
+                        <li id="contacto_linkedin" class="lista-contacto-elemento" title="LinkedIn"><a href="https://linkedin.com/in/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a LinkedIn"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_linkedin"></use></svg></a></li>
+                        <li id="contacto_infojobs" class="lista-contacto-elemento" title="InfoJobs"><a href="https://infojobs.net" target="_blank" rel="noopener noreferrer" aria-label="Ir a InfoJobs"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_infojobs"></use></svg></a></li>
                     </ul>
                 </article>
             </section>
@@ -312,7 +312,7 @@
         <footer class="pie-pagina">
             <button type="button" id="boton_legal" class="boton-aviso-legal" aria-label="Apartado Legal abrir documentación" aria-expanded="false">Apartado Legal</button>
             <p class="copyright">juanpdev.com © 2026 by Juan Peña Dorado. Todos los derechos reservados.</p>
-            <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" target="_blank" rel="noopener noreferrer" class="enlace-accesibilidad" aria-label="Navegar a la página de conformidad AAA de la W3C" title="Accesibilidad W3C"><img src="assets/icons/w3c.svg" alt="Ícono de accesibilidad AAA de la W3C personalizado"></a>
+            <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" target="_blank" rel="noopener noreferrer" class="enlace-accesibilidad" aria-label="Navegar a la página de conformidad AAA de la W3C" title="Accesibilidad W3C"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_w3c"></use></svg></a>
             <dialog id="legal_modal" class="modal-legal" aria-labelledby="legal_titulo" open>              
                 <header class="legal-cabecera">
                     <button type="button" id="boton_modal_cerrar" class="boton-cerrar" aria-label="Cerrar ventana legal">✕</button>
