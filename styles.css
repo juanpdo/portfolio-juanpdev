@@ -175,6 +175,7 @@
 
 html{
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 
     &[data-theme="claro"] body::before{
         opacity: 1;
@@ -439,3 +440,12 @@ body{
     }
 }
 
+/*------------------------------------------------------------------------MAIN-----------------------------------------------------------------------------------*/
+
+.principal{
+    
+    .seccion{
+        min-height: 100vh;
+        scroll-snap-align: start;
+    }
+}
