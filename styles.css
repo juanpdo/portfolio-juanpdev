@@ -78,6 +78,7 @@
     --borde-navbar: 1px solid rgb(from var(--color-base) r g b /10%);
     --borde-configuracion: 2px solid var(--color-base);
     --borde-switch: 1px solid var(--color-base);
+    --borde-mascara-foto: 1px solid rgb(from var(--color-base) r g b /10%);
     --borde-cards: 2px solid var(--color-base);
     --borde-stack: 2px solid var(--color-base);
     --borde-contacto: 2px solid var(--color-base);
@@ -88,15 +89,17 @@
 
     /*------------------SOMBRAS---------------------------*/
 
-    --sombra-flechas: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-flechas: 0 0 2px rgb(from var(--color-base) r g b /100%);
     --sombra-navbar: 0px 0px 5px 3px rgb(from var(--color-base) r g b /5%) inset;
     --sombra-borde-navbar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-iconos-navbar: 0 0 2px rgb(from var(--color-base) r g b /100%);
     --sombra-iconos-configuracion: 0 0 2px rgb(from var(--color-base) r g b /100%);
     --sombra-switch: 0px 0px 5px 5px rgb(from var(--color-base) r g b /30%);
-    --sombra-letras: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-mascara: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-foto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-letras: 0 0 5px rgb(from var(--color-base) r g b /100%);
+    --sombra-mascara: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%) inset;
+    --sombra-mascara-hover: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%);
+    --sombra-foto-apagada: 0 0 5px rgb(from var(--color-base) r g b /0%);
+    --sombra-foto: 0 0 5px rgb(from var(--color-base) r g b /100%);
     --sombra-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-borde-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombras-iconos-tecnologias: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
@@ -222,7 +225,6 @@ body{
 
     h1{
         font-family: "BrunoAce";
-        font-size: 8rem;
         color: var(--color-letras-titulo);
     }
 
@@ -246,6 +248,7 @@ body{
 .cabecera{
     position: fixed;
     width: 100%;
+    z-index: 10;
 
     /*----------------------NAVBAR--------------------------*/
 
@@ -445,7 +448,153 @@ body{
 .principal{
     
     .seccion{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        place-content: center;
         min-height: 100vh;
-        scroll-snap-align: start;
+        scroll-snap-align: start; 
+
+        .seccion-cabecera{
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            gap: 20px;
+            width: 100%;
+
+            .linea-decorativa-titulo{
+                height: 2px;
+                width: 50%;
+                background-color: var(--color-letras-titulo);
+                border-radius: 50%;
+            }
+        }
+
+        .desplazamiento{
+            position: absolute;
+
+            &.avance{
+                bottom: 0;
+            }
+
+            &.retroceso{
+                top: 80px;
+            }
+
+            .flecha{
+                width: 60px;
+                aspect-ratio: 1;
+                stroke-width: 0.5px;
+                shape-rendering: geometricPrecision;
+                color: var(--color-flechas);
+
+                &:hover{
+                    scale: var(--escalado-medio);
+
+                    use{
+                        stroke-width: 1px;
+                        filter: drop-shadow(var(--sombra-flechas));
+                    }
+                }
+
+                &:active{
+                    scale: var(--escalado-reduccion);
+
+                    use{
+                        stroke-width: 0.5px;
+                        shape-rendering: geometricPrecision;
+                        filter: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .seccion-portada{
+        
+        .estructura-portada{
+            display: flex;
+            flex-direction: row;
+            place-items: center;
+            gap: 50px;
+            justify-content: center;
+
+            .seccion-presentacion{
+                display: flex;
+                flex-direction: column;
+                transition: scale 1s ease;
+
+                .titulo-principal{
+                    font-size: clamp(64px,6.666666vw,170px);
+                    font-weight: 400;
+                    transition: text-shadow 1s ease;
+                }
+
+                .subtitulo-principal{
+                    font-size: clamp(32px,3.333333vw,85px);
+                    font-weight: 400;
+                    transition: text-shadow 1s ease;
+                }
+
+                &:hover{
+                    scale: var(--escalado-pequeno);
+
+                    .titulo-principal,.subtitulo-principal{
+                        text-shadow: var(--sombra-letras);
+                    }
+                }
+            }
+
+            .mascara-foto-principal{
+                width: clamp(220px,26.041666%,666px);
+                aspect-ratio: 1;
+                background-color: var(--color-mascara-foto);
+                border: var(--borde-mascara-foto);
+                border-radius: 50%;
+                box-shadow: var(--sombra-mascara);
+                overflow: hidden;
+                backdrop-filter: blur(2px);
+                transition: scale 1s ease, box-shadow 1s ease;
+
+                .foto-principal{
+                    width: 100%;
+                    aspect-ratio: 1;
+                    transition: filter 1s ease;
+                    filter: drop-shadow(var(--sombra-foto-apagada));
+                    will-change: filter;
+                }
+
+                &:hover{
+                    scale: var(--escalado-medio);
+                    box-shadow: var(--sombra-mascara), var(--sombra-mascara-hover);
+
+                    .foto-principal{
+                        filter: drop-shadow(var(--sombra-foto));
+                    }
+                }
+            }
+        }
+    }
+
+    .seccion-proyectos{
+
+        .seccion-cabecera{
+            
+        }
+    }
+
+    .seccion-informacion{
+
+        .seccion-cabecera{
+            
+        }
+    }
+
+    .seccion-contacto{
+
+        .seccion-cabecera{
+            
+        }
     }
 }
