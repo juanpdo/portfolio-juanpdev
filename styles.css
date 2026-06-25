@@ -175,6 +175,10 @@
 
 html{
     scroll-behavior: smooth;
+
+    &[data-theme="claro"] body::before{
+        opacity: 1;
+    }
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -190,6 +194,7 @@ html{
 }
 
 body{
+    position: relative;
     min-height: 100vh;
     background-color: var(--color-fondo);
     background-image: url("assets/backgrounds/Fondo-negro.webp");
@@ -197,6 +202,22 @@ body{
     font-family: "ShulphurPoint";
     font-size: var(--texto-contenido);
     color: var(--color-letras-contenido);
+    z-index: -2;
+
+    &::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-fondo);
+        background-image: url("assets/backgrounds/Fondo-blanco.webp");
+        background-size: 100% 100%;
+        opacity: 0;
+        transition: opacity 1s ease;
+        z-index: -1;
+    }
 
     h1{
         font-family: "BrunoAce";
@@ -417,3 +438,4 @@ body{
         }
     }
 }
+
