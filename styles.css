@@ -106,6 +106,7 @@
     --sombra-borde-cards: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%) inset;
     --sombras-iconos-tecnologias: 0 0 2px rgb(from var(--color-base) r g b /30%);
     --sombra-luz-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-luz-cards-destello: 0px 0px 30px 30px rgb(from var(--color-base) r g b /40%);
     --sombra-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-iconos-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
@@ -130,7 +131,7 @@
     --tamano-alto-switch: 24px;
     --tamano-bola-switch: 18px;
     --tamano-icono-tecnologias: 24px;
-    --tamano-luz: 3px;
+    --tamano-luz: 6px;
     --tamano-punto-stack: 15px;
     --tamano-icono-stack: 32px;
     --tamano-largo-boton-enviar: 150px;
@@ -208,7 +209,7 @@ body{
     font-family: "ShulphurPoint";
     font-size: var(--texto-contenido);
     color: var(--color-letras-contenido);
-    z-index: -2;
+    z-index: -20;
 
     &::before{
         position: absolute;
@@ -222,7 +223,7 @@ body{
         background-size: 100% 100%;
         opacity: 0;
         transition: opacity 1s ease;
-        z-index: -1;
+        z-index: -10;
     }
 
     h1{
@@ -249,7 +250,7 @@ body{
 .cabecera{
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 100;
 
     /*----------------------NAVBAR--------------------------*/
 
@@ -592,21 +593,44 @@ body{
             display: grid;
             grid-template-columns: repeat(3,minmax(200px,1fr));
             grid-template-rows: repeat(2,minmax(150,1fr));
-            gap: 20px;
+            gap: 30px;
             width: 64.583333%;
             aspect-ratio: 2;
             margin-top: 100px;
 
             .card-proyecto{
+                position: relative;
                 width: clamp(260px,100%,550px);
                 aspect-ratio: 1.333333;
-                overflow: hidden;
+                padding: 3px;
                 background-color: var(--color-fondo-cards);
-                border: var(--borde-cards);
                 border-radius: var(--radio-grande);
                 box-shadow: var(--sombra-cards);
                 backdrop-filter: blur(5px);
                 transition: scale 0.5s ease;
+
+                .luz{
+                    position: absolute;
+                    width: var(--tamano-luz);
+                    aspect-ratio: 1;
+                    background-color: var(--color-luz-cards);
+                    border-radius: 50%;
+                    box-shadow: var(--sombra-luz-cards);
+                    offset-path: content-box;
+                    z-index: 50;
+                    opacity: 0;
+                }
+
+                .marco{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: var(--borde-cards);
+                    border-radius: var(--radio-grande);
+                    z-index: -5;
+                }
 
                 .card-proyecto-vinculo{
                     display: flex;
@@ -678,7 +702,15 @@ body{
                 
                 &:hover{
                     scale: var(--escalado-pequeno);
-                    box-shadow: var(--sombra-cards-hover), var(--sombra-borde-cards);
+                    
+                    .marco{
+                        box-shadow: var(--sombra-cards-hover), var(--sombra-borde-cards);
+                    }
+
+                    .luz{
+                        opacity: 1;
+                        animation: recorridoLuz 3s linear infinite, destello-card 3s linear infinite;
+                    }
 
                     .card-proyecto-multimedia{
                         filter: none;
@@ -689,6 +721,35 @@ body{
 
                         .miniatura-video{
                             opacity: 1;
+                        }
+                    }
+                }
+
+                &:active{
+                    transition: none;
+                    scale: var(--escalado-reduccion);
+                    box-shadow: none;
+
+                    .marco{
+                        box-shadow: none;
+                    }
+
+                    .luz{
+                        opacity: 0;
+                    }
+
+                    .card-proyecto-multimedia{
+                        transition: none;
+                        filter: saturate(0);
+                        
+                        .miniatura-imagen{
+                            transition: none;
+                            opacity: 1;
+                        }
+
+                        .miniatura-video{
+                            transition: none;
+                            opacity: 0;
                         }
                     }
                 }
@@ -712,5 +773,28 @@ body{
         .seccion-cabecera{
             
         }
+    }
+}
+
+/*------------------------------------------------------------------------ANIMACIONES-----------------------------------------------------------------------------------*/
+
+@keyframes recorridoLuz{
+    100%{
+        offset-distance: 100%;
+    }
+}
+
+@keyframes destello-card{
+    0%{
+        box-shadow: var(--sombra-luz-cards);
+    }
+    56%{
+        box-shadow: var(--sombra-luz-cards);
+    }
+    62%{
+        box-shadow: var(--sombra-luz-cards-destello);
+    }
+    68%{
+        box-shadow: var(--sombra-luz-cards);
     }
 }
