@@ -79,7 +79,8 @@
     --borde-configuracion: 2px solid var(--color-base);
     --borde-switch: 1px solid var(--color-base);
     --borde-mascara-foto: 1px solid rgb(from var(--color-base) r g b /10%);
-    --borde-cards: 2px solid var(--color-base);
+    --borde-cards: 6px double var(--color-base);
+    --borde-cards-multimedia: 2px solid var(--color-base);
     --borde-stack: 2px solid var(--color-base);
     --borde-contacto: 2px solid var(--color-base);
     --borde-input: 1px solid var(--color-base);
@@ -100,9 +101,10 @@
     --sombra-mascara-hover: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%);
     --sombra-foto-apagada: 0 0 5px rgb(from var(--color-base) r g b /0%);
     --sombra-foto: 0 0 5px rgb(from var(--color-base) r g b /100%);
-    --sombra-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-borde-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombras-iconos-tecnologias: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-cards: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    --sombra-cards-hover: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%);
+    --sombra-borde-cards: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%) inset;
+    --sombras-iconos-tecnologias: 0 0 2px rgb(from var(--color-base) r g b /30%);
     --sombra-luz-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-iconos-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
@@ -230,15 +232,14 @@ body{
 
     h2{
         font-family: "FunnelDisplay";
-        font-size: var(--texto-titulo);
         font-weight: 700;
+        font-size: var(--texto-titulo);
         color: var(--color-letras-titulo);
     }
 
     h3{
         font-family: "FunnelDisplay";
         font-size: var(--texto-subtitulo);
-        font-weight: 700;
         color: var(--color-letras-subtitulo);
     }
 }
@@ -457,6 +458,8 @@ body{
         scroll-snap-align: start; 
 
         .seccion-cabecera{
+            position: absolute;
+            top: 150px;
             display: flex;
             flex-direction: column;
             place-items: center;
@@ -511,6 +514,8 @@ body{
         }
     }
 
+    /*----------------------SECCIÓN PORTADA--------------------------*/
+
     .seccion-portada{
         
         .estructura-portada{
@@ -527,12 +532,14 @@ body{
 
                 .titulo-principal{
                     font-size: clamp(64px,6.666666vw,170px);
+                    font-family: "BrunoAce";
                     font-weight: 400;
                     transition: text-shadow 1s ease;
                 }
 
                 .subtitulo-principal{
                     font-size: clamp(32px,3.333333vw,85px);
+                    font-family: "FunnelDisplay";
                     font-weight: 400;
                     transition: text-shadow 1s ease;
                 }
@@ -577,12 +584,119 @@ body{
         }
     }
 
+    /*----------------------SECCIÓN PROYECTOS--------------------------*/
+
     .seccion-proyectos{
 
-        .seccion-cabecera{
-            
+        .estructura-cards{
+            display: grid;
+            grid-template-columns: repeat(3,minmax(200px,1fr));
+            grid-template-rows: repeat(2,minmax(150,1fr));
+            gap: 20px;
+            width: 64.583333%;
+            aspect-ratio: 2;
+            margin-top: 100px;
+
+            .card-proyecto{
+                width: clamp(260px,100%,550px);
+                aspect-ratio: 1.333333;
+                overflow: hidden;
+                background-color: var(--color-fondo-cards);
+                border: var(--borde-cards);
+                border-radius: var(--radio-grande);
+                box-shadow: var(--sombra-cards);
+                backdrop-filter: blur(5px);
+                transition: scale 0.5s ease;
+
+                .card-proyecto-vinculo{
+                    display: flex;
+                    flex-direction: column;
+                    place-items: center;
+                    place-content: center;
+                    justify-content: space-around;
+                    width: 100%;
+                    height: 100%;
+                    color: var(--color-enlaces-modal);
+
+                    .card-proyecto-multimedia{
+                        flex-shrink: 0;
+                        position: relative;
+                        width: 80%;
+                        aspect-ratio: 1.777777;
+                        border: var(--borde-cards-multimedia);
+                        border-radius: var(--radio-mediano);
+                        overflow: hidden;
+                        filter: saturate(0);
+                        transition: filter 0.5s ease;
+                        
+                        .miniatura{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        .miniatura-imagen{
+                            opacity: 1;
+                            transition: opacity 0.5s ease;
+                        }
+
+                        .miniatura-video{
+                            opacity: 0;
+                            transition: opacity 0.5s ease;
+                        }
+                    }
+
+                    .card-proyecto-lista{
+                        display: flex;
+                        gap: 10px;
+                        list-style: none;
+
+                        .proyecto-lista-elemento{
+                            width: var(--tamano-icono-tecnologias);
+                            aspect-ratio: 1;
+
+                            .icono{
+                                width: 100%;
+                                aspect-ratio: 1;
+                                color: var(--color-iconos-tecnologias);
+
+                                use{
+                                    width: 100%;
+                                    aspect-ratio: 1;
+                                }
+
+                                &:hover{
+                                    scale: var(--escalado-grande);
+                                    filter: drop-shadow(var(--sombras-iconos-tecnologias));
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                &:hover{
+                    scale: var(--escalado-pequeno);
+                    box-shadow: var(--sombra-cards-hover), var(--sombra-borde-cards);
+
+                    .card-proyecto-multimedia{
+                        filter: none;
+
+                        .miniatura-imagen{
+                            opacity: 0;
+                        }
+
+                        .miniatura-video{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
         }
     }
+
+    /*----------------------SECCIÓN INFORMACIÓN--------------------------*/
 
     .seccion-informacion{
 
@@ -590,6 +704,8 @@ body{
             
         }
     }
+
+    /*----------------------SECCIÓN CONTACTO--------------------------*/
 
     .seccion-contacto{
 
