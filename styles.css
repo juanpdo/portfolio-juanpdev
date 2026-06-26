@@ -785,9 +785,6 @@ body{
 }
 
 @keyframes destello-card{
-    0%{
-        box-shadow: var(--sombra-luz-cards);
-    }
     56%{
         box-shadow: var(--sombra-luz-cards);
     }
