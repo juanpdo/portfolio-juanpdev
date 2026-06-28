@@ -764,13 +764,16 @@ body{
         .estructura-info{
             display: flex;
             flex-direction: row;
-            place-items: center;
+            align-items: center;
+            justify-content: center;
             gap: 50px;
+            width: 100%;
+            max-width: 1500px;
 
             .articulo-info{
                 display: flex;
                 flex-direction: column;
-                flex: 1 1 0%;
+                flex: 0 1 400px;
                 min-width: 320px;
                 max-width: 400px;               
 
@@ -792,6 +795,7 @@ body{
                     display: flex;
                     flex-direction: column;
                     place-items: center;
+                    flex-grow: 1;
                     min-height: 600px;
                     margin-top: 50px;
                     padding: 20px;
