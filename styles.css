@@ -102,14 +102,15 @@
     --sombra-mascara-hover: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%);
     --sombra-foto-apagada: 0 0 5px rgb(from var(--color-base) r g b /0%);
     --sombra-foto: 0 0 5px rgb(from var(--color-base) r g b /100%);
-    --sombra-cards: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+    --sombra-cards: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
     --sombra-cards-hover: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%);
     --sombra-borde-cards: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%) inset;
     --sombras-iconos-tecnologias: 0 0 2px rgb(from var(--color-base) r g b /30%);
     --sombra-luz-cards: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-luz-cards-destello: 0px 0px 30px 30px rgb(from var(--color-base) r g b /40%);
-    --sombra-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-iconos-stack: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-stack: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
+    --sombra-stack-hover: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-stack: 0 0 10px rgb(from var(--color-base) r g b /50%);
     --sombra-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-borde-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-input: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
@@ -133,7 +134,7 @@
     --tamano-bola-switch: 18px;
     --tamano-icono-tecnologias: 24px;
     --tamano-luz: 6px;
-    --tamano-punto-stack: 15px;
+    --tamano-punto-stack: 1rem;
     --tamano-icono-stack: 32px;
     --tamano-largo-boton-enviar: 150px;
     --tamano-alto-boton-enviar: 50px;
@@ -776,7 +777,7 @@ body{
                 flex-direction: column;
                 flex: 0 1 400px;
                 min-width: 320px;
-                max-width: 400px;               
+                max-width: 400px;            
 
                 .articulo-info-cabecera{
                     display: flex;
@@ -795,14 +796,16 @@ body{
                 .card-info{
                     display: flex;
                     flex-direction: column;
-                    place-items: center;
+                    justify-content: left;
                     flex-grow: 1;
                     min-height: 600px;
                     margin-top: 50px;
                     padding: 20px;
                     border: var(--borde-stack);
                     border-radius: var(--radio-grande);
+                    box-shadow: var(--sombra-stack);
                     backdrop-filter: blur(10px);
+                    transition: scale 0.5s ease;
 
                     .parrafo-info{
                         line-height: 1.25;
@@ -813,6 +816,10 @@ body{
                     }
 
                     .lista-formacion{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        margin-left: 25px;
                         list-style: none;
 
                         .elemento-formacion{
@@ -820,8 +827,8 @@ body{
 
                             &::before{
                                 position: absolute;
-                                top: 0.25rem;
-                                left: -20px;
+                                top: 0.15rem;
+                                left: -2rem;
                                 content: "";
                                 width: var(--tamano-punto-stack);
                                 aspect-ratio: 1;
@@ -838,15 +845,34 @@ body{
                     .lista-stack{
                         display: flex;
                         flex-direction: column;
+                        gap: 10px;
+                        margin-left: 25px;
                         list-style: none;
 
                         .apartado-stack{
                             display: flex;
                             flex-direction: column;
+                            gap: 10px;
+
+                            .stack-titulo{
+                                position: relative;
+
+                                &::before{
+                                    position: absolute;
+                                    top: 0.15rem;
+                                    left: -2rem;
+                                    content: "";
+                                    width: var(--tamano-punto-stack);
+                                    aspect-ratio: 1;
+                                    background-color: var(--color-punto-stack);
+                                    border-radius: 50%;
+                                }
+                            }
 
                             .sublista-stack{
                                 display: flex;
                                 flex-direction: row;
+                                gap: 10px;
                                 list-style: none;
 
                                 .elemento-stack{
@@ -857,9 +883,22 @@ body{
                                         width: 100%;
                                         height: 100%;
                                     }
+
+                                    &:hover{
+                                        scale: var(--escalado-grande);
+
+                                        .icono{
+                                            filter: drop-shadow(var(--sombra-iconos-stack));
+                                        }
+                                    }
                                 }
                             }
                         }
+                    }
+
+                    &:hover{
+                        scale: var(--escalado-pequeno);
+                        box-shadow: var(--sombra-stack-hover);
                     }
                 }
             }
@@ -867,6 +906,10 @@ body{
             .separador-vertical{
                 width: 50px;
                 height: 750px;
+
+                &#separador_vertical_derecho{
+                    rotate: 180deg;
+                }
             }
         }
     }
