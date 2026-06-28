@@ -58,6 +58,7 @@
     --color-iconos-tecnologias: var(--color-base);
     --color-luz-cards: var(--color-base);
     --color-fondo-stack: rgba(161,161,161,0.25);
+    --color-punto-stack: var(--color-base);
     --color-iconos-stack: var(--color-base);
     --color-separador-vertical: var(--color-base);
     --color-fondo-contacto: rgba(161,161,161,0.25);
@@ -807,25 +808,46 @@ body{
                         line-height: 1.25;
 
                         &.inferior{
-                            margin-top: 50px;
+                            margin-top: auto;
+                        }
+                    }
+
+                    .lista-formacion{
+                        list-style: none;
+
+                        .elemento-formacion{
+                            position: relative;
+
+                            &::before{
+                                position: absolute;
+                                top: 0.25rem;
+                                left: -20px;
+                                content: "";
+                                width: var(--tamano-punto-stack);
+                                aspect-ratio: 1;
+                                background-color: var(--color-punto-stack);
+                                border-radius: 50%;
+                            }
+
+                            .formacion-tiempo{
+                                font-weight: 300;
+                            }
                         }
                     }
                     
                     .lista-stack{
                         display: flex;
                         flex-direction: column;
+                        list-style: none;
 
                         .apartado-stack{
                             display: flex;
                             flex-direction: column;
 
-                            .stack-titulo{
-
-                            }
-
                             .sublista-stack{
                                 display: flex;
                                 flex-direction: row;
+                                list-style: none;
 
                                 .elemento-stack{
                                     width: 32px;
