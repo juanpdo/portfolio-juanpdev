@@ -370,6 +370,7 @@ body{
         bottom: auto;
         background-color: var(--color-fondo-configuracion);
         border: var(--borde-configuracion);
+        border-radius: 0px 0px 20px 20px;
         padding: 20px;
         backdrop-filter: blur(10px);
         visibility: hidden;
