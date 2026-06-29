@@ -495,6 +495,8 @@ body{
                 width: 50%;
                 background-color: var(--color-letras-titulo);
                 border-radius: 50%;
+                transform: scaleX(0);
+                transition: transform 0.5s ease 0.2s;
             }
         }
 
@@ -538,6 +540,13 @@ body{
         }
     }
 
+    .seccion.visible{
+
+        .linea-decorativa-titulo{
+            transform: scaleX(1);
+        }
+    }
+
     /*----------------------SECCIÓN PORTADA--------------------------*/
 
     .seccion-portada{
@@ -552,7 +561,9 @@ body{
             .seccion-presentacion{
                 display: flex;
                 flex-direction: column;
-                transition: scale 1s ease;
+                opacity: 0;
+                transition: scale 1s ease, opacity 0.3s ease;
+                animation: pulso-portada-letras 2s ease;
 
                 .titulo-principal{
                     font-size: clamp(64px,6.666666vw,170px);
@@ -586,7 +597,9 @@ body{
                 box-shadow: var(--sombra-mascara);
                 overflow: hidden;
                 backdrop-filter: blur(2px);
-                transition: scale 1s ease, box-shadow 1s ease;
+                opacity: 0;
+                transition: scale 1s ease, box-shadow 1s ease, opacity 0.3s ease;
+                animation: pulso-portada-foto 3s ease;
 
                 .foto-principal{
                     width: 100%;
@@ -605,6 +618,19 @@ body{
                     }
                 }
             }
+        }
+    }
+
+    .seccion-portada.visible{
+
+        .seccion-presentacion{
+            opacity: 1;
+            transition: scale 1s ease, opacity 1s ease 0.4s;
+        }
+
+        .mascara-foto-principal{
+            opacity: 1;
+            transition: scale 1s ease, opacity 1s ease 0.8s;
         }
     }
 
@@ -1361,5 +1387,35 @@ body{
     }
     68%{
         box-shadow: var(--sombra-luz-cards);
+    }
+}
+
+@keyframes pulso-portada-letras{
+    60%{
+        scale: none;
+        text-shadow: none;
+    }
+    80%{
+        scale: var(--escalado-pequeno);
+        text-shadow: var(--sombra-letras);
+    }
+    100%{
+        scale: none;
+        text-shadow: none;
+    }
+}
+
+@keyframes pulso-portada-foto{
+    60%{
+        scale: none;
+        box-shadow: none;
+    }
+    80%{
+        scale: var(--escalado-medio);
+        box-shadow: var(--sombra-mascara), var(--sombra-mascara-hover);
+    }
+    100%{
+        scale: none;
+        box-shadow: none;
     }
 }
