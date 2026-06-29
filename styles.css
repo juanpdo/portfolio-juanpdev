@@ -363,7 +363,6 @@ body{
     /*----------------------MENU OPCIONES--------------------------*/
 
     .configuracion-menu{
-        /* height: 0; */
         position: fixed;
         top: 80px;
         right: 0px;
@@ -373,6 +372,17 @@ body{
         border: var(--borde-configuracion);
         padding: 20px;
         backdrop-filter: blur(10px);
+        visibility: hidden;
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        transition: transform 0.3s ease, visibility 0.3s ease, opacity 0.6s ease-in;
+
+        &[data-estado="abierto"]{
+            visibility: visible;
+            transform: scaleY(1);
+            opacity: 1;
+        }
         
         .configuracion-lista{
             display: flex;
