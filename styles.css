@@ -62,7 +62,7 @@
     --color-iconos-stack: var(--color-base);
     --color-separador-vertical: var(--color-base);
     --color-fondo-contacto: rgba(161,161,161,0.25);
-    --color-input: rgb(164,164,164);
+    --color-input: rgb(164,164,164,0.25);
     --color-boton-enviar: rgba(161,161,161,0.25);
     --color-luz-boton-enviar: var(--color-base);
     --color-iconos-contacto: var(--color-base);
@@ -85,7 +85,8 @@
     --borde-stack: 2px solid var(--color-base);
     --borde-contacto: 2px solid var(--color-base);
     --borde-input: 1px solid var(--color-base);
-    --borde-boton-enviar: 2px solid var(--color-base);
+    --borde-input-activo: 2px solid var(--color-base);
+    --borde-boton-enviar: 6px double var(--color-base);
     --borde-modal: 2px solid var(--color-base);
     --borde-boton-modal: 1px solid var(--color-base);
 
@@ -111,14 +112,15 @@
     --sombra-stack: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
     --sombra-stack-hover: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%);
     --sombra-iconos-stack: 0 0 10px rgb(from var(--color-base) r g b /50%);
-    --sombra-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-contacto: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
     --sombra-borde-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-input: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-borde-input: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-borde-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-input: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    --sombra-input-activo: 0px 0px 10px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-boton-enviar: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    --sombra-boton-enviar-hover: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%);
+    --sombra-borde-boton-enviar: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%) inset;
     --sombra-luz-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-iconos-contacto: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-iconos-contacto: 0 0 10px rgb(from var(--color-base) r g b /50%);
     --sombra-legal-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-iconos-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-enlaces-modal: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
@@ -172,7 +174,7 @@
         --color-fondo-cards: rgba(161,161,161,0.25);
         --color-fondo-stack: rgba(161,161,161,0.25);
         --color-fondo-contacto: rgba(161,161,161,0.25);
-        --color-input: rgb(164,164,164);
+        --color-input: rgb(164,164,164,0.25);
         --color-boton-enviar: rgba(161,161,161,0.25);
         --color-modal: rgba(161,161,161,0.25);
         --color-boton-modal: rgb(164,164,164);
@@ -876,7 +878,7 @@ body{
                                 list-style: none;
 
                                 .elemento-stack{
-                                    width: 32px;
+                                    width: var(--tamano-icono-stack);
                                     aspect-ratio: 1;
 
                                     .icono{
@@ -918,6 +920,152 @@ body{
 
     .seccion-contacto{
 
+        .articulo-contacto{
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            width: 41.666666%;
+
+            .formulario-contacto{
+                display: flex;
+                flex-direction: column;
+                place-items: center;
+                gap: 15px;
+                padding: 25px;
+                width: 100%;
+                border: var(--borde-contacto);
+                border-radius: var(--radio-grande);
+                backdrop-filter: blur(10px);
+
+                .bloque-input{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    width: 80%;
+
+                    .input-formulario,.textarea-formulario{
+                        height: 2rem;
+                        width: 100%;
+                        background-color: var(--color-input);
+                        padding: 10px;
+                        border: var(--borde-input);
+                        border-radius: var(--radio-mediano);
+                        font-family: "ShulphurPoint";
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: var(--color-letras-contenido);
+                        box-shadow: var(--sombra-input);
+
+                        &:focus{
+                            border: var(--borde-input-activo);
+                            box-shadow: var(--sombra-input-activo);
+                        }
+                    }
+
+                    .textarea-formulario{
+                        height: 10rem;
+                    }
+                }
+
+                .boton-enviar{
+                    position: relative;
+                    width: var(--tamano-largo-boton-enviar);
+                    height: var(--tamano-alto-boton-enviar);
+                    padding: 3px;
+                    background-color: transparent;
+                    border: none;
+                    border-radius: var(--radio-grande);
+                    font-family: "ShulphurPoint";
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: var(--color-letras-titulo);
+                    box-shadow: var(--sombra-boton-enviar);
+                    backdrop-filter: blur(10px);
+                    cursor: pointer;
+
+                    .luz-boton{
+                        position: absolute;
+                        width: var(--tamano-luz);
+                        aspect-ratio: 1;
+                        background-color: var(--color-luz-cards);
+                        border-radius: 50%;
+                        box-shadow: var(--sombra-luz-cards);
+                        offset-path: content-box;
+                        z-index: 50;
+                        opacity: 0;
+                    }
+
+                    .marco-boton{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border: var(--borde-boton-enviar);
+                        border-radius: var(--radio-grande);
+                        z-index: -5;
+                    }
+
+                    &:hover{
+                        scale: var(--escalado-pequeno);
+
+                        .marco-boton{
+                            box-shadow: var(--sombra-boton-enviar-hover), var(--sombra-borde-boton-enviar);
+                        }
+
+                        .luz-boton{
+                            opacity: 1;
+                            animation: recorridoLuz 1.5s linear infinite, destello-card 1.5s linear infinite;
+                        } 
+                    }
+
+                    &:active{
+                        scale: var(--escalado-reduccion);
+                        box-shadow: none;
+
+                        .marco-boton{
+                            box-shadow: none;
+                        }
+
+                        .luz-boton{
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .lista-contacto{
+            display: flex;
+            gap: 20px;
+            list-style: none;
+
+            .lista-contacto-elemento{
+                width: var(--tamano-icono-contacto);
+                aspect-ratio: 1;
+
+                .icono{
+                    width: 100%;
+                    color: var(--color-iconos-contacto);
+                }
+
+                &:hover{
+                    scale: var(--escalado-grande);
+
+                    .icono{
+                        filter: drop-shadow(var(--sombra-iconos-contacto));
+                    }
+                }
+
+                &:active{
+                    scale: var(--escalado-reduccion);
+
+                    .icono{
+                        filter: none;
+                    }
+                }
+            }
+        }
     }
 }
 
