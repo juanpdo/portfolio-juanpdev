@@ -66,7 +66,7 @@
     --color-boton-enviar: rgba(161,161,161,0.25);
     --color-luz-boton-enviar: var(--color-base);
     --color-iconos-contacto: var(--color-base);
-    --color-fondo-pie: rgb(from var(--color-base) r g b /3%);
+    --color-fondo-pie: rgb(from var(--color-base) r g b /1%);
     --color-legal-pie: var(--color-base);
     --color-iconos-pie: var(--color-base);
     --color-modal: rgba(161,161,161,0.25);
@@ -87,6 +87,7 @@
     --borde-input: 1px solid var(--color-base);
     --borde-input-activo: 2px solid var(--color-base);
     --borde-boton-enviar: 6px double var(--color-base);
+    --borde-pie: 1px solid rgb(from var(--color-base) r g b /10%);
     --borde-modal: 2px solid var(--color-base);
     --borde-boton-modal: 1px solid var(--color-base);
 
@@ -121,14 +122,17 @@
     --sombra-borde-boton-enviar: 0px 0px 5px 1px rgb(from var(--color-base) r g b /100%) inset;
     --sombra-luz-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-iconos-contacto: 0 0 10px rgb(from var(--color-base) r g b /50%);
-    --sombra-legal-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-iconos-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-pie: 0px 0px 5px 3px rgb(from var(--color-base) r g b /5%) inset;
+    --sombra-borde-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-legal-pie: 0px 0px 5px rgb(from var(--color-base) r g b /100%);
+    --sombra-iconos-pie: 0 0 10px rgb(from var(--color-base) r g b /50%);
     --sombra-enlaces-modal: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-boton-modal: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
 
     /*------------------TAMAÑOS---------------------------*/
 
     --tamano-flechas: 60px;
+    --tamano-navbar-alto: 80px;
     --tamano-icono-navbar: 48px;
     --tamano-icono-configuracion: 48px;
     --tamano-largo-switch: 40px;
@@ -141,6 +145,7 @@
     --tamano-largo-boton-enviar: 150px;
     --tamano-alto-boton-enviar: 50px;
     --tamano-icono-contacto: 32px;
+    --tamano-pie-pagina-alto: 80px;
     --tamano-largo-icono-accesibilidad: 88px;
     --tamano-alto-icono-accesibilidad: 31px;
     --tamano-boton-modal: 40px;
@@ -260,7 +265,7 @@ body{
 
     .navbar{
         position: relative;
-        height: 80px;
+        height: var(--tamano-navbar-alto);
         background-color: var(--color-fondo-navbar);
         border: var(--borde-navbar);
         box-shadow: var(--sombra-navbar);
@@ -1069,7 +1074,109 @@ body{
     }
 }
 
-/*------------------------------------------------------------------------ANIMACIONES-----------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------PIE DE PÁGINA-----------------------------------------------------------------------------------*/
+
+.pie-pagina{
+    position: relative;
+
+    .marco-footer{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        place-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: var(--tamano-pie-pagina-alto);
+        padding: 0 50px;
+        background-color: var(--color-fondo-pie);
+        border: var(--borde-pie);
+        box-shadow: var(--sombra-pie);
+        backdrop-filter: blur(2px);
+
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            content: "";
+            backdrop-filter: brightness(3) saturate(3) contrast(3);
+        }
+
+        &::after{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            content: "";
+            backdrop-filter: brightness(2) saturate(2) contrast(2);
+        }
+
+        .boton-aviso-legal{
+            background-color: transparent;
+            font-family: "ShulphurPoint";
+            font-size: 1rem;
+            font-weight: 400;
+            text-decoration: underline;
+            color: var(--color-letras-titulo);
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+
+            &:hover{
+                scale: var(--escalado-medio);
+                text-shadow: var(--sombra-legal-pie);
+            }
+
+            &:active{
+                scale: var(--escalado-reduccion);
+                text-shadow: none;
+            }
+        }
+
+        .enlace-accesibilidad{
+            color: var(--color-iconos-pie);
+            height: var(--tamano-alto-icono-accesibilidad);
+
+            .icono{
+                width: var(--tamano-largo-icono-accesibilidad);
+                height: var(--tamano-alto-icono-accesibilidad);
+            }
+
+            &:hover{
+                scale: var(--escalado-medio);
+
+                .icono{
+                    filter: drop-shadow(var(--sombra-iconos-pie));
+                }
+            }
+
+            &:active{
+                scale: var(--escalado-reduccion);
+
+                .icono{
+                    filter: none;
+                }
+            }
+        }
+    }
+
+    /*----------------------EFECTO REFLEXIÓN--------------------------*/
+
+    .caja-reflectora{
+        position: absolute;
+        bottom: var(--tamano-pie-pagina-alto);
+        left: 0;
+        width: 100%;
+        height: 1px;
+        backdrop-filter: brightness(3);
+    }
+}
+
+/*------------------------------------------------------------------------ANIMACIONES-------------------------------------------------------------------------------------*/
 
 @keyframes recorridoLuz{
     100%{
