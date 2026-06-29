@@ -69,10 +69,11 @@
     --color-fondo-pie: rgb(from var(--color-base) r g b /1%);
     --color-legal-pie: var(--color-base);
     --color-iconos-pie: var(--color-base);
-    --color-modal: rgba(161,161,161,0.25);
+    --color-modal: rgba(25, 25, 30, 0.85);
     --color-navbar-modal: rgb(from var(--color-base) r g b /3%);
     --color-enlaces-modal: var(--color-base);
-    --color-boton-modal: rgb(164,164,164);
+    --color-boton-modal: rgb(140,140,140);
+    --color-x-modal: var(--color-base);
 
     /*------------------BORDES---------------------------*/
 
@@ -126,8 +127,9 @@
     --sombra-borde-pie: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
     --sombra-legal-pie: 0px 0px 5px rgb(from var(--color-base) r g b /100%);
     --sombra-iconos-pie: 0 0 10px rgb(from var(--color-base) r g b /50%);
-    --sombra-enlaces-modal: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
-    --sombra-boton-modal: 0px 0px 5px 10px rgb(from var(--color-base) r g b /30%);
+    --sombra-enlaces-modal: 0px 0px 10px rgb(from var(--color-base) r g b /100%);
+    --sombra-boton-modal: 0px 0px 5px 5px rgba(0,0,0,1);
+    --sombra-boton-modal-hover: 0px 0px 5px 2px rgb(from var(--color-base) r g b /100%);
 
     /*------------------TAMAÑOS---------------------------*/
 
@@ -148,6 +150,7 @@
     --tamano-pie-pagina-alto: 80px;
     --tamano-largo-icono-accesibilidad: 88px;
     --tamano-alto-icono-accesibilidad: 31px;
+    --tamano-alto-navbar-modal: 60px;
     --tamano-boton-modal: 40px;
 
     /*------------------TEXTOS---------------------------*/
@@ -181,7 +184,7 @@
         --color-fondo-contacto: rgba(161,161,161,0.25);
         --color-input: rgb(164,164,164,0.25);
         --color-boton-enviar: rgba(161,161,161,0.25);
-        --color-modal: rgba(161,161,161,0.25);
+        --color-modal: rgba(170, 170, 190, 0.75);
         --color-boton-modal: rgb(164,164,164);
     }
 }
@@ -1177,10 +1180,156 @@ body{
         backdrop-filter: brightness(3);
     }
 
-    /*----------------------MODAL LEGAL--------------------------*/
+    /*----------------------------------------------MODAL LEGAL------------------------------------------------------*/
 
     .modal-legal{
+        position: fixed;
+        align-self: center;
+        justify-self: center;
+        width: 50%;
+        height: 80%;
+        background-color: var(--color-modal);
+        border: var(--borde-modal);
+        border-radius: var(--radio-grande);
+        color: var(--color-letras-contenido);
 
+        &::backdrop{
+            backdrop-filter: blur(5px);
+        }
+
+        /*----------------------------------CABECERA----------------------------------------*/
+
+        .legal-cabecera{
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--tamano-alto-navbar-modal);
+
+            .boton-cerrar{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                place-items: center;
+                width: var(--tamano-boton-modal);
+                height: var(--tamano-boton-modal);
+                background-color: var(--color-boton-modal);
+                border: var(--borde-boton-modal);
+                border-radius: var(--radio-mediano);
+                box-shadow: var(--sombra-boton-modal);
+                z-index: 30;
+
+                .icono{
+                    width: 100%;
+                    height: 100%;
+                    color: var(--color-x-modal);
+                }
+
+                &:hover{
+                    scale: var(--escalado-pequeno);
+                    box-shadow: var(--sombra-boton-modal-hover);
+
+                    .icono{
+                        stroke-width: 2;
+                    }
+                }
+
+                &:active{
+                    scale: var(--escalado-reduccion);
+                    box-shadow: none;
+
+                    .icono{
+                        stroke-width: 1;
+                    }
+                }
+            }
+
+            .legal-navbar{
+                width: 100%;
+                height: 100%;
+                background-color: var(--color-fondo-navbar);
+                border: var(--borde-navbar);
+                box-shadow: var(--sombra-navbar);
+                backdrop-filter: blur(5px);
+
+                &::before{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 10px;
+                    content: "";
+                    backdrop-filter: brightness(2) saturate(2) contrast(2);
+                }
+
+                &::after{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 10px;
+                    content: "";
+                    backdrop-filter: brightness(3) saturate(3) contrast(3);
+                }
+
+                .legal-lista{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    width: 90%;
+                    height: 100%;
+                    list-style: none;
+
+                    .legal-lista-elemento{
+                        place-content: center;
+
+                        a{
+                            color: var(--color-letras-titulo);
+                        }
+
+                        &:hover{
+                            scale: var(--escalado-medio);
+                            text-shadow: var(--sombra-enlaces-modal);
+                        }
+
+                        &:active{
+                            scale: var(--escalado-reduccion);
+                            text-shadow: none;
+                        }
+                    } 
+                }
+            }
+
+            /*----------------------EFECTO REFLEXIÓN--------------------------*/
+
+            .caja-reflectora{
+                position: sticky;
+                top: 0;
+                width: 100%;
+                height: 1px;
+                backdrop-filter: brightness(5);
+            }
+        }
+
+        /*----------------------------------CONTENIDO----------------------------------------*/
+
+        .estructura-modal{
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            margin-top: 50px;
+
+            .legal-titulo{
+                text-decoration: underline;
+            }
+
+            .legal-seccion{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: var(--tamano-alto-navbar-modal) 25px 0px 25px;
+            }
+        }
     }
 }
 

@@ -1,0 +1,1 @@
+document.querySelector(".modal-legal").showModal();
