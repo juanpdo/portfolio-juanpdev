@@ -143,3 +143,126 @@ cardCajero.addEventListener("mouseenter",reproduccionVideo);
 
 /*----------------------------------------------------AUDIO GENERAL DEL PORTFOLIO---------------------------------------------------------*/
 
+const sonidoHoverNavbar = new Audio;
+sonidoHoverNavbar.src = "./assets/audio/HOVER_NAVBAR.wav";
+sonidoHoverNavbar.volume = 0.5;
+
+const sonidoHoverIconos = new Audio;
+sonidoHoverIconos.src = "./assets/audio/HOVER_ICONOS.wav";
+sonidoHoverIconos.volume = 1;
+
+const sonidoHoverCards = new Audio;
+sonidoHoverCards.src = "./assets/audio/HOVER_CARDS.wav";
+sonidoHoverCards.volume = 0.5;
+
+const sonidoClick = new Audio;
+sonidoClick.src = "./assets/audio/CLICK.wav";
+sonidoClick.volume = 1;
+
+const elementosNavbar = document.querySelectorAll(".navbar-elemento");
+const elementosOpciones = document.querySelectorAll(".interruptor-cuerpo");
+const elementosFlecha = document.querySelectorAll(".desplazamiento");
+const tituloPortada = document.querySelector(".seccion-presentacion");
+const imagenPortada = document.querySelector(".mascara-foto-principal");
+const elementosCardsProyectos = document.querySelectorAll(".card-proyecto");
+const elementosIconosTecnologias = document.querySelectorAll(".proyecto-lista-elemento");
+const elementosCardsInformacion = document.querySelectorAll(".card-info");
+const elementosIconosStack = document.querySelectorAll(".elemento-stack");
+const botonEnviar = document.querySelector(".boton-enviar");
+const elementosIconosContacto = document.querySelectorAll(".lista-contacto-elemento");
+const avisoLegal = document.querySelector(".boton-aviso-legal");
+const accesibilidad = document.querySelector(".enlace-accesibilidad");
+const elementosNavbarLegal = document.querySelectorAll(".legal-lista-elemento");
+
+elementosNavbar.forEach((iconoNavbar)=>{
+    iconoNavbar.addEventListener("mouseenter",()=>{
+        sonidoHoverNavbar.currentTime = 0;
+        sonidoHoverNavbar.play();
+    })
+});
+
+elementosOpciones.forEach((interruptor)=>{
+    interruptor.addEventListener("mouseenter",()=>{
+        sonidoHoverNavbar.currentTime = 0;
+        sonidoHoverNavbar.play();
+    })
+});
+
+elementosFlecha.forEach((flecha)=>{
+    flecha.addEventListener("mouseenter",()=>{
+        sonidoHoverIconos.currentTime = 0;
+        sonidoHoverIconos.play();
+    })
+});
+
+tituloPortada.addEventListener("mouseenter",()=>{
+    sonidoHoverIconos.currentTime = 0;
+    sonidoHoverIconos.play();
+});
+
+imagenPortada.addEventListener("mouseenter",()=>{
+    sonidoHoverIconos.currentTime = 0;
+    sonidoHoverIconos.play();
+});
+
+elementosCardsProyectos.forEach((card)=>{
+    card.addEventListener("mouseenter",()=>{
+        sonidoHoverCards.currentTime = 0;
+        sonidoHoverCards.play();
+    })
+});
+
+elementosIconosTecnologias.forEach((icono)=>{
+    icono.addEventListener("mouseenter",()=>{
+        sonidoHoverIconos.currentTime = 0;
+        sonidoHoverIconos.play();
+    })
+});
+
+elementosCardsInformacion.forEach((card)=>{
+    card.addEventListener("mouseenter",()=>{
+        sonidoHoverCards.currentTime = 0;
+        sonidoHoverCards.play();
+    })
+});
+
+elementosIconosStack.forEach((icono)=>{
+    icono.addEventListener("mouseenter",()=>{
+        sonidoHoverIconos.currentTime = 0;
+        sonidoHoverIconos.play();
+    })
+});
+
+botonEnviar.addEventListener("mouseenter",()=>{
+    sonidoHoverCards.currentTime = 0;
+    sonidoHoverCards.play();
+});
+
+elementosIconosContacto.forEach((icono)=>{
+    icono.addEventListener("mouseenter",()=>{
+        sonidoHoverIconos.currentTime = 0;
+        sonidoHoverIconos.play();
+    })
+});
+
+avisoLegal.addEventListener("mouseenter",()=>{
+    sonidoHoverIconos.currentTime = 0;
+    sonidoHoverIconos.play();
+});
+
+accesibilidad.addEventListener("mouseenter",()=>{
+    sonidoHoverIconos.currentTime = 0;
+    sonidoHoverIconos.play();
+});
+
+elementosNavbarLegal.forEach((enlace)=>{
+    enlace.addEventListener("mouseenter",()=>{
+        sonidoHoverNavbar.currentTime = 0;
+        sonidoHoverNavbar.play();
+    })
+});
+
+botonCerraModal.addEventListener("mouseenter",()=>{
+    sonidoHoverNavbar.currentTime = 0;
+    sonidoHoverNavbar.play();
+});
