@@ -1,3 +1,47 @@
+/*-------------------------------------------------ESTADOS GLOBALES DE LA APLICACIÓN----------------------------------------------*/
+
+let modoOscuroActivado = true;
+let animacionesActivadas = true;
+let sonidoActivado = false;
+
+const elementoRaiz = document.documentElement;
+const checkboxModoOscuro = document.getElementById("switch_tema");
+const checkboxAnimaciones = document.getElementById("switch_animacion");
+const checkboxSonido = document.getElementById("switch_audio");
+
+function cambiarModo(){
+    if(checkboxModoOscuro.checked){
+        modoOscuroActivado = true;
+        elementoRaiz.setAttribute("data-theme","oscuro");
+    }
+    else{
+        modoOscuroActivado = false;
+        elementoRaiz.setAttribute("data-theme","claro");
+    };
+};
+
+function cambiarAnimaciones(){
+    if(checkboxAnimaciones.checked){
+        animacionesActivadas = true;
+    }
+    else{
+        animacionesActivadas = false;
+    };
+};
+
+function cambiarSonido(){
+    if(checkboxSonido.checked){
+        sonidoActivado = true;
+    }
+    else{
+        sonidoActivado = false;
+    };
+};
+
+checkboxModoOscuro.addEventListener("change",cambiarModo);
+checkboxAnimaciones.addEventListener("change",cambiarAnimaciones);
+checkboxSonido.addEventListener("change",cambiarSonido);
+
 /*------------------------------------------------APERTURA Y CIERRE MENÚ DE OPCIONES----------------------------------------------*/
 
 let estadoMenu = "cerrado";
@@ -177,6 +221,7 @@ const elementosClicables = document.querySelectorAll(".clicable");
 
 elementosNavbar.forEach((iconoNavbar)=>{
     iconoNavbar.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverNavbar.currentTime = 0;
         sonidoHoverNavbar.play();
     })
@@ -184,6 +229,7 @@ elementosNavbar.forEach((iconoNavbar)=>{
 
 elementosOpciones.forEach((interruptor)=>{
     interruptor.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverNavbar.currentTime = 0;
         sonidoHoverNavbar.play();
     })
@@ -191,23 +237,27 @@ elementosOpciones.forEach((interruptor)=>{
 
 elementosFlecha.forEach((flecha)=>{
     flecha.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverIconos.currentTime = 0;
         sonidoHoverIconos.play();
     })
 });
 
 tituloPortada.addEventListener("mouseenter",()=>{
+    if(!sonidoActivado){return};
     sonidoHoverIconos.currentTime = 0;
     sonidoHoverIconos.play();
 });
 
 imagenPortada.addEventListener("mouseenter",()=>{
+    if(!sonidoActivado){return};
     sonidoHoverIconos.currentTime = 0;
     sonidoHoverIconos.play();
 });
 
 elementosCardsProyectos.forEach((card)=>{
     card.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverCards.currentTime = 0;
         sonidoHoverCards.play();
     })
@@ -215,6 +265,7 @@ elementosCardsProyectos.forEach((card)=>{
 
 elementosIconosTecnologias.forEach((icono)=>{
     icono.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverIconos.currentTime = 0;
         sonidoHoverIconos.play();
     })
@@ -222,6 +273,7 @@ elementosIconosTecnologias.forEach((icono)=>{
 
 elementosCardsInformacion.forEach((card)=>{
     card.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverCards.currentTime = 0;
         sonidoHoverCards.play();
     })
@@ -229,47 +281,55 @@ elementosCardsInformacion.forEach((card)=>{
 
 elementosIconosStack.forEach((icono)=>{
     icono.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverIconos.currentTime = 0;
         sonidoHoverIconos.play();
     })
 });
 
 botonEnviar.addEventListener("mouseenter",()=>{
+    if(!sonidoActivado){return};
     sonidoHoverCards.currentTime = 0;
     sonidoHoverCards.play();
 });
 
 elementosIconosContacto.forEach((icono)=>{
     icono.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverIconos.currentTime = 0;
         sonidoHoverIconos.play();
     })
 });
 
 avisoLegal.addEventListener("mouseenter",()=>{
+    if(!sonidoActivado){return};
     sonidoHoverIconos.currentTime = 0;
     sonidoHoverIconos.play();
 });
 
 accesibilidad.addEventListener("mouseenter",()=>{
+    if(!sonidoActivado){return};
     sonidoHoverIconos.currentTime = 0;
     sonidoHoverIconos.play();
 });
 
 elementosNavbarLegal.forEach((enlace)=>{
     enlace.addEventListener("mouseenter",()=>{
+        if(!sonidoActivado){return};
         sonidoHoverNavbar.currentTime = 0;
         sonidoHoverNavbar.play();
     })
 });
 
 botonCerraModal.addEventListener("mouseenter",()=>{
+    if(!sonidoActivado){return};
     sonidoHoverNavbar.currentTime = 0;
     sonidoHoverNavbar.play();
 });
 
 elementosClicables.forEach((elemento)=>{
     elemento.addEventListener("click",()=>{
+        if(!sonidoActivado){return};
         sonidoClick.currentTime = 0;
         sonidoClick.play();
     })
