@@ -856,7 +856,7 @@ body{
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 50px;
+            gap: 40px;
             width: 100%;
             max-width: 1500px;
 
@@ -1003,6 +1003,7 @@ body{
             .separador-vertical{
                 width: 50px;
                 height: 750px;
+                margin-top: 4rem;
                 opacity: 0;
                 translate: 0px -120px;
                 transform: scale(var(--proporcion-escalado));

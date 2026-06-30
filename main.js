@@ -86,7 +86,7 @@ function procesadoEscalado(evento){
     if(!procesandoEscalado){
         procesandoEscalado = true;
         requestAnimationFrame(()=>{
-            const proporcionAltura = (((evento.clientY/window.innerHeight)*0.3)+0.85);
+            const proporcionAltura = (((evento.clientY/window.innerHeight)*0.2)+0.9);
             
             separadores.forEach(separador => {
                 separador.style.setProperty("--proporcion-escalado",proporcionAltura);
