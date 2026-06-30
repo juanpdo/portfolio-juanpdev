@@ -107,3 +107,39 @@ function quitarControlPuntero(){
 
     seccionInfo.removeEventListener("mousemove",procesadoEscalado);
 };
+
+/*-------------------------------------------VIDEO EN MINIATURAS DE CARDS DE PROYECTOS------------------------------------------------*/
+
+const cardSPA = document.getElementById("card_proyecto_spa");
+const cardEcommerce = document.getElementById("card_proyecto_ecommerce");
+const cardBuscador = document.getElementById("card_proyecto_buscador");
+const cardTresEnRaya = document.getElementById("card_proyecto_tresenraya");
+const cardArkanoid = document.getElementById("card_proyecto_arkanoid");
+const cardCajero = document.getElementById("card_proyecto_cajero");
+
+function reproduccionVideo(evento){
+    const videoMiniatura = evento.target.querySelector(".miniatura-video");
+
+    videoMiniatura.play();
+
+    evento.target.addEventListener("mouseleave",resetVideo);
+};
+
+function resetVideo(evento){
+    const videoMiniatura = evento.target.querySelector(".miniatura-video");
+
+    videoMiniatura.pause();
+    videoMiniatura.currentTime = 0;
+
+    evento.target.removeEventListener("mouseleave",resetVideo);
+};
+
+cardSPA.addEventListener("mouseenter",reproduccionVideo);
+cardEcommerce.addEventListener("mouseenter",reproduccionVideo);
+cardBuscador.addEventListener("mouseenter",reproduccionVideo);
+cardTresEnRaya.addEventListener("mouseenter",reproduccionVideo);
+cardArkanoid.addEventListener("mouseenter",reproduccionVideo);
+cardCajero.addEventListener("mouseenter",reproduccionVideo);
+
+/*----------------------------------------------------AUDIO GENERAL DEL PORTFOLIO---------------------------------------------------------*/
+
