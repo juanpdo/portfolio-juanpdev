@@ -173,6 +173,7 @@ const elementosIconosContacto = document.querySelectorAll(".lista-contacto-eleme
 const avisoLegal = document.querySelector(".boton-aviso-legal");
 const accesibilidad = document.querySelector(".enlace-accesibilidad");
 const elementosNavbarLegal = document.querySelectorAll(".legal-lista-elemento");
+const elementosClicables = document.querySelectorAll(".clicable");
 
 elementosNavbar.forEach((iconoNavbar)=>{
     iconoNavbar.addEventListener("mouseenter",()=>{
@@ -265,4 +266,11 @@ elementosNavbarLegal.forEach((enlace)=>{
 botonCerraModal.addEventListener("mouseenter",()=>{
     sonidoHoverNavbar.currentTime = 0;
     sonidoHoverNavbar.play();
+});
+
+elementosClicables.forEach((elemento)=>{
+    elemento.addEventListener("click",()=>{
+        sonidoClick.currentTime = 0;
+        sonidoClick.play();
+    })
 });

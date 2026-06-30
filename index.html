@@ -24,11 +24,11 @@
         <header class="cabecera">
             <nav class="navbar">
                 <ul class="navbar-lista">
-                    <li class="navbar-elemento elemento-portada" title="Portada"><a href="#seccion_portada" aria-label="Navegar a sección portada"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_home"></use></svg></a></li>
-                    <li class="navbar-elemento elemento-proyectos" title="Proyectos"><a href="#seccion_proyectos" aria-label="Navegar a sección proyectos"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_briefcase"></use></svg></a></li>
-                    <li class="navbar-elemento elemento-informacion" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_user_square"></use></svg></a></li>
-                    <li class="navbar-elemento elemento-contacto" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_mail_opened"></use></svg></a></li>
-                    <li class="navbar-elemento elemento-settings" title="Configuración"><button id="boton_settings" type="button" class="boton-settings" aria-label="Abrir opciones de configuración" aria-expanded="false"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_settings"></use></svg></button></li>
+                    <li class="navbar-elemento elemento-portada clicable" title="Portada"><a href="#seccion_portada" aria-label="Navegar a sección portada"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_home"></use></svg></a></li>
+                    <li class="navbar-elemento elemento-proyectos clicable" title="Proyectos"><a href="#seccion_proyectos" aria-label="Navegar a sección proyectos"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_briefcase"></use></svg></a></li>
+                    <li class="navbar-elemento elemento-informacion clicable" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_user_square"></use></svg></a></li>
+                    <li class="navbar-elemento elemento-contacto clicable" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_mail_opened"></use></svg></a></li>
+                    <li class="navbar-elemento elemento-settings clicable" title="Configuración"><button id="boton_settings" type="button" class="boton-settings" aria-label="Abrir opciones de configuración" aria-expanded="false"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_settings"></use></svg></button></li>
                 </ul>
             </nav>
             <div class="caja-reflectora"></div>
@@ -36,7 +36,7 @@
                 <ul class="configuracion-lista" aria-label="Lista de elementos de configuración">
                     <li class="configuracion-elemento" aria-label="Tema Claro/Oscuro">
                         <input type="checkbox" name="tema" value="oscuro" id="switch_tema" class="interruptor-checkbox" aria-label="Activar Tema Oscuro" checked>
-                        <label for="switch_tema" class="interruptor-cuerpo" title="Cambiar Tema"><div class="interruptor-bola"></div></label>
+                        <label for="switch_tema" class="interruptor-cuerpo clicable" title="Cambiar Tema"><div class="interruptor-bola"></div></label>
                         <div class="contenedor-iconos-configuracion" title="Tema Oscuro">
                             <svg class="icono apagado" aria-hidden="true" id="icono_tema_off"><use href="assets/icons/icons.svg#icono_sun"></use></svg>
                             <svg class="icono encendido" aria-hidden="true" id="icono_tema_on"><use href="assets/icons/icons.svg#icono_moon"></use></svg>
@@ -44,7 +44,7 @@
                     </li>
                     <li class="configuracion-elemento" aria-label="Animación ON/OFF">
                         <input type="checkbox" name="animacion" value="activada" id="switch_animacion" class="interruptor-checkbox" aria-label="Activar Animaciones" checked>
-                        <label for="switch_animacion" class="interruptor-cuerpo" title="Cambiar Animaciones"><div class="interruptor-bola"></div></label>
+                        <label for="switch_animacion" class="interruptor-cuerpo clicable" title="Cambiar Animaciones"><div class="interruptor-bola"></div></label>
                         <div class="contenedor-iconos-configuracion" title="Animaciones ON">
                             <svg class="icono apagado" aria-hidden="true" id="icono_animacion_off"><use href="assets/icons/icons.svg#icono_wand_off"></use></svg>
                             <svg class="icono encendido" aria-hidden="true" id="icono_animacion_on" ><use href="assets/icons/icons.svg#icono_wand"></use></svg>
@@ -52,7 +52,7 @@
                     </li>
                     <li class="configuracion-elemento" aria-label="Audio ON/OFF">
                         <input type="checkbox" name="audio" value="activado" id="switch_audio" class="interruptor-checkbox" aria-label="Activar Audio">
-                        <label for="switch_audio" class="interruptor-cuerpo" title="Cambiar Audio"><div class="interruptor-bola"></div></label>
+                        <label for="switch_audio" class="interruptor-cuerpo clicable" title="Cambiar Audio"><div class="interruptor-bola"></div></label>
                         <div class="contenedor-iconos-configuracion" title="Audio OFF">
                             <svg class="icono apagado" aria-hidden="true" id="icono_audio_off" ><use href="assets/icons/icons.svg#icono_volume_off"></use></svg>
                             <svg class="icono encendido" aria-hidden="true" id="icono_audio_on"><use href="assets/icons/icons.svg#icono_volume"></use></svg>
@@ -60,6 +60,7 @@
                     </li>
                 </ul>
             </div>
+            
         </header>
         <main class="principal">
             <section id="seccion_portada" class="seccion seccion-portada">
@@ -72,16 +73,16 @@
                         <img src="assets/images/Foto_Monocromo.webp" alt="Fotografía frontal monocromo de mi busto" class="foto-principal">
                     </div>
                 </div>
-                <a href="#seccion_proyectos" class="desplazamiento avance" aria-label="Navegar a la siguiente sección" title="Siguiente Sección"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_down"></use></svg></a>
+                <a href="#seccion_proyectos" class="desplazamiento avance clicable" aria-label="Navegar a la siguiente sección" title="Siguiente Sección"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_down"></use></svg></a>
             </section>
             <section id="seccion_proyectos" class="seccion seccion-proyectos">
-                <a href="#seccion_portada" class="desplazamiento retroceso" aria-label="Navegar a la sección anterior" title="Sección Anterior"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_up"></use></svg></a>
+                <a href="#seccion_portada" class="desplazamiento retroceso clicable" aria-label="Navegar a la sección anterior" title="Sección Anterior"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_up"></use></svg></a>
                 <header class="seccion-cabecera">
                     <h2 class="seccion-titulo">Proyectos Personales</h2>
                     <div class="linea-decorativa-titulo" role="presentation"></div>
                 </header>
                 <div class="estructura-cards">
-                    <article id="card_proyecto_spa" class="card-proyecto">
+                    <article id="card_proyecto_spa" class="card-proyecto clicable">
                         <div class="luz"></div>
                         <div class="marco"></div>
                         <a href="projects/spa-noticias/index.html" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto SPA Noticias">
@@ -99,7 +100,7 @@
                             </ul>
                         </a>
                     </article>
-                    <article id="card_proyecto_ecommerce" class="card-proyecto">
+                    <article id="card_proyecto_ecommerce" class="card-proyecto clicable">
                         <div class="luz"></div>
                         <div class="marco"></div>
                         <a href="projects/e-commerce/index.html" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto E-Commerce">
@@ -116,7 +117,7 @@
                             </ul>
                         </a>
                     </article>
-                    <article id="card_proyecto_buscador" class="card-proyecto">
+                    <article id="card_proyecto_buscador" class="card-proyecto clicable">
                         <div class="luz"></div>
                         <div class="marco"></div>
                         <a href="projects/buscador-omdb/index.html" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Buscador OMDb">
@@ -133,7 +134,7 @@
                             </ul>
                         </a>
                     </article>
-                    <article id="card_proyecto_tresenraya" class="card-proyecto">
+                    <article id="card_proyecto_tresenraya" class="card-proyecto clicable">
                         <div class="luz"></div>
                         <div class="marco"></div>
                         <a href="projects/tres-en-raya/index.html" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Tres en Raya">
@@ -150,7 +151,7 @@
                             </ul>
                         </a>
                     </article>
-                    <article id="card_proyecto_arkanoid" class="card-proyecto">
+                    <article id="card_proyecto_arkanoid" class="card-proyecto clicable">
                         <div class="luz"></div>
                         <div class="marco"></div>
                         <a href="projects/arkanoid/index.html" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Clon Arkanoid">
@@ -166,7 +167,7 @@
                             </ul>
                         </a>
                     </article>
-                    <article id="card_proyecto_cajero" class="card-proyecto">
+                    <article id="card_proyecto_cajero" class="card-proyecto clicable">
                         <div class="luz"></div>
                         <div class="marco"></div>
                         <a href="projects/cajero-automatico/index.html" target="_blank" rel="noopener noreferrer" class="card-proyecto-vinculo" aria-label="Ir al proyecto Cajero Automático">
@@ -183,10 +184,10 @@
                         </a>
                     </article>
                 </div>
-                <a href="#seccion_informacion" class="desplazamiento avance" aria-label="Navegar a la siguiente sección" title="Siguiente Sección"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_down"></use></svg></a>
+                <a href="#seccion_informacion" class="desplazamiento avance clicable" aria-label="Navegar a la siguiente sección" title="Siguiente Sección"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_down"></use></svg></a>
             </section>
             <section id="seccion_informacion" class="seccion seccion-informacion">
-                <a href="#seccion_proyectos" class="desplazamiento retroceso" aria-label="Navegar a la sección anterior" title="Sección Anterior"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_up"></use></svg></a>
+                <a href="#seccion_proyectos" class="desplazamiento retroceso clicable" aria-label="Navegar a la sección anterior" title="Sección Anterior"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_up"></use></svg></a>
                 <header class="seccion-cabecera">
                     <h2 class="seccion-titulo">Información Personal</h2>
                     <div class="linea-decorativa-titulo" role="presentation"></div>
@@ -311,10 +312,10 @@
                         </div>
                     </article>
                 </div>
-                <a href="#seccion_contacto" class="desplazamiento avance" aria-label="Navegar a la siguiente sección" title="Siguiente Sección"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_down"></use></svg></a>
+                <a href="#seccion_contacto" class="desplazamiento avance clicable" aria-label="Navegar a la siguiente sección" title="Siguiente Sección"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_down"></use></svg></a>
             </section>
             <section id="seccion_contacto" class="seccion seccion-contacto">
-                <a href="#seccion_informacion" class="desplazamiento retroceso" aria-label="Navegar a la sección anterior" title="Sección Anterior"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_up"></use></svg></a>
+                <a href="#seccion_informacion" class="desplazamiento retroceso clicable" aria-label="Navegar a la sección anterior" title="Sección Anterior"><svg class="icono flecha" aria-hidden="true"><use href="assets/icons/icons.svg#icono_chevrons_up"></use></svg></a>
                 <header class="seccion-cabecera">
                     <h2 class="seccion-titulo">Contacto</h2>
                     <div class="linea-decorativa-titulo" role="presentation"></div>
@@ -323,32 +324,32 @@
                     <form action="" id="formulario_contacto" class="formulario-contacto" aria-label="Formulario de contacto">
                         <div class="bloque-input bloque-input-nombre">
                             <label for="input_nombre" class="etiqueta-formulario">Nombre/Empresa :</label>
-                            <input type="text" id="input_nombre" class="input-formulario" required minlength="2" pattern="[a-zA-Z0-9ñÑ_-]" placeholder="Ingrese su nombre o el nombre de la empresa" aria-label="Input para nombre/empresa">
+                            <input type="text" id="input_nombre" class="input-formulario clicable" required minlength="2" pattern="[a-zA-Z0-9ñÑ_-]" placeholder="Ingrese su nombre o el nombre de la empresa" aria-label="Input para nombre/empresa">
                         </div>
                         <div class="bloque-input bloque-input-correo">
                             <label for="input_correo" class="etiqueta-formulario">Correo electrónico :</label>
-                            <input type="email" id="input_correo" class="input-formulario" required pattern="[a-zA-Z0-9ñÑ_@-]" placeholder="Ingrese su correo electrónico de contacto" aria-label="Input para correo electrónico">
+                            <input type="email" id="input_correo" class="input-formulario clicable" required pattern="[a-zA-Z0-9ñÑ_@-]" placeholder="Ingrese su correo electrónico de contacto" aria-label="Input para correo electrónico">
                         </div>
                         <div class="bloque-input bloque-input-asunto">
                             <label for="input_asunto" class="etiqueta-formulario">Asunto :</label>
-                            <input type="text" id="input_asunto" class="input-formulario" placeholder="Indique un asunto para este correo" aria-label="Input para asunto">
+                            <input type="text" id="input_asunto" class="input-formulario clicable" placeholder="Indique un asunto para este correo" aria-label="Input para asunto">
                         </div>
                         <div class="bloque-input bloque-input-mensaje">
                             <label for="input_mensaje" class="etiqueta-formulario">Mensaje :</label>
-                            <textarea id="input_mensaje" class="textarea-formulario" placeholder="Redacte su mensaje" aria-label="Input para mensaje"></textarea>
+                            <textarea id="input_mensaje" class="textarea-formulario clicable" placeholder="Redacte su mensaje" aria-label="Input para mensaje"></textarea>
                         </div>
                         
-                        <button type="submit" id="boton_enviar" class="boton-enviar">Enviar
+                        <button type="submit" id="boton_enviar" class="boton-enviar clicable">Enviar
                             <div class="luz-boton"></div>
                             <div class="marco-boton"></div>
                         </button>
                     </form>
                     <ul class="lista-contacto">
-                        <li id="contacto_telefono" class="lista-contacto-elemento" title="Teléfono +34 671858858"><a href="tel:+34671858858" aria-label="Llamar al teléfono +34 671858858"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_phone"></use></svg></a></li>
-                        <li id="contacto_correo" class="lista-contacto-elemento" title="Correo juanpdomail@gmail.com"><a href="mailto:juanpdomail@gmail.com" aria-label="Mandar correo a juanpdomail@gmail.com"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_mail"></use></svg></a></li>
-                        <li id="contacto_github" class="lista-contacto-elemento" title="GitHub https://github.com/juanpdo"><a href="https://github.com/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a GitHub https://github.com/juanpdo"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_github"></use></svg></a></li>
-                        <li id="contacto_linkedin" class="lista-contacto-elemento" title="LinkedIn"><a href="https://linkedin.com/in/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a LinkedIn"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_linkedin"></use></svg></a></li>
-                        <li id="contacto_infojobs" class="lista-contacto-elemento" title="InfoJobs"><a href="https://infojobs.net" target="_blank" rel="noopener noreferrer" aria-label="Ir a InfoJobs"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_infojobs"></use></svg></a></li>
+                        <li id="contacto_telefono" class="lista-contacto-elemento clicable" title="Teléfono +34 671858858"><a href="tel:+34671858858" aria-label="Llamar al teléfono +34 671858858"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_phone"></use></svg></a></li>
+                        <li id="contacto_correo" class="lista-contacto-elemento clicable" title="Correo juanpdomail@gmail.com"><a href="mailto:juanpdomail@gmail.com" aria-label="Mandar correo a juanpdomail@gmail.com"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_mail"></use></svg></a></li>
+                        <li id="contacto_github" class="lista-contacto-elemento clicable" title="GitHub https://github.com/juanpdo"><a href="https://github.com/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a GitHub https://github.com/juanpdo"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_github"></use></svg></a></li>
+                        <li id="contacto_linkedin" class="lista-contacto-elemento clicable" title="LinkedIn"><a href="https://linkedin.com/in/juanpdo" target="_blank" rel="noopener noreferrer" aria-label="Ir a LinkedIn"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_linkedin"></use></svg></a></li>
+                        <li id="contacto_infojobs" class="lista-contacto-elemento clicable" title="InfoJobs"><a href="https://infojobs.net" target="_blank" rel="noopener noreferrer" aria-label="Ir a InfoJobs"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_infojobs"></use></svg></a></li>
                     </ul>
                 </article>
             </section>
@@ -356,19 +357,19 @@
         <footer class="pie-pagina">
             <div class="caja-reflectora"></div>
             <div class="marco-footer">
-                <button type="button" id="boton_legal" class="boton-aviso-legal" aria-label="Apartado Legal abrir documentación" aria-expanded="false">Apartado Legal</button>
+                <button type="button" id="boton_legal" class="boton-aviso-legal clicable" aria-label="Apartado Legal abrir documentación" aria-expanded="false">Apartado Legal</button>
                 <p class="copyright">juanpdev.com © 2026 by Juan Peña Dorado. Todos los derechos reservados.</p>
-                <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" target="_blank" rel="noopener noreferrer" class="enlace-accesibilidad" aria-label="Navegar a la página de conformidad AAA de la W3C" title="Accesibilidad W3C"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_w3c"></use></svg></a>
+                <a href="https://www.w3.org/WAI/WCAG2AAA-Conformance" target="_blank" rel="noopener noreferrer" class="enlace-accesibilidad clicable" aria-label="Navegar a la página de conformidad AAA de la W3C" title="Accesibilidad W3C"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_w3c"></use></svg></a>
             </div>
             <dialog id="legal_modal" class="modal-legal" aria-labelledby="legal_titulo">
                 <header class="legal-cabecera">
-                    <button type="button" id="boton_modal_cerrar" class="boton-cerrar" aria-label="Cerrar ventana legal" title="Cerrar"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_x"></use></svg></button>
+                    <button type="button" id="boton_modal_cerrar" class="boton-cerrar clicable" aria-label="Cerrar ventana legal" title="Cerrar"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_x"></use></svg></button>
                     <nav class="legal-navbar">
                         <ul class="legal-lista">
-                            <li class="legal-lista-elemento"><a href="#legal_aviso">Aviso Legal</a></li>
-                            <li class="legal-lista-elemento"><a href="#legal_privacidad">Privacidad</a></li>
-                            <li class="legal-lista-elemento"><a href="#legal_cookies">Cookies</a></li>
-                            <li class="legal-lista-elemento"><a href="#legal_propiedad">Propiedad</a></li>
+                            <li class="legal-lista-elemento clicable"><a href="#legal_aviso">Aviso Legal</a></li>
+                            <li class="legal-lista-elemento clicable"><a href="#legal_privacidad">Privacidad</a></li>
+                            <li class="legal-lista-elemento clicable"><a href="#legal_cookies">Cookies</a></li>
+                            <li class="legal-lista-elemento clicable"><a href="#legal_propiedad">Propiedad</a></li>
                         </ul>
                     </nav>
                     <div class="caja-reflectora"></div>
