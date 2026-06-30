@@ -187,6 +187,21 @@
         --color-modal: rgba(170, 170, 190, 0.75);
         --color-boton-modal: rgb(164,164,164);
     }
+
+    /*------------------ANIMACIONES OFF---------------------------*/
+
+    &[data-animation="off"]{
+
+        *{
+            text-shadow: none !important;
+            box-shadow: none !important;
+            filter: none !important;
+            transition: none !important;
+            transform: none !important;
+            scale: none !important;
+            animation: none !important;
+        }
+    }    
 }
 
 /*------------------------------------------------------------------------RESET Y BASES-----------------------------------------------------------------------------------*/

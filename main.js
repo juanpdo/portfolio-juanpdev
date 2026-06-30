@@ -23,9 +23,11 @@ function cambiarModo(){
 function cambiarAnimaciones(){
     if(checkboxAnimaciones.checked){
         animacionesActivadas = true;
+        elementoRaiz.setAttribute("data-animation","on");
     }
     else{
         animacionesActivadas = false;
+        elementoRaiz.setAttribute("data-animation","off");
     };
 };
 
