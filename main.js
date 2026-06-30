@@ -45,9 +45,17 @@ function manejadorObservador(entradas,observador){
     entradas.forEach(entrada => {
         if(entrada.isIntersecting){
             entrada.target.classList.add("visible");
+
+            if(entrada.target.id == "seccion_informacion"){
+                controlPuntero();
+            }
         }
         else{
            entrada.target.classList.remove("visible");
+
+           if(entrada.target.id == "seccion_informacion"){
+                quitarControlPuntero();
+            }
         }
     });
 };
@@ -65,3 +73,37 @@ const secciones = document.querySelectorAll(".seccion");
 secciones.forEach(seccion => {
     observador.observe(seccion);
 });
+
+/*-------------------------------------------ESCALADO SEPARADORES VERTICALES INFORMACIÓN------------------------------------------------*/
+
+const separadores = document.querySelectorAll(".separador-vertical");
+
+const seccionInfo = document.getElementById("seccion_informacion");
+
+let procesandoEscalado = false;
+
+function procesadoEscalado(evento){
+    if(!procesandoEscalado){
+        procesandoEscalado = true;
+        requestAnimationFrame(()=>{
+            const proporcionAltura = (((evento.clientY/window.innerHeight)*0.3)+0.85);
+            
+            separadores.forEach(separador => {
+                separador.style.setProperty("--proporcion-escalado",proporcionAltura);
+            });
+            procesandoEscalado = false;
+        })
+    }
+};
+
+function controlPuntero(){
+    console.log("CONTROLANDO EL PUNTERO");
+
+    seccionInfo.addEventListener("mousemove",procesadoEscalado); 
+};
+
+function quitarControlPuntero(){
+    console.log("QUITANDO CONTROL DE PUNTERO");
+
+    seccionInfo.removeEventListener("mousemove",procesadoEscalado);
+};
