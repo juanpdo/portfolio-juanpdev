@@ -72,7 +72,7 @@
     --color-modal: rgba(25, 25, 30, 0.85);
     --color-navbar-modal: rgb(from var(--color-base) r g b /3%);
     --color-enlaces-modal: var(--color-base);
-    --color-boton-modal: rgb(140,140,140);
+    --color-boton-modal: rgba(140,140,140,0.1);
     --color-x-modal: var(--color-base);
 
     /*------------------BORDES---------------------------*/
@@ -90,7 +90,7 @@
     --borde-boton-enviar: 6px double var(--color-base);
     --borde-pie: 1px solid rgb(from var(--color-base) r g b /10%);
     --borde-modal: 2px solid var(--color-base);
-    --borde-boton-modal: 1px solid var(--color-base);
+    --borde-boton-modal: 2px solid var(--color-base);
 
     /*------------------SOMBRAS---------------------------*/
 
@@ -197,8 +197,8 @@
             box-shadow: none !important;
             filter: none !important;
             transition: none !important;
-            transform: none !important;
             scale: none !important;
+            transform: scale(none) !important;
             animation: none !important;
         }
     }    
@@ -1021,7 +1021,7 @@ body{
                 margin-top: 4rem;
                 opacity: 0;
                 translate: 0px -120px;
-                transform: scale(var(--proporcion-escalado));
+                scale: var(--proporcion-escalado);
                 transition: opacity 0.1s ease, translate 0.1s ease;
 
                 &#separador_vertical_derecho{
