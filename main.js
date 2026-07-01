@@ -14,10 +14,12 @@ function cambiarModo(){
     if(checkboxModoOscuro.checked){
         modoOscuroActivado = true;
         elementoRaiz.setAttribute("data-theme","oscuro");
+        localStorage.setItem("tema","oscuro");
     }
     else{
         modoOscuroActivado = false;
         elementoRaiz.setAttribute("data-theme","claro");
+        localStorage.setItem("tema","claro");
     };
 };
 
@@ -25,10 +27,12 @@ function cambiarAnimaciones(){
     if(checkboxAnimaciones.checked){
         animacionesActivadas = true;
         elementoRaiz.setAttribute("data-animation","on");
+        localStorage.setItem("animacion","activada");
     }
     else{
         animacionesActivadas = false;
         elementoRaiz.setAttribute("data-animation","off");
+        localStorage.setItem("animacion","desactivada");
     };
 };
 
@@ -44,6 +48,55 @@ function cambiarSonido(){
 checkboxModoOscuro.addEventListener("change",cambiarModo);
 checkboxAnimaciones.addEventListener("change",cambiarAnimaciones);
 checkboxSonido.addEventListener("change",cambiarSonido);
+
+/*-------------------------------------COMPROBACIONES DE PRIMERA VISITA Y ESTADOS INICIALES---------------------------------------*/
+
+const primeraVisita = localStorage.getItem("primeraVisita");
+
+if(!primeraVisita){
+    localStorage.setItem("primeraVisita","true");
+
+    const modoClaro = window.matchMedia("(prefers-color-scheme: light)").matches;
+    if(modoClaro){
+        checkboxModoOscuro.checked = false;
+        cambiarModo();
+    }
+    else{
+        checkboxModoOscuro.checked = true;
+        cambiarModo();
+    };
+
+    const movimientoReducido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(movimientoReducido){
+        checkboxAnimaciones.checked = false;
+        cambiarAnimaciones();
+    }
+    else{
+        checkboxAnimaciones.checked = true;
+        cambiarAnimaciones();
+    };
+}
+else{
+    const tema = localStorage.getItem("tema");
+    if(tema == "oscuro"){
+        checkboxModoOscuro.checked = true;
+        cambiarModo();
+    }
+    else if(tema == "claro"){
+        checkboxModoOscuro.checked = false;
+        cambiarModo();
+    };
+
+    const animacion = localStorage.getItem("animacion");
+    if(animacion == "activada"){
+        checkboxAnimaciones.checked = true;
+        cambiarAnimaciones();
+    }
+    else if(animacion == "desactivada"){
+        checkboxAnimaciones.checked = false;
+        cambiarAnimaciones();
+    };
+};
 
 /*------------------------------------------------APERTURA Y CIERRE MENÚ DE OPCIONES----------------------------------------------*/
 
@@ -95,7 +148,7 @@ if(tutorialAcabado){
 
     dialogoTutorial.classList.remove("tutorial");
     botonMenu.classList.remove("tutorial");    
-}
+};
 
 /*-------------------------------------------------APERTURA Y CIERRE MODAL LEGAL-----------------------------------------------------*/
 
