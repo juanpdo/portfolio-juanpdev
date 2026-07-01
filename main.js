@@ -1,7 +1,9 @@
+import { animacionMatrix } from "./matrix-animation.js";
+
 /*-------------------------------------------------ESTADOS GLOBALES DE LA APLICACIÓN----------------------------------------------*/
 
-let modoOscuroActivado = true;
-let animacionesActivadas = true;
+export let modoOscuroActivado = true;
+export let animacionesActivadas = true;
 let sonidoActivado = false;
 let tutorial = true;
 
@@ -26,6 +28,7 @@ function cambiarModo(){
 function cambiarAnimaciones(){
     if(checkboxAnimaciones.checked){
         animacionesActivadas = true;
+        animacionMatrix();
         elementoRaiz.setAttribute("data-animation","on");
         localStorage.setItem("animacion","activada");
     }
