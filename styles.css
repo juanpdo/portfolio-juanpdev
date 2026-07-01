@@ -81,7 +81,7 @@
 
     --borde-navbar: 1px solid rgb(from var(--color-base) r g b /10%);
     --borde-configuracion: 2px solid var(--color-base);
-    --borde-switch: 1px solid var(--color-base);
+    --borde-switch: 2px solid var(--color-base);
     --borde-dialogo-configuracion: 2px solid var(--color-base);
     --borde-boton-dialogo-configuracion: 2px solid var(--color-base);
     --borde-mascara-foto: 1px solid rgb(from var(--color-base) r g b /10%);
@@ -146,7 +146,7 @@
     --tamano-icono-navbar: 48px;
     --tamano-icono-configuracion: 48px;
     --tamano-largo-switch: 40px;
-    --tamano-alto-switch: 24px;
+    --tamano-alto-switch: 26px;
     --tamano-bola-switch: 18px;
     --tamano-icono-tecnologias: 24px;
     --tamano-luz: 6px;
@@ -183,17 +183,32 @@
     /*------------------MODO CLARO---------------------------*/
     
     &[data-theme="claro"]{
-        --color-base: rgb(59,59,59);
-        --color-switch-apagado: rgb(177,177,177);
+        --color-base: rgb(0,0,0);
+        --color-luz: rgb(165, 203, 253);
+        --color-switch-apagado: rgb(208, 208, 208);
         --color-switch-encendido: rgb(255,255,255);
         --color-mascara-foto: rgba(217,217,217,0.6);
-        --color-fondo-cards: rgba(161,161,161,0.25);
+        --color-fondo-cards: rgba(205, 205, 205, 0.10);
+        --color-luz-cards: var(--color-luz);
         --color-fondo-stack: rgba(161,161,161,0.25);
         --color-fondo-contacto: rgba(161,161,161,0.25);
         --color-input: rgb(164,164,164,0.25);
         --color-boton-enviar: rgba(161,161,161,0.25);
-        --color-modal: rgba(170, 170, 190, 0.75);
-        --color-boton-modal: rgb(164,164,164);
+        --color-luz-boton-enviar: var(--color-luz);
+        --color-modal: rgba(227, 224, 230, 0.75);
+        --color-boton-modal: rgba(140,140,140,0.1);
+
+        --sombra-cards: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+        --sombra-luz-cards: 0px 0px 5px 10px rgb(from var(--color-luz) r g b /30%);
+        --sombra-luz-cards-destello: 0px 0px 30px 30px rgb(from var(--color-luz) r g b /50%);
+        --sombra-stack: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+        --sombra-contacto: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+        --sombra-input: 0px 0px 10px 3px rgba(0, 0, 0, 0.4);
+        --sombra-input-activo: 0px 0px 10px 10px rgb(from var(--color-base) r g b /40%);
+        --sombra-boton-enviar: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+        --sombra-luz-boton-enviar: 0px 0px 5px 10px rgb(from var(--color-luz) r g b /30%);
+        --sombra-boton-modal: 0px 0px 5px 2px rgba(0,0,0,0.5);
+        --sombra-boton-modal-hover: 0px 0px 5px 2px rgb(from var(--color-base) r g b /100%);
     }
 
     /*------------------ANIMACIONES OFF---------------------------*/
@@ -483,7 +498,7 @@ body{
                 .interruptor-checkbox:checked+.interruptor-cuerpo{
                     background-color: var(--color-switch-encendido);
                     .interruptor-bola{
-                        transform: translateX(17px);
+                        transform: translateX(14px);
                     }
                 }
                 .interruptor-checkbox:checked~.contenedor-iconos-configuracion{
@@ -1177,6 +1192,7 @@ body{
                 min-width: 320px;
                 border: var(--borde-contacto);
                 border-radius: var(--radio-grande);
+                box-shadow: var(--sombra-contacto);
                 backdrop-filter: blur(10px);
                 opacity: 0;
                 translate: 0px -60px;
@@ -1583,6 +1599,10 @@ body{
                 flex-direction: column;
                 gap: 20px;
                 padding: var(--tamano-alto-navbar-modal) 25px 0px 25px;
+            }
+
+            #legal_propiedad{
+                margin-bottom: 4rem;
             }
         }
     }
