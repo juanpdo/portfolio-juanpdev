@@ -48,6 +48,8 @@
     --color-switch-apagado: rgb(177,177,177);
     --color-switch-encendido: rgb(0,0,0);
     --color-bola-switch: var(--color-base);
+    --color-fondo-dialogo-configuracion: rgb(from var(--color-base) r g b /10%);
+    --color-fondo-boton-dialogo-congiguracion: rgba(140,140,140,0.1);
     --color-letras-titulo: var(--color-base);
     --color-letras-subtitulo: var(--color-base);
     --color-letras-contenido: var(--color-base);
@@ -80,6 +82,8 @@
     --borde-navbar: 1px solid rgb(from var(--color-base) r g b /10%);
     --borde-configuracion: 2px solid var(--color-base);
     --borde-switch: 1px solid var(--color-base);
+    --borde-dialogo-configuracion: 2px solid var(--color-base);
+    --borde-boton-dialogo-configuracion: 2px solid var(--color-base);
     --borde-mascara-foto: 1px solid rgb(from var(--color-base) r g b /10%);
     --borde-cards: 6px double var(--color-base);
     --borde-cards-multimedia: 2px solid var(--color-base);
@@ -100,6 +104,10 @@
     --sombra-iconos-navbar: 0 0 2px rgb(from var(--color-base) r g b /100%);
     --sombra-iconos-configuracion: 0 0 2px rgb(from var(--color-base) r g b /100%);
     --sombra-switch: 0px 0px 5px 5px rgb(from var(--color-base) r g b /30%);
+    --sombra-dialogo-configuracion: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
+    --sombra-dialogo-configuracion-pulso: 0px 0px 5px 2px rgb(from var(--color-base) r g b /100%);
+    --sombra-boton-dialogo-configuracion: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    --sombra-boton-dialogo-configuracion-hover: 0px 0px 5px 2px rgb(from var(--color-base) r g b /100%);
     --sombra-letras: 0 0 5px rgb(from var(--color-base) r g b /100%);
     --sombra-mascara: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%) inset;
     --sombra-mascara-hover: 0px 0px 10px 5px rgb(from var(--color-base) r g b /30%);
@@ -361,7 +369,15 @@ body{
             }
 
             .elemento-settings{
-                margin-left: auto;          
+                margin-left: auto;
+
+                .tutorial{
+                    animation: pulso-boton-configuracion 2s ease infinite;
+                    
+                    .icono use{
+                        animation: pulso-icono-configuracion 2s ease infinite;
+                    }
+                }
             }
         }
     }
@@ -478,6 +494,61 @@ body{
                         opacity: 0%;
                     }
                 }
+            }
+        }
+    }
+
+    /*----------------------DIALOGO CONFIGURACIÓN--------------------------*/
+
+    .dialogo-configuracion{
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 88px;
+        width: 200px;
+        padding: 10px;
+        background-color: var(--color-fondo-dialogo-configuracion);
+        border: var(--borde-dialogo-configuracion);
+        border-radius: var(--radio-grande);
+        color: var(--color-letras-contenido);
+        box-shadow: var(--sombra-dialogo-configuracion);
+
+        &[open]{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &.tutorial{
+            animation: aparicion-tutorial 4s ease, pulso-dialogo-configuracion 2s ease infinite;
+        }
+        
+        .lista-dialogo-configuracion{
+            margin-left: 1rem;
+            list-style: circle;
+        }
+
+        .boton-dialogo-configuracion{
+            align-self: center;
+            width: 80%;
+            padding: 5px;
+            background-color: var(--color-fondo-boton-dialogo-congiguracion);
+            border: var(--borde-boton-dialogo-configuracion);
+            border-radius: var(--radio-grande);
+            color: var(--color-letras-titulo);
+            font-family: "ShulphurPoint";
+            font-size: 1rem;
+            box-shadow: var(--sombra-boton-dialogo-configuracion);
+            cursor: pointer;
+
+            &:hover{
+                scale: var(--escalado-pequeno);
+                box-shadow: var(--sombra-boton-dialogo-configuracion-hover);
+            }
+
+            &:active{
+                scale: var(--escalado-reduccion);
+                box-shadow: none;
             }
         }
     }
@@ -1564,5 +1635,44 @@ body{
     100%{
         scale: none;
         box-shadow: none;
+    }
+}
+
+@keyframes pulso-dialogo-configuracion{
+    0%{
+        box-shadow: var(--sombra-dialogo-configuracion);
+    }
+    50%{
+        box-shadow: var(--sombra-dialogo-configuracion-pulso);
+    }
+}
+
+@keyframes pulso-boton-configuracion{
+    0%{
+        scale: none;
+    }
+    50%{
+        scale: var(--escalado-pequeno);
+    }
+}
+
+@keyframes pulso-icono-configuracion{
+    0%{
+        stroke-width: 0.5px;
+    }
+    50%{
+        stroke-width: 1px;
+    }
+}
+
+@keyframes aparicion-tutorial{
+    0%{
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

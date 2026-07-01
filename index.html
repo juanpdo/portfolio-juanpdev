@@ -28,7 +28,7 @@
                     <li class="navbar-elemento elemento-proyectos clicable" title="Proyectos"><a href="#seccion_proyectos" aria-label="Navegar a sección proyectos"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_briefcase"></use></svg></a></li>
                     <li class="navbar-elemento elemento-informacion clicable" title="Información personal"><a href="#seccion_informacion" aria-label="Navegar a sección información personal"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_user_square"></use></svg></a></li>
                     <li class="navbar-elemento elemento-contacto clicable" title="Contacto"><a href="#seccion_contacto" aria-label="Navegar a sección contacto"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_mail_opened"></use></svg></a></li>
-                    <li class="navbar-elemento elemento-settings clicable" title="Configuración"><button id="boton_settings" type="button" class="boton-settings" aria-label="Abrir opciones de configuración" aria-expanded="false"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_settings"></use></svg></button></li>
+                    <li class="navbar-elemento elemento-settings clicable" title="Configuración"><button id="boton_settings" type="button" class="boton-settings tutorial" aria-label="Abrir opciones de configuración" aria-expanded="false"><svg class="icono" aria-hidden="true"><use href="assets/icons/icons.svg#icono_settings"></use></svg></button></li>
                 </ul>
             </nav>
             <div class="caja-reflectora"></div>
@@ -60,7 +60,15 @@
                     </li>
                 </ul>
             </div>
-            
+            <dialog id="dialogo_tutorial" class="dialogo-configuracion  tutorial" aria-label="Mensaje de referencia a las opciones en la UI" open>
+                <p class="parrafo-dialogo-configuracion">Puede modificar las opciones desde el <strong>menú de configuración</strong>:</p>
+                <ul class="lista-dialogo-configuracion">
+                    <li class="elemento-lista-dialogo-configuracion">Tema: Claro/Oscuro</li>
+                    <li class="elemento-lista-dialogo-configuracion">Animaciones: OFF/ON</li>
+                    <li class="elemento-lista-dialogo-configuracion">Sonido: OFF/ON</li>
+                </ul>
+                <button id="boton_dialogo_tutorial" class="boton-dialogo-configuracion clicable">Cerrar</button>
+            </dialog>
         </header>
         <main class="principal">
             <section id="seccion_portada" class="seccion seccion-portada">

@@ -3,6 +3,7 @@
 let modoOscuroActivado = true;
 let animacionesActivadas = true;
 let sonidoActivado = false;
+let tutorial = true;
 
 const elementoRaiz = document.documentElement;
 const checkboxModoOscuro = document.getElementById("switch_tema");
@@ -64,6 +65,37 @@ function cambiarEstadoMenu(){
 };
 
 botonMenu.addEventListener("click",cambiarEstadoMenu);
+
+/*-------------------------------------------------------CIERRE DIALOG TUTORIAL-----------------------------------------------------*/
+
+const dialogoTutorial = document.getElementById("dialogo_tutorial");
+
+const botonDialogoTutorial = document.getElementById("boton_dialogo_tutorial");
+
+function cambiarEstadoTutorial(){
+    dialogoTutorial.close();
+
+    dialogoTutorial.classList.remove("tutorial");
+    botonMenu.classList.remove("tutorial");
+
+    localStorage.setItem("tutorial","true");
+
+    checkboxSonido.checked = true;
+    cambiarSonido();
+};
+
+botonDialogoTutorial.addEventListener("click",cambiarEstadoTutorial);
+
+const tutorialAcabado = localStorage.getItem("tutorial");
+
+if(tutorialAcabado){
+    tutorial = false;
+
+    dialogoTutorial.close();
+
+    dialogoTutorial.classList.remove("tutorial");
+    botonMenu.classList.remove("tutorial");    
+}
 
 /*-------------------------------------------------APERTURA Y CIERRE MODAL LEGAL-----------------------------------------------------*/
 
