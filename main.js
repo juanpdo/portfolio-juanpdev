@@ -1,4 +1,4 @@
-import { animacionMatrix } from "./matrix-animation.js";
+import { animacionMatrix, pintadoCanvas } from "./matrix-animation.js";
 
 /*-------------------------------------------------ESTADOS GLOBALES DE LA APLICACIÓN----------------------------------------------*/
 
@@ -22,6 +22,10 @@ function cambiarModo(){
         modoOscuroActivado = false;
         elementoRaiz.setAttribute("data-theme","claro");
         localStorage.setItem("tema","claro");
+    };
+
+    if(!animacionesActivadas){
+        pintadoCanvas();
     };
 };
 
