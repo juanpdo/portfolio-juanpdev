@@ -28,7 +28,7 @@ function cambiarModo(){
 function cambiarAnimaciones(){
     if(checkboxAnimaciones.checked){
         animacionesActivadas = true;
-        animacionMatrix();
+        animacionMatrix(performance.now());
         elementoRaiz.setAttribute("data-animation","on");
         localStorage.setItem("animacion","activada");
     }
