@@ -428,3 +428,42 @@ elementosClicables.forEach((elemento)=>{
         sonidoClick.play();
     })
 });
+
+/*----------------------------------------------------API FORMULARIO DE CONTACTO---------------------------------------------------------*/
+
+const formularioContacto = document.getElementById("formulario_contacto");
+
+function enviarFormularioContacto(evento){
+    evento.preventDefault();
+
+    let segundoIntento = localStorage.getItem("formularioEnviado");
+
+    if(segundoIntento){
+        alert("Ya ha enviado su formulario de contacto con anterioridad. Si necesita ponerse en contacto nuevamente, utilice cualquiera de los métodos facilitados en esta misma sección de contacto. Gracias.");
+        return; 
+    };
+
+    let datos = new FormData(evento.target);
+
+    fetch("https://formspree.io/f/xaqglbyn",{
+        method: "POST",
+        body: datos,
+        headers: {"Accept": "application/json"}
+    })
+    .then(respuesta => {
+        if(respuesta.ok){
+            localStorage.setItem("formularioEnviado","true");
+            evento.target.reset();
+            alert("Mensaje enviado con exito. Gracias.");
+        }
+        else{
+            throw new Error("ERROR de envío de formulario de contacto");
+        };
+    })
+    .catch(error => {
+        console.log(error);
+        alert("No se ha podido enviar el mensaje en este momento. Por favor, inténtelo de nuevo más tarde. Gracias.");
+    });
+};
+
+formularioContacto.addEventListener("submit",enviarFormularioContacto);
