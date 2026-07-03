@@ -130,6 +130,9 @@ function ajusteResize(){
     alturaTotalWeb = document.documentElement.scrollHeight;
     anchoPantalla = document.documentElement.clientWidth;
     altoPantalla = document.documentElement.clientHeight;
+
+    canvasMatrix.width = anchoPantalla;
+    canvasMatrix.height = altoPantalla;
     
     columnasMatrix = anchoPantalla/anchoColumna;
     
