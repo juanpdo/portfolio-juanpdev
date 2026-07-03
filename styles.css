@@ -2226,9 +2226,8 @@ body{
 
                 .separador-vertical{
                     width: 50px;
-                    height: 300px;
-                    margin: -100px;
-                    
+                    height: calc(100vw - 20px);
+                    margin: -100px;  
                 }
             }
         }
@@ -2276,6 +2275,40 @@ body{
             .copyright{
                 font-size: 0.75rem;
                 text-align: center;
+            }
+        }
+
+        .modal-legal{
+            width: 90%;
+            height: 90%;
+
+            /*----------------------------------CABECERA----------------------------------------*/
+
+            .legal-cabecera{
+
+                .legal-navbar{
+
+                    .legal-lista{
+                        gap: 10px;
+                        width: 80%;
+
+                        .legal-lista-elemento{
+
+                            a{
+                                font-size: 0.75rem;
+                            }
+                        } 
+                    }
+                }
+            }
+
+            /*----------------------------------CONTENIDO----------------------------------------*/
+
+            .estructura-modal{
+
+                .legal-seccion{
+                    padding: var(--tamano-alto-navbar-modal) 15px 0px 15px;
+                }
             }
         }
     }
