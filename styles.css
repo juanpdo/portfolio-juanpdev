@@ -2107,5 +2107,174 @@ body{
 /*======================================================================================RESPONSIVE MÓVIL====================================================================================*/
 
 @media screen and (max-width: 550px){
-    
+    body{
+        font-size: 1rem;
+
+        h2{
+            font-size: 1.5rem;
+        }
+
+        h3{
+            font-size: 1.25rem;
+        }
+    }
+
+    .cabecera{
+
+        /*----------------------NAVBAR--------------------------*/
+
+        .navbar{
+            width: 100%;
+
+            .navbar-lista{
+                gap: 20px;
+                width: 100%;
+                padding: 5px 5px;
+            }
+        }
+    }
+
+    /*------------------------------------------------------------------------MAIN-----------------------------------------------------------------------------------*/
+
+    .principal{
+
+        .seccion{
+
+            .seccion-cabecera{
+                top: 100px;
+                gap: 10px;
+
+                .linea-decorativa-titulo{
+                    width: 85%;
+                }
+            }
+        }
+
+        /*----------------------SECCIÓN PORTADA--------------------------*/
+
+        .seccion-portada{
+
+            .estructura-portada{
+                flex-direction: column;
+                gap: 25px;
+
+                .seccion-presentacion{
+                    place-items: center;
+
+                    .titulo-principal{
+                        text-align: center;
+                        font-size: 3rem;
+                    }
+
+                    .subtitulo-principal{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        /*----------------------SECCIÓN PROYECTOS--------------------------*/
+
+        .seccion-proyectos{
+
+            .estructura-cards{
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                margin-top: 180px;
+                margin-bottom: 60px;
+            }
+        }
+
+        /*----------------------SECCIÓN INFORMACIÓN--------------------------*/
+
+        .seccion-informacion{
+            overflow-x: hidden;
+
+            .estructura-info{
+                display: flex;
+                flex-direction: column;
+                place-items: center;
+                gap: 30px;
+                width: 100%;
+                margin-top: 180px;
+                margin-bottom: 60px;
+
+                .articulo-info{
+                    padding: 0px 20px;        
+
+                    .card-info{
+                        min-height: auto;
+                    
+                        .lista-stack{
+
+                            .apartado-stack{
+
+                                .sublista-stack{
+                                    gap: 8px;
+
+                                    .elemento-stack{
+                                        width: 28px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .separador-vertical{
+                    width: 50px;
+                    height: 250px;
+                    margin: -100px;
+                    
+                }
+            }
+        }
+
+        /*----------------------SECCIÓN CONTACTO--------------------------*/
+
+        .seccion-contacto{
+
+            .articulo-contacto{
+                gap: 25px;
+                width: 100%;
+                height: auto;
+                margin-top: 180px;
+                margin-bottom: 80px;
+
+                .formulario-contacto{
+                    min-width: 0px;
+                    max-width: 90%;
+
+                    .bloque-input{
+                        width: 90%;
+
+                        .input-formulario,.textarea-formulario{
+                            height: 1.75rem;
+                            font-size: 0.9rem;
+                        }
+
+                        .textarea-formulario{
+                            height: clamp(6rem,5vh,8rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*------------------------------------------------------------------------PIE DE PÁGINA-----------------------------------------------------------------------------------*/
+
+    .pie-pagina{
+
+        .marco-footer{
+            gap: 10px;
+            padding: 5px 5px;
+
+            .copyright{
+                font-size: 0.75rem;
+                text-align: center;
+            }
+        }
+    }
 }
