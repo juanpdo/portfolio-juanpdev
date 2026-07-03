@@ -200,8 +200,8 @@ function manejadorObservador(entradas,observador){
 
 let opcionesObserador = {
     root: null,
-    rootMargin: "0px",
-    threshold: 0.2
+    rootMargin: "-10% 0px -10% 0px",
+    threshold: 0
 }
 
 const observador = new IntersectionObserver(manejadorObservador,opcionesObserador);

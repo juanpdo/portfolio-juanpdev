@@ -2132,6 +2132,13 @@ body{
                 padding: 5px 5px;
             }
         }
+
+        /*----------------------DIALOGO CONFIGURACIÓN--------------------------*/
+
+        .dialogo-configuracion{
+            right: 52px;
+            backdrop-filter: blur(10px);
+        }
     }
 
     /*------------------------------------------------------------------------MAIN-----------------------------------------------------------------------------------*/
@@ -2308,6 +2315,109 @@ body{
 
                 .legal-seccion{
                     padding: var(--tamano-alto-navbar-modal) 15px 0px 15px;
+                }
+            }
+        }
+    }
+}
+
+/*==================================================================================RESPONSIVE MÓVIL HORIZONTAL================================================================================*/
+
+@media screen and (max-height: 450px){
+
+    .cabecera{
+
+        /*----------------------DIALOGO CONFIGURACIÓN--------------------------*/
+
+        .dialogo-configuracion{
+            backdrop-filter: blur(10px);
+        }
+    }
+
+    /*------------------------------------------------------------------------MAIN-----------------------------------------------------------------------------------*/
+
+    .principal{
+
+        /*----------------------SECCIÓN PORTADA--------------------------*/
+
+        .seccion-portada{
+
+            .estructura-portada{
+                margin-top: 100px;
+                margin-bottom: 60px;
+            }
+        }
+
+        /*----------------------SECCIÓN PROYECTOS--------------------------*/
+
+        .seccion-proyectos{
+            overflow-x: hidden;
+
+            .estructura-cards{
+                margin-top: 180px;
+                margin-bottom: 60px;
+            }
+        }
+
+        /*----------------------SECCIÓN CONTACTO--------------------------*/
+
+        .seccion-contacto{
+
+            .articulo-contacto{
+                width: 100%;
+                height: auto;
+                margin-top: 180px;
+                margin-bottom: 80px;
+
+                .formulario-contacto{
+                    min-width: 0px;
+                    max-width: 90%;
+
+                    .bloque-input{
+                        width: 90%;
+
+                        .input-formulario,.textarea-formulario{
+                            height: 1.75rem;
+                            font-size: 0.9rem;
+                        }
+
+                        .textarea-formulario{
+                            height: clamp(6rem,5vh,8rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*------------------------------------------------------------------------PIE DE PÁGINA-----------------------------------------------------------------------------------*/
+
+    .pie-pagina{
+
+        .marco-footer{
+            padding: 5px 15px;
+        }
+
+        .modal-legal{
+            width: 90%;
+            height: 90%;
+
+            /*----------------------------------CABECERA----------------------------------------*/
+
+            .legal-cabecera{
+
+                .legal-navbar{
+
+                    .legal-lista{
+                        width: 90%;
+
+                        .legal-lista-elemento{
+
+                            a{
+                                font-size: 1rem;
+                            }
+                        } 
+                    }
                 }
             }
         }
