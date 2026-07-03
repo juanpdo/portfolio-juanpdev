@@ -676,14 +676,14 @@ body{
                 animation: pulso-portada-letras 2s ease;
 
                 .titulo-principal{
-                    font-size: clamp(64px,6.666666vw,170px);
+                    font-size: clamp(64px,6.666666vw,140px);
                     font-family: "BrunoAce";
                     font-weight: 400;
                     transition: text-shadow 1s ease;
                 }
 
                 .subtitulo-principal{
-                    font-size: clamp(32px,3.333333vw,85px);
+                    font-size: clamp(32px,3.333333vw,70px);
                     font-family: "FunnelDisplay";
                     font-weight: 400;
                     transition: text-shadow 1s ease;
@@ -699,7 +699,7 @@ body{
             }
 
             .mascara-foto-principal{
-                width: clamp(220px,26.041666%,666px);
+                width: clamp(220px,26.041666%,580px);
                 aspect-ratio: 1;
                 background-color: var(--color-mascara-foto);
                 border: var(--borde-mascara-foto);
@@ -754,12 +754,11 @@ body{
             grid-template-rows: repeat(2,minmax(150,1fr));
             gap: 30px;
             width: 64.583333%;
-            aspect-ratio: 2;
             margin-top: 100px;
 
             .card-proyecto{
                 position: relative;
-                width: clamp(260px,100%,550px);
+                width: clamp(260px,100%,500px);
                 aspect-ratio: 1.333333;
                 padding: 3px;
                 background-color: var(--color-fondo-cards);
@@ -969,6 +968,7 @@ body{
             gap: 30px;
             width: 100%;
             max-width: 1500px;
+            margin-top: 100px;
             padding: 0px 20px;
 
             .articulo-info{
@@ -1190,6 +1190,7 @@ body{
             place-items: center;
             gap: 50px;
             width: 41.666666%;
+            margin-top: 100px;
 
             .formulario-contacto{
                 display: flex;
@@ -1712,7 +1713,7 @@ body{
 @media screen and (max-width: 1370px){
 
     body{
-        font-size: 0.9rem;
+        font-size: 1rem;
 
         h2{
             font-size: 1.5rem;
@@ -1723,6 +1724,39 @@ body{
         }
     }
 
+    .cabecera{
+
+        /*----------------------NAVBAR--------------------------*/
+
+        .navbar{
+            height: 50px;
+
+            .navbar-lista{
+                padding: 5px 20px;
+
+                .navbar-elemento{
+                    width: 42px;
+                    height: 42px;
+
+                }
+            }
+
+            &::before{
+                height: 5px;
+            }
+
+            &::after{
+                height: 5px;
+            }
+        }
+
+        /*----------------------MENU OPCIONES--------------------------*/
+
+        .configuracion-menu{
+            top: 50px;
+        }
+    }
+
     /*------------------------------------------------------------------------MAIN-----------------------------------------------------------------------------------*/
 
     .principal{
@@ -1730,8 +1764,21 @@ body{
         .seccion{
 
             .seccion-cabecera{
-                top: 130px;
+                top: 90px;
                 gap: 10px;
+            }
+
+            .desplazamiento{
+                width: 50px;
+                height: 50px;
+
+                &.retroceso{
+                    top: 50px;
+                }
+
+                .flecha{
+                    width: 50px;
+                }
             }
         }
 
@@ -1740,7 +1787,16 @@ body{
         .seccion-proyectos{
 
             .estructura-cards{
-                width: 85%;
+                width: auto;
+                max-width: 85%;
+                height: auto;
+                place-items: center;
+                grid-template-columns: repeat(3,minmax(260px,1fr));
+                gap: 20px;
+
+                .card-proyecto{
+                    width: clamp(260px,100%,400px);
+                }
             }
         }
 
@@ -1750,10 +1806,11 @@ body{
 
             .estructura-info{
                 display: grid;
-                grid-template-columns: 15fr 1fr 15fr 1fr;
+                grid-template-columns: 10fr 1fr 10fr 1fr;
+                place-items: center;
                 gap: 30px;
                 width: 95%;
-                margin-top: 180px;
+                margin-top: 150px;
                 margin-bottom: 40px;
 
                 .articulo-info{
@@ -1764,7 +1821,7 @@ body{
                     }
 
                     .card-info{
-                        min-height: 500px;
+                        min-height: 520px;
                         margin-top: 25px;
                         margin-bottom: auto;
                         padding: 15px;
@@ -1789,176 +1846,31 @@ body{
         .seccion-contacto{
 
             .articulo-contacto{
-                display: flex;
-                flex-direction: column;
-                place-items: center;
-                gap: 50px;
-                width: 41.666666%;
+                gap: 10px;
+                width: 65%;
+                height: auto;
+                margin-top: 80px;
 
                 .formulario-contacto{
-                    display: flex;
-                    flex-direction: column;
-                    place-items: center;
-                    gap: 15px;
-                    padding: 25px;
-                    width: 100%;
-                    max-width: 800px;
-                    min-width: 320px;
-                    border: var(--borde-contacto);
-                    border-radius: var(--radio-grande);
-                    box-shadow: var(--sombra-contacto);
-                    backdrop-filter: blur(10px);
-                    opacity: 0;
-                    translate: 0px -60px;
-                    transition: opacity 0.1s ease, translate 0.1s ease;
+                    gap: 10px;
+                    padding: 15px;
 
                     .bloque-input{
-                        display: flex;
-                        flex-direction: column;
-                        gap: 5px;
-                        width: 80%;
 
                         .input-formulario,.textarea-formulario{
-                            height: 2rem;
-                            width: 100%;
-                            background-color: var(--color-input);
-                            padding: 10px;
-                            border: var(--borde-input);
-                            border-radius: var(--radio-mediano);
-                            font-family: "ShulphurPoint";
-                            font-size: 1rem;
-                            font-weight: 400;
-                            color: var(--color-letras-contenido);
-                            box-shadow: var(--sombra-input);
-
-                            &:focus{
-                                border: var(--borde-input-activo);
-                                box-shadow: var(--sombra-input-activo);
-                            }
+                            height: 1.75rem;
+                            font-size: 0.9rem;
                         }
 
                         .textarea-formulario{
-                            height: 10rem;
+                            height: clamp(1.75rem,5vh,8rem);
+                            padding: 5px 10px;
                         }
                     }
 
                     .boton-enviar{
-                        position: relative;
-                        width: var(--tamano-largo-boton-enviar);
-                        height: var(--tamano-alto-boton-enviar);
-                        padding: 3px;
-                        background-color: transparent;
-                        border: none;
-                        border-radius: var(--radio-grande);
-                        font-family: "ShulphurPoint";
-                        font-size: 1rem;
-                        font-weight: 400;
-                        color: var(--color-letras-titulo);
-                        box-shadow: var(--sombra-boton-enviar);
-                        backdrop-filter: blur(10px);
-                        cursor: pointer;
-
-                        .luz-boton{
-                            position: absolute;
-                            width: var(--tamano-luz);
-                            aspect-ratio: 1;
-                            background-color: var(--color-luz-cards);
-                            border-radius: 50%;
-                            box-shadow: var(--sombra-luz-cards);
-                            offset-path: content-box;
-                            z-index: 50;
-                            opacity: 0;
-                        }
-
-                        .marco-boton{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            border: var(--borde-boton-enviar);
-                            border-radius: var(--radio-grande);
-                            z-index: -5;
-                        }
-
-                        &:hover{
-                            scale: var(--escalado-pequeno);
-
-                            .marco-boton{
-                                box-shadow: var(--sombra-boton-enviar-hover), var(--sombra-borde-boton-enviar);
-                            }
-
-                            .luz-boton{
-                                opacity: 1;
-                                animation: recorridoLuz 1.5s linear infinite, destello-card 1.5s linear infinite;
-                            } 
-                        }
-
-                        &:active{
-                            scale: var(--escalado-reduccion);
-                            box-shadow: none;
-
-                            .marco-boton{
-                                box-shadow: none;
-                            }
-
-                            .luz-boton{
-                                opacity: 0;
-                            }
-                        }
+                        font-size: 0.9rem;
                     }
-                }
-            }
-
-            .lista-contacto{
-                display: flex;
-                gap: 20px;
-                list-style: none;
-                opacity: 0;
-                translate: 0px 60px;
-                transition: opacity 0.1s ease, translate 0.1s ease;
-
-                .lista-contacto-elemento{
-
-                    .icono{
-                        width: var(--tamano-icono-contacto);
-                        height: var(--tamano-icono-contacto);
-                        color: var(--color-iconos-contacto);
-                    }
-
-                    &:hover{
-                        scale: var(--escalado-grande);
-
-                        .icono{
-                            filter: drop-shadow(var(--sombra-iconos-contacto));
-                        }
-                    }
-
-                    &:active{
-                        scale: var(--escalado-reduccion);
-
-                        .icono{
-                            filter: none;
-                        }
-                    }
-                }
-            }
-        }
-
-        .seccion-contacto.visible{
-
-            .articulo-contacto{
-
-                .formulario-contacto{
-                    opacity: 1;
-                    translate: 0px 0px;
-                    transition: opacity 0.3s ease 0.6s, translate 0.3s ease 0.6s;
-                }
-
-                .lista-contacto{
-                    opacity: 1;
-                    translate: 0px 0px;
-                    transition: opacity 0.3s ease 0.9s, translate 0.3s ease 0.9s;
                 }
             }
         }
@@ -1967,258 +1879,22 @@ body{
     /*------------------------------------------------------------------------PIE DE PÁGINA-----------------------------------------------------------------------------------*/
 
     .pie-pagina{
-        position: relative;
 
         .marco-footer{
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            display: flex;
-            flex-direction: row;
-            place-items: center;
-            justify-content: space-between;
-            width: 100%;
-            height: var(--tamano-pie-pagina-alto);
-            padding: 0 50px;
-            background-color: var(--color-fondo-pie);
-            border: var(--borde-pie);
-            box-shadow: var(--sombra-pie);
-            backdrop-filter: blur(2px);
-
-            &::before{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 10px;
-                content: "";
-                backdrop-filter: brightness(3) saturate(3) contrast(3);
-            }
-
-            &::after{
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 10px;
-                content: "";
-                backdrop-filter: brightness(2) saturate(2) contrast(2);
-            }
-
-            .boton-aviso-legal{
-                background-color: transparent;
-                font-family: "ShulphurPoint";
-                font-size: 1rem;
-                font-weight: 400;
-                text-decoration: underline;
-                color: var(--color-letras-titulo);
-                border: none;
-                box-shadow: none;
-                cursor: pointer;
-
-                &:hover{
-                    scale: var(--escalado-medio);
-                    text-shadow: var(--sombra-legal-pie);
-                }
-
-                &:active{
-                    scale: var(--escalado-reduccion);
-                    text-shadow: none;
-                }
-            }
-
-            .enlace-accesibilidad{
-                color: var(--color-iconos-pie);
-                height: var(--tamano-alto-icono-accesibilidad);
-
-                .icono{
-                    width: var(--tamano-largo-icono-accesibilidad);
-                    height: var(--tamano-alto-icono-accesibilidad);
-                }
-
-                &:hover{
-                    scale: var(--escalado-medio);
-
-                    .icono{
-                        filter: drop-shadow(var(--sombra-iconos-pie));
-                    }
-                }
-
-                &:active{
-                    scale: var(--escalado-reduccion);
-
-                    .icono{
-                        filter: none;
-                    }
-                }
-            }
+            height: 50px;
+            padding: 5px 50px;
         }
 
         /*----------------------EFECTO REFLEXIÓN--------------------------*/
 
         .caja-reflectora{
-            position: absolute;
-            bottom: var(--tamano-pie-pagina-alto);
-            left: 0;
-            width: 100%;
-            height: 1px;
-            backdrop-filter: brightness(3);
+            bottom: 50px;
         }
 
         /*----------------------------------------------MODAL LEGAL------------------------------------------------------*/
 
         .modal-legal{
-            position: fixed;
-            align-self: center;
-            justify-self: center;
-            width: 50%;
-            height: 80%;
-            background-color: var(--color-modal);
-            border: var(--borde-modal);
-            border-radius: var(--radio-grande);
-            color: var(--color-letras-contenido);
-
-            &::backdrop{
-                backdrop-filter: blur(5px);
-            }
-
-            /*----------------------------------CABECERA----------------------------------------*/
-
-            .legal-cabecera{
-                position: sticky;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: var(--tamano-alto-navbar-modal);
-
-                .boton-cerrar{
-                    position: absolute;
-                    top: 10px;
-                    right: 10px;
-                    place-items: center;
-                    width: var(--tamano-boton-modal);
-                    height: var(--tamano-boton-modal);
-                    background-color: var(--color-boton-modal);
-                    border: var(--borde-boton-modal);
-                    border-radius: var(--radio-mediano);
-                    box-shadow: var(--sombra-boton-modal);
-                    z-index: 30;
-
-                    .icono{
-                        width: 100%;
-                        height: 100%;
-                        color: var(--color-x-modal);
-                    }
-
-                    &:hover{
-                        scale: var(--escalado-pequeno);
-                        box-shadow: var(--sombra-boton-modal-hover);
-
-                        .icono{
-                            stroke-width: 2;
-                        }
-                    }
-
-                    &:active{
-                        scale: var(--escalado-reduccion);
-                        box-shadow: none;
-
-                        .icono{
-                            stroke-width: 1;
-                        }
-                    }
-                }
-
-                .legal-navbar{
-                    width: 100%;
-                    height: 100%;
-                    background-color: var(--color-fondo-navbar);
-                    border: var(--borde-navbar);
-                    box-shadow: var(--sombra-navbar);
-                    backdrop-filter: blur(5px);
-
-                    &::before{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 10px;
-                        content: "";
-                        backdrop-filter: brightness(2) saturate(2) contrast(2);
-                    }
-
-                    &::after{
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 10px;
-                        content: "";
-                        backdrop-filter: brightness(3) saturate(3) contrast(3);
-                    }
-
-                    .legal-lista{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-around;
-                        width: 90%;
-                        height: 100%;
-                        list-style: none;
-
-                        .legal-lista-elemento{
-                            place-content: center;
-
-                            a{
-                                color: var(--color-letras-titulo);
-                            }
-
-                            &:hover{
-                                scale: var(--escalado-medio);
-                                text-shadow: var(--sombra-enlaces-modal);
-                            }
-
-                            &:active{
-                                scale: var(--escalado-reduccion);
-                                text-shadow: none;
-                            }
-                        } 
-                    }
-                }
-
-                /*----------------------EFECTO REFLEXIÓN--------------------------*/
-
-                .caja-reflectora{
-                    position: sticky;
-                    top: 0;
-                    width: 100%;
-                    height: 1px;
-                    backdrop-filter: brightness(5);
-                }
-            }
-
-            /*----------------------------------CONTENIDO----------------------------------------*/
-
-            .estructura-modal{
-                display: flex;
-                flex-direction: column;
-                place-items: center;
-                margin-top: 50px;
-
-                .legal-titulo{
-                    text-decoration: underline;
-                }
-
-                .legal-seccion{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                    padding: var(--tamano-alto-navbar-modal) 25px 0px 25px;
-                }
-
-                #legal_propiedad{
-                    margin-bottom: 4rem;
-                }
-            }
+            width: 80%;
         }
     }
 }
