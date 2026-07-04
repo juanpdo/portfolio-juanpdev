@@ -676,14 +676,14 @@ body{
                 animation: pulso-portada-letras 2s ease;
 
                 .titulo-principal{
-                    font-size: clamp(64px,6.666666vw,140px);
+                    font-size: clamp(64px,6.666666vw,128px);
                     font-family: "BrunoAce";
                     font-weight: 400;
                     transition: text-shadow 1s ease;
                 }
 
                 .subtitulo-principal{
-                    font-size: clamp(32px,3.333333vw,70px);
+                    font-size: clamp(32px,3.333333vw,64px);
                     font-family: "FunnelDisplay";
                     font-weight: 400;
                     transition: text-shadow 1s ease;
@@ -699,7 +699,7 @@ body{
             }
 
             .mascara-foto-principal{
-                width: clamp(220px,26.041666%,580px);
+                width: clamp(220px,30%,580px);
                 aspect-ratio: 1;
                 background-color: var(--color-mascara-foto);
                 border: var(--borde-mascara-foto);
@@ -819,6 +819,7 @@ body{
                             left: 0;
                             width: 100%;
                             height: 100%;
+                            object-fit: cover;
                         }
 
                         .miniatura-imagen{
