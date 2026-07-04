@@ -11,17 +11,22 @@ const elementoRaiz = document.documentElement;
 const checkboxModoOscuro = document.getElementById("switch_tema");
 const checkboxAnimaciones = document.getElementById("switch_animacion");
 const checkboxSonido = document.getElementById("switch_audio");
+const contenedorIconosTema = document.getElementById("contenedor_iconos_tema");
+const contenedorIconosAnimacion = document.getElementById("contenedor_iconos_animacion");
+const contenedorIconosAudio = document.getElementById("contenedor_iconos_audio");
 
 function cambiarModo(){
     if(checkboxModoOscuro.checked){
         modoOscuroActivado = true;
         elementoRaiz.setAttribute("data-theme","oscuro");
         localStorage.setItem("tema","oscuro");
+        contenedorIconosTema.title = "Tema Oscuro";
     }
     else{
         modoOscuroActivado = false;
         elementoRaiz.setAttribute("data-theme","claro");
         localStorage.setItem("tema","claro");
+        contenedorIconosTema.title = "Tema Claro";
     };
 
     if(!animacionesActivadas){
@@ -35,20 +40,24 @@ function cambiarAnimaciones(){
         animacionMatrix(performance.now());
         elementoRaiz.setAttribute("data-animation","on");
         localStorage.setItem("animacion","activada");
+        contenedorIconosAnimacion.title = "Animaciones ON";
     }
     else{
         animacionesActivadas = false;
         elementoRaiz.setAttribute("data-animation","off");
         localStorage.setItem("animacion","desactivada");
+        contenedorIconosAnimacion.title = "Animaciones OFF";
     };
 };
 
 function cambiarSonido(){
     if(checkboxSonido.checked){
         sonidoActivado = true;
+        contenedorIconosAudio.title = "Audio ON";
     }
     else{
         sonidoActivado = false;
+        contenedorIconosAudio.title = "Audio OFF";
     };
 };
 
@@ -154,7 +163,7 @@ if(tutorialAcabado){
     dialogoTutorial.close();
 
     dialogoTutorial.classList.remove("tutorial");
-    botonMenu.classList.remove("tutorial");    
+    botonMenu.classList.remove("tutorial"); 
 };
 
 /*-------------------------------------------------APERTURA Y CIERRE MODAL LEGAL-----------------------------------------------------*/
