@@ -1,5 +1,3 @@
-alert("Vamos al lío");
-
 var pinTarjeta = prompt("Elige un PIN para tu tarjeta de crédito de 4 dígitos :");
 
 comprobarPIN();
