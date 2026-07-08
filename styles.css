@@ -39,7 +39,7 @@
     /*------------------COLORES---------------------------*/
 
     --color-base: rgb(255,255,255);
-    --color-fondo: var(--color-base);
+    --color-fondo: rgb(0,0,0);
     --color-flechas: var(--color-base);
     --color-fondo-navbar: rgb(from var(--color-base) r g b /1%);
     --color-iconos-navbar: var(--color-base);
@@ -184,6 +184,7 @@
     
     &[data-theme="claro"]{
         --color-base: rgb(0,0,0);
+        --color-fondo: rgb(255,255,255);
         --color-luz: rgb(165, 203, 253);
         --color-switch-apagado: rgb(208, 208, 208);
         --color-switch-encendido: rgb(255,255,255);
