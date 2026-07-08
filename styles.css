@@ -260,7 +260,6 @@ body{
     font-family: "ShulphurPoint";
     font-size: var(--texto-contenido);
     color: var(--color-letras-contenido);
-    z-index: -20;
 
     &::before{
         position: absolute;
@@ -274,7 +273,7 @@ body{
         background-size: 100% 100%;
         opacity: 0;
         transition: opacity 1s ease;
-        z-index: -10;
+        z-index: -2;
     }
 
     h1{
@@ -302,7 +301,7 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -6;
+    z-index: -1;
 }
 
 /*------------------------------------------------------------------------CABECERA-----------------------------------------------------------------------------------*/
