@@ -1509,6 +1509,7 @@ body{
                 border-radius: var(--radio-mediano);
                 box-shadow: var(--sombra-boton-modal);
                 z-index: 30;
+                cursor: pointer;
 
                 .icono{
                     width: 100%;
