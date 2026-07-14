@@ -758,7 +758,7 @@ body{
 
             .card-proyecto{
                 position: relative;
-                width: clamp(260px,100%,450px);
+                width: clamp(260px,100%,500px);
                 aspect-ratio: 1.333333;
                 padding: 3px;
                 background-color: var(--color-fondo-cards);
