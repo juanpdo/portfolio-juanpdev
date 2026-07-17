@@ -1722,6 +1722,101 @@ body{
 
 @media screen and (max-width: 2000px){
     
+    .principal{
+
+        /*----------------------SECCIÓN PROYECTOS--------------------------*/
+
+        .seccion-proyectos{
+
+            .estructura-cards{
+                width: auto;
+                max-width: 80%;
+                height: auto;
+                place-items: center;
+                grid-template-columns: repeat(3,minmax(340px,1fr));
+                gap: 25px;
+
+                .card-proyecto{
+                    width: clamp(340px,100%,400px);
+                }
+            }
+        }
+
+        /*----------------------SECCIÓN INFORMACIÓN--------------------------*/
+
+        .seccion-informacion{
+
+            .estructura-info{
+                display: grid;
+                grid-template-columns: 10fr 1fr 10fr 1fr;
+                place-items: center;
+                gap: 30px;
+                width: 95%;
+                margin-top: 150px;
+                margin-bottom: 40px;
+
+                .articulo-info{
+                    margin-bottom: auto;          
+
+                    .articulo-info-cabecera{
+                        gap: 10px;
+                    }
+
+                    .card-info{
+                        min-height: 520px;
+                        margin-top: 25px;
+                        margin-bottom: auto;
+                        padding: 15px;
+
+                        .lista-stack{
+                            gap: 5px;
+                        }
+                    }
+                }
+
+                .separador-vertical{
+                    width: 50px;
+                    height: 550px;
+                    margin-top: 1rem;
+                    scale: none;
+                }
+            }
+        }
+
+        /*----------------------SECCIÓN CONTACTO--------------------------*/
+
+        .seccion-contacto{
+
+            .articulo-contacto{
+                gap: 10px;
+                width: 65%;
+                height: auto;
+                margin-top: 80px;
+
+                .formulario-contacto{
+                    gap: 10px;
+                    padding: 15px;
+
+                    .bloque-input{
+
+                        .input-formulario,.textarea-formulario{
+                            height: 1.75rem;
+                            font-size: 0.9rem;
+                        }
+
+                        .textarea-formulario{
+                            height: clamp(1.75rem,5vh,8rem);
+                            padding: 5px 10px;
+                        }
+                    }
+
+                    .boton-enviar{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*==================================================================RESPONSIVE ESCRITORIO PEQUEÑO Y TABLET HORIZONTAL===================================================================================*/
