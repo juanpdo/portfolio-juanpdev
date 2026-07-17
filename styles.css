@@ -1744,7 +1744,7 @@ body{
 
         /*----------------------SECCIÓN INFORMACIÓN--------------------------*/
 
-        .seccion-informacion{
+        /* .seccion-informacion{
 
             .estructura-info{
                 display: grid;
@@ -1781,11 +1781,11 @@ body{
                     scale: none;
                 }
             }
-        }
+        } */
 
         /*----------------------SECCIÓN CONTACTO--------------------------*/
 
-        .seccion-contacto{
+        /* .seccion-contacto{
 
             .articulo-contacto{
                 gap: 10px;
@@ -1815,7 +1815,7 @@ body{
                     }
                 }
             }
-        }
+        } */
     }
 }
 
