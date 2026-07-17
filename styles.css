@@ -1757,6 +1757,27 @@ body{
     
     .principal{
 
+        .seccion{
+
+            .seccion-cabecera{
+                top: 100px;
+                gap: 10px;
+            }
+
+            .desplazamiento{
+                width: 55px;
+                height: 55px;
+
+                &.retroceso{
+                    top: 55px;
+                }
+
+                .flecha{
+                    width: 55px;
+                }
+            }
+        }
+
         /*----------------------SECCIÓN PROYECTOS--------------------------*/
 
         .seccion-proyectos{
