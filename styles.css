@@ -1799,11 +1799,12 @@ body{
         /*----------------------SECCIÓN INFORMACIÓN--------------------------*/
 
         .seccion-informacion{
+            min-height: max(100vh, 800px);
 
             .estructura-info{
                 gap: 30px;
                 width: 95%;
-                margin-top: 0px;
+                margin-top: 50px;
                 margin-bottom: 0px;
 
                 .articulo-info{
@@ -1831,40 +1832,6 @@ body{
                 }
             }
         }
-
-        /*----------------------SECCIÓN CONTACTO--------------------------*/
-
-        /* .seccion-contacto{
-
-            .articulo-contacto{
-                gap: 10px;
-                width: 65%;
-                height: auto;
-                margin-top: 80px;
-
-                .formulario-contacto{
-                    gap: 10px;
-                    padding: 15px;
-
-                    .bloque-input{
-
-                        .input-formulario,.textarea-formulario{
-                            height: 1.75rem;
-                            font-size: 0.9rem;
-                        }
-
-                        .textarea-formulario{
-                            height: clamp(1.75rem,5vh,8rem);
-                            padding: 5px 10px;
-                        }
-                    }
-
-                    .boton-enviar{
-                        font-size: 0.9rem;
-                    }
-                }
-            }
-        } */
     }
 }
 
