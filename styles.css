@@ -1721,6 +1721,39 @@ body{
 /*==================================================================RESPONSIVE FULL-HD===================================================================================*/
 
 @media screen and (max-width: 2000px){
+
+    .cabecera{
+
+        /*----------------------NAVBAR--------------------------*/
+
+        .navbar{
+            height: 60px;
+
+            .navbar-lista{
+                padding: 5px 20px;
+
+                .navbar-elemento{
+                    width: 46px;
+                    height: 46px;
+
+                }
+            }
+
+            &::before{
+                height: 5px;
+            }
+
+            &::after{
+                height: 5px;
+            }
+        }
+
+        /*----------------------MENU OPCIONES--------------------------*/
+
+        .configuracion-menu{
+            top: 60px;
+        }
+    }
     
     .principal{
 
@@ -1744,16 +1777,13 @@ body{
 
         /*----------------------SECCIÓN INFORMACIÓN--------------------------*/
 
-        /* .seccion-informacion{
+        .seccion-informacion{
 
             .estructura-info{
-                display: grid;
-                grid-template-columns: 10fr 1fr 10fr 1fr;
-                place-items: center;
                 gap: 30px;
                 width: 95%;
-                margin-top: 150px;
-                margin-bottom: 40px;
+                margin-top: 0px;
+                margin-bottom: 0px;
 
                 .articulo-info{
                     margin-bottom: auto;          
@@ -1763,7 +1793,7 @@ body{
                     }
 
                     .card-info{
-                        min-height: 520px;
+                        min-height: 560px;
                         margin-top: 25px;
                         margin-bottom: auto;
                         padding: 15px;
@@ -1775,13 +1805,11 @@ body{
                 }
 
                 .separador-vertical{
-                    width: 50px;
-                    height: 550px;
-                    margin-top: 1rem;
-                    scale: none;
+                    height: 600px;
+                    margin-top: 0.5rem;
                 }
             }
-        } */
+        }
 
         /*----------------------SECCIÓN CONTACTO--------------------------*/
 
